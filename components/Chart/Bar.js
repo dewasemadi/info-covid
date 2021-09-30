@@ -2,7 +2,7 @@ import { Bar } from 'react-chartjs-2';
 import { useState, useEffect } from 'react';
 import { useGetDataByProvincesQuery } from '../../redux/services/covid-indonesia.service';
 import { Box, Skeleton } from '@mui/material';
-const string = require('lodash');
+const format = require('lodash');
 
 export default function BarChart() {
   const { data, error, isLoading } = useGetDataByProvincesQuery('');
@@ -16,8 +16,8 @@ export default function BarChart() {
     if (data) {
       setProvinces(
         data.map((arg) => {
-          const lower = string.toLower(arg.provinsi);
-          return string.startCase(lower);
+          const lower = format.toLower(arg.provinsi);
+          return format.startCase(lower);
         })
       );
       setCases(data.map((arg) => arg.kasus));
@@ -33,27 +33,23 @@ export default function BarChart() {
       {
         label: 'Confirmed Cases',
         data: cases,
-        fill: false,
         backgroundColor: 'rgb(251, 53, 117)',
+      },
+      {
+        label: 'Treated',
+        data: treated,
+        backgroundColor: 'rgb(247, 188, 67)',
       },
       {
         label: 'Recovered',
         data: recovered,
-        fill: false,
         backgroundColor: 'rgb(100, 212, 31)',
       },
-      //   {
-      //     label: 'Treated',
-      //     data: treated,
-      //     fill: false,
-      //     backgroundColor: 'rgb(247, 188, 67)',
-      //   },
-      //   {
-      //     label: 'Death',
-      //     data: death,
-      //     fill: false,
-      //     backgroundColor: 'rgb(0, 0, 0)',
-      //   },
+      {
+        label: 'Death',
+        data: death,
+        backgroundColor: 'rgb(0, 0, 0)',
+      },
     ],
   };
 
@@ -90,20 +86,26 @@ export default function BarChart() {
         <p>Upps.. Network error</p>
       ) : isLoading ? (
         <Box
-        //   sx={{
-        //     width: {
-        //       xs: 100,
-        //       sm: 200,
-        //       md: 300,
-        //       lg: 400,
-        //       xl: 500,
-        //     },
-        //   }}
+          m="auto"
+          sx={{
+            width: {
+              lg: 900,
+            },
+          }}
         >
-          <Skeleton variant="rectangular" height={500} />
+          <Skeleton variant="rectangular" animation="wave" height={550} />
         </Box>
       ) : data ? (
-        <Bar data={dataSource} options={options} responsive="true" height={500} width={600} />
+        <Box
+          m="auto"
+          sx={{
+            width: {
+              lg: 900,
+            },
+          }}
+        >
+          <Bar data={dataSource} options={options} responsive="true" height={550} />
+        </Box>
       ) : null}
     </div>
   );
