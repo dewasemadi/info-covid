@@ -1,10 +1,12 @@
 import { Bar } from 'react-chartjs-2';
 import { useState, useEffect } from 'react';
 import { useGetDataByProvincesQuery } from '../../redux/services/covid-indonesia.service';
-import { Box, Skeleton } from '@mui/material';
+import { Box, Skeleton, Button } from '@mui/material';
+import { useRouter } from 'next/router'
 const format = require('lodash');
 
 export default function BarChart() {
+  const router = useRouter();
   const { data, error, isLoading } = useGetDataByProvincesQuery('');
   const [provinces, setProvinces] = useState([]);
   const [cases, setCases] = useState([]);
@@ -80,10 +82,18 @@ export default function BarChart() {
     },
   };
 
+
+  const handleReload = () => {
+    router.reload();
+  }
+
   return (
     <div>
       {error ? (
-        <p style={{ textAlign: 'center' }}>Ups.. Network error</p>
+        <>
+          <p style={{ textAlign: 'center', marginTop: '10px' }}>Oops.. Something went wrong. Failed to get data, please try again.</p>
+          <Button onClick={handleReload} variant="outlined" style={{ margin: "10px auto auto auto", display: 'block' }}>Try Again</Button>
+        </>
       ) : isLoading ? (
         <Box
           m="auto"
@@ -93,7 +103,7 @@ export default function BarChart() {
             },
           }}
         >
-          <Skeleton variant="rectangular" animation="wave" height={550} />
+          <Skeleton variant="rectangular" animation="wave" height={550} style={{ marginTop: '15px' }} />
         </Box>
       ) : data ? (
         <Box

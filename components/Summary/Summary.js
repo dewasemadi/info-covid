@@ -1,9 +1,11 @@
 import { useGetSummaryQuery } from '../../redux/services/covid-indonesia.service';
-import { Box, Skeleton, Card, CardContent } from '@mui/material';
+import { Box, Skeleton, Card, CardContent, Button } from '@mui/material';
 import { formatDateToUs } from '../../utils/formatter';
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router'
 
 export default function Summary() {
+  const router = useRouter();
   const { data, error, isLoading } = useGetSummaryQuery('');
   const [res, setRes] = useState([]);
 
@@ -18,6 +20,10 @@ export default function Summary() {
       )
     }
   }, [data]);
+
+  const handleReload = () => {
+    router.reload();
+  }
 
   const list = (params) => (
     <Box sx={{
@@ -37,8 +43,8 @@ export default function Summary() {
                     </>
                   ) : (
                     <>
-                      <Skeleton variant="text" animation="wave" />
-                      <Skeleton variant="text" animation="wave" />
+                      <Skeleton variant="text" animation="wave" height={28} />
+                      <Skeleton variant="text" animation="wave" height={24} />
                     </>
                   )
                 }
@@ -53,7 +59,10 @@ export default function Summary() {
   return (
     <div>
       {error ? (
-        <p style={{ textAlign: 'center' }}>Ups.. Network error</p>
+        <>
+          <p style={{ textAlign: 'center', marginTop: '10px' }}>Oops.. Something went wrong. Failed to get data, please try again.</p>
+          <Button onClick={handleReload} variant="outlined" style={{ margin: "10px auto auto auto", display: 'block' }}>Try Again</Button>
+        </>
       ) : isLoading ? (
         <Box
           m="auto"
@@ -63,7 +72,7 @@ export default function Summary() {
             },
           }}
         >
-          <Skeleton variant="text" animation="wave" />
+          <Skeleton variant="text" animation="wave" height={24} />
         </Box>
       ) : data ? (
         <p style={{ textAlign: 'center' }}>Last Update on {formatDateToUs(data.lastUpdate)}</p>

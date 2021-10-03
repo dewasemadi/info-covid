@@ -11,7 +11,6 @@ export default function Statistics() {
     setOpen(false);
   };
 
-
   const handleTooltipOpen = () => {
     setOpen(true);
   };
@@ -39,7 +38,7 @@ export default function Statistics() {
                 placement="top"
                 arrow>
                 <IconButton aria-label="help" onClick={handleTooltipOpen}>
-                  <HelpTwoToneIcon></HelpTwoToneIcon>
+                  <HelpTwoToneIcon fontSize="small"></HelpTwoToneIcon>
                 </IconButton>
               </Tooltip>
             </ClickAwayListener>
