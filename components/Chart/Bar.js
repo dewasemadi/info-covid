@@ -83,7 +83,7 @@ export default function BarChart() {
   return (
     <div>
       {error ? (
-        <p>Upps.. Network error</p>
+        <p style={{ textAlign: 'center' }}>Ups.. Network error</p>
       ) : isLoading ? (
         <Box
           m="auto"
