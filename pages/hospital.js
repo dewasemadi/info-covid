@@ -18,8 +18,6 @@ export default function Hospital() {
     if (getCities.data) setCities(getCities.data.cities);
   }, [getProvinces, getCities]);
 
-  console.log(`${province.name} : ${city.name}`);
-
   return (
     <div>
       <Head>
