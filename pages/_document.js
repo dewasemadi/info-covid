@@ -10,7 +10,13 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head />
+        <Head >
+          <link rel="manifest" href="/manifest.json" />
+          <link rel="apple-touch-icon" href="/icon-256x256.png" />
+          <link rel="icon" href="/icon-256x256.png" />
+          <meta name="theme-color" content="#fff" />
+          <meta name="description" content="Info Corona" />
+        </Head>
         <body>
           <Main />
           <NextScript />

@@ -1,3 +1,12 @@
+import Head from 'next/head'
+
 export default function Vaccine() {
-  return <h1 style={{ textAlign: 'center' }}>Vaccine</h1>;
+  return (
+    <div>
+      <Head>
+        <title>Vaccine</title>
+      </Head>
+      <h1 style={{ textAlign: 'center' }}>Vaccine</h1>
+    </div>
+  )
 }

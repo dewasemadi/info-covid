@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import BarChart from '../components/Chart/Bar';
 import Summary from '../components/Summary/Summary'
 import { Container, ClickAwayListener, Tooltip, IconButton } from '@mui/material'
@@ -17,11 +18,14 @@ export default function Statistics() {
 
   return (
     <div>
+      <Head>
+        <title>Statistics</title>
+      </Head>
       <Container maxWidth="lg">
         <h2 style={{ textAlign: 'center', marginTop: '30px' }}>Covid-19 Cases in Indonesia</h2>
         <Summary />
 
-        <dix style={{ display: 'flex', justifyContent: 'center', marginTop: '40px' }} >
+        <div style={{ display: 'flex', justifyContent: 'center', marginTop: '40px' }} >
           <h2 style={{ textAlign: 'center' }}>Statistics by Provinces</h2>
           <div style={{ marginLeft: '5px' }}>
             <ClickAwayListener onClickAway={handleTooltipClose}>
@@ -43,7 +47,7 @@ export default function Statistics() {
               </Tooltip>
             </ClickAwayListener>
           </div>
-        </dix>
+        </div>
         <BarChart />
       </Container>
     </div>

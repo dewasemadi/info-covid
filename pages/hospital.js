@@ -1,3 +1,12 @@
+import Head from 'next/head'
+
 export default function Hospital() {
-  return <h1 style={{ textAlign: 'center' }}>Hospital</h1>;
+  return (
+    <div>
+      <Head>
+        <title>Hospital Check</title>
+      </Head>
+      <h1 style={{ textAlign: 'center' }}>Hospital</h1>
+    </div>
+  )
 }
