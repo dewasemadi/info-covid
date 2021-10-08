@@ -1,32 +1,45 @@
-import Head from 'next/head';
-import { Container, Autocomplete, TextField, CircularProgress } from '@mui/material';
-import { useGetProvincesQuery, useGetCitiesByProvinceQuery } from '../redux/services/bed-rs.service';
 import { useState, useEffect } from 'react';
+import { Button, Box, Radio, RadioGroup, FormControlLabel, FormControl, Autocomplete, TextField, CircularProgress } from '@mui/material';
+import { useGetProvincesQuery, useGetCitiesByProvinceQuery } from '../../redux/services/bed-rs.service';
+import { useRouter } from 'next/router';
 
-export default function Hospital() {
+export default function Search() {
+  const router = useRouter();
   const [provinces, setProvinces] = useState([]);
   const [province, setProvince] = useState('');
   const [cities, setCities] = useState([]);
   const [city, setcity] = useState('');
+  const [type, setType] = useState(1);
 
-  let selected = province ? province.id : '';
+  let selectedProvince = province ? province.id : '';
   const getProvinces = useGetProvincesQuery('');
-  const getCities = useGetCitiesByProvinceQuery(`${selected}`);
+  const getCities = useGetCitiesByProvinceQuery(`${selectedProvince}`);
 
   useEffect(() => {
     if (getProvinces.data) setProvinces(getProvinces.data.provinces);
     if (getCities.data) setCities(getCities.data.cities);
   }, [getProvinces, getCities]);
 
-  return (
-    <div>
-      <Head>
-        <title>Hospital</title>
-      </Head>
-      <Container maxWidth="lg">
-        <h1 style={{ textAlign: 'center' }}>Hospital Bed Availability</h1>
+  const handleChange = (e) => {
+    console.log(e.target.value)
+    setType(e.target.value);
+  };
 
-        <p>Select Your Provinces</p>
+  const handleRoute = () => {
+    router.push(`/hospital/bed?province_id=${selectedProvince}&city_id=${city.id}&type=${type}`);
+  }
+
+  return (
+    <div >
+      <Box
+        sx={{
+          width: {
+            md: 500
+          }
+        }}
+        style={{ marginLeft: 'auto', marginRight: 'auto' }}
+      >
+        <p style={{ margin: '20px 0 10px 0' }}>Select Your Province</p>
         <Autocomplete
           disablePortal
           id="select-provinces"
@@ -35,7 +48,7 @@ export default function Hospital() {
           getOptionLabel={(provinces) => provinces.name}
           onChange={(_, province) => setProvince(province)}
           noOptionsText={'Province not found'}
-          sx={{ width: 300 }}
+          style={{ marginLeft: 'auto', marginRight: 'auto' }}
           renderInput={(params) =>
             <TextField
               {...params}
@@ -53,7 +66,7 @@ export default function Hospital() {
           }
         />
 
-        <p>Select Your City</p>
+        <p style={{ margin: '20px 0 10px 0' }}>Select Your City</p>
         <Autocomplete
           disablePortal
           id="combo-box-demo"
@@ -64,7 +77,7 @@ export default function Hospital() {
           getOptionLabel={(cities) => cities.name}
           onChange={(_, city) => setcity(city)}
           noOptionsText={'City not found'}
-          sx={{ width: 300 }}
+          style={{ marginLeft: 'auto', marginRight: 'auto' }}
           renderInput={(params) =>
             <TextField
               {...params}
@@ -82,7 +95,19 @@ export default function Hospital() {
           }
         />
 
-      </Container>
+        <FormControl component="fieldset">
+          <p style={{ margin: '20px 0 5px 0' }}>Choose bed type</p>
+          <RadioGroup row aria-label="gender" name="row-radio-buttons-group" value={type}
+            onChange={handleChange}>
+            <FormControlLabel value="1" control={<Radio />} label="Covid-19" />
+            <FormControlLabel value="2" control={<Radio />} label="Non Covid-19" />
+          </RadioGroup>
+        </FormControl>
+
+        <div>
+          <Button disabled={province && city ? false : true} onClick={handleRoute} variant="contained" disableElevation style={{ marginTop: '10px', width: '100%', textTransform: 'capitalize' }}>Search</Button>
+        </div>
+      </Box>
     </div>
   )
 }

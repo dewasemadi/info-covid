@@ -3,7 +3,7 @@ const headerStyle = () => ({
     padding: '0 10px',
   },
   hotline: {
-    marginTop: '20px',
+    marginTop: '10px',
     justifyContent: 'start',
     paddingLeft: '15px',
   },

@@ -3,6 +3,7 @@ import styles from './Header.style';
 import { makeStyles } from '@mui/styles';
 import { cloneElement, useState, Fragment } from 'react';
 import { Container, AppBar, Toolbar, CssBaseline, useScrollTrigger, Box, Stack, Button, SwipeableDrawer, IconButton } from '@mui/material';
+import HomeTwoToneIcon from '@mui/icons-material/HomeTwoTone';
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import CallTwoToneIcon from '@mui/icons-material/CallTwoTone';
 import InfoTwoToneIcon from '@mui/icons-material/InfoTwoTone';
@@ -12,6 +13,7 @@ import InsertChartTwoToneIcon from '@mui/icons-material/InsertChartTwoTone';
 const useStyles = makeStyles(styles);
 
 const navLinks = [
+  { title: `Home`, path: '/', icon: <HomeTwoToneIcon /> },
   { title: `Statistics`, path: '/statistics', icon: <InsertChartTwoToneIcon /> },
   { title: `Vaccine`, path: '/vaccine', icon: <BubbleChartTwoToneIcon /> },
   { title: `Hospital`, path: '/hospital', icon: <LocalHospitalTwoToneIcon /> },
@@ -44,14 +46,14 @@ export default function Navbar(props) {
     <Box sx={{ width: 250 }} role="presentation" onClick={toggleDrawer(false)} onKeyDown={toggleDrawer(false)}>
       <Stack spacing={1} className={classes.stack}>
         <Link href="tel:119" passHref>
-          <Button size="large" startIcon={<CallTwoToneIcon />} className={classes.hotline}>
+          <Button size="large" startIcon={<CallTwoToneIcon />} className={classes.hotline} style={{ textTransform: 'capitalize' }}>
             Covid-19 Hotline 119
           </Button>
         </Link>
 
         {navLinks.map(({ title, path, icon }, idx) => (
           <Link href={path} passHref key={idx}>
-            <Button size="large" startIcon={icon} className={classes.navLinkMobile}>
+            <Button size="large" startIcon={icon} className={classes.navLinkMobile} style={{ textTransform: 'capitalize' }}>
               {title}
             </Button>
           </Link>
@@ -69,7 +71,7 @@ export default function Navbar(props) {
             <Toolbar style={{ justifyContent: 'space-between', padding: 0 }}>
 
               <Link href="/" passHref>
-                <Button>Lawan Corona</Button>
+                <Button size="large" style={{ textTransform: 'capitalize' }}>Lawan Corona</Button>
               </Link>
 
               <Stack
@@ -81,11 +83,11 @@ export default function Navbar(props) {
               >
                 {navLinks.map(({ title, path }, idx) => (
                   <Link key={idx} href={path} passHref>
-                    <Button size="medium">{title}</Button>
+                    <Button size="large" style={{ textTransform: 'capitalize' }}>{title}</Button>
                   </Link>
                 ))}
                 <Link href="tel:119" passHref>
-                  <Button size="medium" startIcon={<CallTwoToneIcon />}>
+                  <Button size="large" startIcon={<CallTwoToneIcon />} style={{ textTransform: 'capitalize' }}>
                     Covid-19 Hotline 119
                   </Button>
                 </Link>
