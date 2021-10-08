@@ -7,7 +7,7 @@ export const bedRsApi = createApi({
     getProvinces: builder.query({
       query: () => `/get-provinces`,
     }),
-    getRegencyByProvince: builder.query({
+    getCitiesByProvince: builder.query({
       query: (id) => `/get-cities?provinceid=${id}`,
     }),
     getHospital: builder.query({
@@ -25,7 +25,7 @@ export const bedRsApi = createApi({
 
 export const {
   useGetProvincesQuery,
-  useGetRegencyByProvinceQuery,
+  useGetCitiesByProvinceQuery,
   useGetHospitalQuery,
   useGetBedDetailByHospitalQuery,
   useGetHospitalMapQuery,

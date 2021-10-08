@@ -9,5 +9,4 @@ export default function About() {
       <h1 style={{ textAlign: 'center' }}>About</h1>;
     </div>
   )
-
 }

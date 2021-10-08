@@ -92,7 +92,7 @@ export default function BarChart() {
       {error ? (
         <>
           <p style={{ textAlign: 'center', marginTop: '10px' }}>Oops.. Something went wrong. Failed to get data, please try again.</p>
-          <Button onClick={handleReload} variant="outlined" style={{ margin: "10px auto auto auto", display: 'block' }}>Try Again</Button>
+          <Button onClick={handleReload} variant="outlined" style={{ margin: "10px auto auto auto", display: 'block', textTransform: 'capitalize' }}>Try Again</Button>
         </>
       ) : isLoading ? (
         <Box

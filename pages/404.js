@@ -1,13 +1,25 @@
-import Head from 'next/head'
+import Head from 'next/head';
+import Link from 'next/link';
+import { Button, Container } from '@mui/material';
 
 export default function Custom404() {
+
   return (
     <div>
       <Head>
-        <title>Not found</title>
+        <title>404 Not Found</title>
       </Head>
-      <h1>Uppss.. your destination not found. </h1>
-      <h1>Please visit another page</h1>
+      <Container maxWidth="lg" style={{ height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+        <div>
+          <h3 style={{ textAlign: 'center' }}>Ups.. your destination not found</h3>
+          <p style={{ textAlign: 'center' }}>Please try another page</p>
+          <Link href="/" passHref >
+            <div style={{ display: 'block' }}>
+              <Button variant="outlined" style={{ margin: "10px auto auto auto", display: 'block', textTransform: 'capitalize' }}>Back To Home</Button>
+            </div>
+          </Link>
+        </div>
+      </Container>
     </div>
   );
 }

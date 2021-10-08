@@ -1,5 +1,5 @@
 import { useGetSummaryQuery } from '../../redux/services/covid-indonesia.service';
-import { Box, Skeleton, Card, CardContent, Button } from '@mui/material';
+import { Box, Skeleton, Card, CardContent, Button, Grid } from '@mui/material';
 import { formatDateToUs } from '../../utils/formatter';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router'
@@ -26,13 +26,10 @@ export default function Summary() {
   }
 
   const list = (params) => (
-    <Box sx={{
-      display: { sm: 'block', md: 'flex' },
-      justifyContent: 'space-between', mt: 2
-    }}>
+    <Grid container spacing={{ xs: 2, md: 2 }} columns={{ xs: 4, sm: 8, lg: 12 }} style={{ marginTop: '20px' }}>
       {
         params.map((data, idx) => (
-          <Box sx={{ my: 1 }} key={idx}>
+          <Grid item xs={12} sm={4} md={2} key={idx}>
             <Card sx={{ minWidth: 210 }} variant="outlined" >
               <CardContent style={{ paddingBottom: '16px' }}>
                 {
@@ -50,10 +47,10 @@ export default function Summary() {
                 }
               </CardContent>
             </Card>
-          </Box>
+          </Grid>
         ))
       }
-    </Box>
+    </Grid>
   )
 
   return (
@@ -61,7 +58,7 @@ export default function Summary() {
       {error ? (
         <>
           <p style={{ textAlign: 'center', marginTop: '10px' }}>Oops.. Something went wrong. Failed to get data, please try again.</p>
-          <Button onClick={handleReload} variant="outlined" style={{ margin: "10px auto auto auto", display: 'block' }}>Try Again</Button>
+          <Button onClick={handleReload} variant="outlined" style={{ margin: "10px auto auto auto", display: 'block', textTransform: 'capitalize' }}>Try Again</Button>
         </>
       ) : isLoading ? (
         <Box

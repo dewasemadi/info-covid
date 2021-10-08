@@ -14,7 +14,7 @@ const useStyles = makeStyles(styles);
 const navLinks = [
   { title: `Statistics`, path: '/statistics', icon: <InsertChartTwoToneIcon /> },
   { title: `Vaccine`, path: '/vaccine', icon: <BubbleChartTwoToneIcon /> },
-  { title: `Hospital Check`, path: '/hospital', icon: <LocalHospitalTwoToneIcon /> },
+  { title: `Hospital`, path: '/hospital', icon: <LocalHospitalTwoToneIcon /> },
   { title: `About Us`, path: '/about', icon: <InfoTwoToneIcon /> },
 ];
 

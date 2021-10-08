@@ -22,7 +22,7 @@ export default function Statistics() {
         <title>Statistics</title>
       </Head>
       <Container maxWidth="lg">
-        <h2 style={{ textAlign: 'center', marginTop: '30px' }}>Covid-19 Cases in Indonesia</h2>
+        <h2 style={{ textAlign: 'center', marginTop: '10px' }}>Covid-19 Cases in Indonesia</h2>
         <Summary />
 
         <div style={{ display: 'flex', justifyContent: 'center', marginTop: '40px' }} >
