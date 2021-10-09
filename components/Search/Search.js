@@ -125,7 +125,7 @@ export default function Search() {
             variant='contained'
             disableElevation
             size='large'
-            endIcon={<SearchRoundedIcon />}
+            startIcon={<SearchRoundedIcon />}
             className={classes.btnCustom}>
             Search
           </Button>
