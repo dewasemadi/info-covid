@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ClickAwayListener, Tooltip, IconButton } from "@mui/material";
-import HelpTwoToneIcon from "@mui/icons-material/HelpTwoTone";
+import HelpRoundedIcon from "@mui/icons-material/HelpRounded";
 
 export default function MyTooltip({ place, title }) {
   const [open, setOpen] = useState(false);
@@ -28,7 +28,7 @@ export default function MyTooltip({ place, title }) {
         placement={place}
         arrow>
         <IconButton aria-label='help' onClick={handleTooltipOpen}>
-          <HelpTwoToneIcon fontSize='small'></HelpTwoToneIcon>
+          <HelpRoundedIcon fontSize='small'></HelpRoundedIcon>
         </IconButton>
       </Tooltip>
     </ClickAwayListener>

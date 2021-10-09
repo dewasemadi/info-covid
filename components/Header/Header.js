@@ -1,14 +1,12 @@
 import Link from "next/link";
-import styles from "./Header.style";
-import { makeStyles } from "@mui/styles";
 import { cloneElement, useState, Fragment } from "react";
 import { Container, AppBar, Toolbar, CssBaseline, useScrollTrigger, Box, Stack, Button, SwipeableDrawer, IconButton } from "@mui/material";
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import CallRoundedIcon from "@mui/icons-material/CallRounded";
 import HelpRoundedIcon from "@mui/icons-material/HelpRounded";
 import ArrowBackRoundedIcon from "@mui/icons-material/ArrowBackRounded";
+import styles from "./Header.module.css";
 import { useRouter } from "next/router";
-const useStyles = makeStyles(styles);
 
 const navLinks = [
   { title: `Home`, path: "/" },
@@ -34,7 +32,6 @@ function ElevationScroll(props) {
 export default function Navbar(props) {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
-  const classes = useStyles();
 
   const toggleDrawer = (open) => (event) => {
     if (event && event.type === "keydown" && (event.key === "Tab" || event.key === "Shift")) return;
@@ -43,13 +40,9 @@ export default function Navbar(props) {
 
   const list = () => (
     <Box sx={{ width: 250 }} role='presentation' onClick={toggleDrawer(false)} onKeyDown={toggleDrawer(false)}>
-      <Stack spacing={1} className={classes.stack}>
+      <Stack spacing={1} className={styles.stack}>
         <Link href='tel:119' passHref>
-          <Button
-            size='large'
-            startIcon={<CallRoundedIcon />}
-            className={classes.hotline}
-            style={{ fontSize: "14px", textTransform: "capitalize", color: "rgba(0, 0, 0, 0.6)" }}>
+          <Button size='large' startIcon={<CallRoundedIcon />} className={styles.hotline}>
             Covid-19 Hotline 119
           </Button>
         </Link>
@@ -58,8 +51,7 @@ export default function Navbar(props) {
           <Button
             size='large'
             startIcon={<HelpRoundedIcon />}
-            className={classes.hotline}
-            style={{ fontSize: "14px", textTransform: "capitalize", color: "rgba(0, 0, 0, 0.6)" }}>
+            className={router.pathname === "/about" ? styles.aboutActive : styles.aboutDeactive}>
             About Us
           </Button>
         </Link>
@@ -71,17 +63,23 @@ export default function Navbar(props) {
     <Fragment>
       <CssBaseline />
       <ElevationScroll {...props}>
-        <AppBar sx={{ backgroundColor: "white" }}>
+        <AppBar className={styles.bgWhite}>
           <Container maxWidth='lg'>
-            <Toolbar style={{ justifyContent: "space-between", padding: 0 }}>
+            <Toolbar className={styles.toolBar}>
               {router.pathname === "/hospital/bed" || router.pathname === "/hospital/detail" ? (
-                <IconButton onClick={() => router.back()} aria-label='back' size='medium' color='primary' sx={{ display: { md: `none` } }}>
-                  <ArrowBackRoundedIcon fontSize='inherit' />
+                <IconButton
+                  onClick={() => router.back()}
+                  aria-label='back'
+                  size='medium'
+                  color='primary'
+                  sx={{ display: { md: `none` } }}
+                  className={styles.grey}>
+                  <ArrowBackRoundedIcon fontSize='inherit' className={styles.grey} />
                 </IconButton>
               ) : null}
 
               <Link href='/' passHref>
-                <a style={{ fontSize: "18px", color: "rgba(0, 0, 0, 1)", fontWeight: 500 }}>infoCovid</a>
+                <a className={styles.brand}>infoCovid</a>
               </Link>
 
               <Stack
@@ -92,16 +90,13 @@ export default function Navbar(props) {
                 }}>
                 {navLinks.map(({ title, path }, idx) => (
                   <Link key={idx} href={path} passHref>
-                    <Button size='medium' style={{ textTransform: "capitalize", fontSize: "16px", color: "rgba(0, 0, 0, 0.6)" }}>
+                    <Button size='medium' className={router.pathname === `${path}` ? styles.navActive : styles.navDeactive}>
                       {title}
                     </Button>
                   </Link>
                 ))}
                 <Link href='tel:119' passHref>
-                  <Button
-                    size='medium'
-                    startIcon={<CallRoundedIcon />}
-                    style={{ textTransform: "capitalize", color: "rgba(0, 0, 0, 0.6)" }}>
+                  <Button size='medium' startIcon={<CallRoundedIcon />} className={styles.hotlineDesktop}>
                     Covid-19 Hotline 119
                   </Button>
                 </Link>
@@ -112,13 +107,8 @@ export default function Navbar(props) {
                 sx={{
                   display: { xs: `flex`, md: `none` },
                 }}>
-                <IconButton
-                  onClick={toggleDrawer(true)}
-                  aria-label='menu'
-                  size='medium'
-                  color='primary'
-                  style={{ color: "rgba(0, 0, 0, 0.6)" }}>
-                  <MenuRoundedIcon fontSize='inherit' style={{ color: "rgba(0, 0, 0, 0.6)" }} />
+                <IconButton onClick={toggleDrawer(true)} aria-label='menu' size='medium' color='primary' className={styles.grey}>
+                  <MenuRoundedIcon fontSize='inherit' className={styles.grey} />
                 </IconButton>
                 <SwipeableDrawer anchor='right' open={isOpen} onClose={toggleDrawer(false)} onOpen={toggleDrawer(true)}>
                   {list(navLinks)}

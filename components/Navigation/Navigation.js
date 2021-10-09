@@ -5,10 +5,8 @@ import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
 import BarChartRoundedIcon from "@mui/icons-material/BarChartRounded";
 import BubbleChartRoundedIcon from "@mui/icons-material/BubbleChartRounded";
 import AddModeratorRoundedIcon from "@mui/icons-material/AddModeratorRounded";
-import { makeStyles } from "@mui/styles";
 import { styled } from "@mui/material/styles";
-import styles from "./Navigation.style";
-const useStyles = makeStyles(styles);
+import styles from "./Navigation.module.css";
 
 const CustomizedBottomNavigationAction = styled(BottomNavigationAction)`
   .css-imwso6-MuiBottomNavigationAction-label {
@@ -21,7 +19,6 @@ const CustomizedBottomNavigationAction = styled(BottomNavigationAction)`
 
 export default function Navigation() {
   const router = useRouter();
-  const classes = useStyles();
   const [value, setValue] = useState(0);
 
   const navLinks = [
@@ -44,8 +41,8 @@ export default function Navigation() {
           <CustomizedBottomNavigationAction
             className={
               router.pathname === `${path}` || router.pathname === `${path}/bed` || router.pathname === `${path}/detail`
-                ? classes.active
-                : classes.deactive
+                ? styles.active
+                : styles.deactive
             }
             label={title}
             icon={icon}

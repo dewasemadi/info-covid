@@ -1,21 +1,11 @@
 import Head from "next/head";
 import { useState } from "react";
-import { Box, Container, ClickAwayListener, Tooltip, IconButton } from "@mui/material";
-import HelpTwoToneIcon from "@mui/icons-material/HelpTwoTone";
+import { Box, Container } from "@mui/material";
 import Search from "../../components/Search/Search";
 import MyTooltip from "../../components/Tooltip/Tooltip";
+import styles from "../../styles/pages/hospital.module.css";
 
 export default function Hospital() {
-  const [open, setOpen] = useState(false);
-
-  const handleTooltipClose = () => {
-    setOpen(false);
-  };
-
-  const handleTooltipOpen = () => {
-    setOpen(true);
-  };
-
   return (
     <div>
       <Head>
@@ -28,9 +18,9 @@ export default function Hospital() {
               md: 500,
             },
           }}>
-          <div style={{ display: "flex", justifyContent: "start", marginTop: "10px" }}>
-            <h2 style={{ textAlign: "center", fontSize: "18px", margin: "auto 0", fontWeight: 500 }}>Hospital Bed Availability</h2>
-            <div style={{ marginLeft: "5px" }}>
+          <div className={styles.titleContainer}>
+            <h2 className={styles.title}>Hospital Bed Availability</h2>
+            <div className={styles.ml}>
               <MyTooltip place='bottom' title='The data displayed may be an error because the data center changes frequently' />
             </div>
           </div>

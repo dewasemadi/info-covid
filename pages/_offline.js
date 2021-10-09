@@ -1,25 +1,28 @@
-import Head from 'next/head'
-import { useRouter } from 'next/router';
-import { Button, Container } from '@mui/material';
+import Head from "next/head";
+import { useRouter } from "next/router";
+import { Button, Container } from "@mui/material";
+import styles from "../styles/pages/_offline.module.css";
 
 export default function Offline() {
   const router = useRouter();
   const handleReload = () => {
     router.reload();
-  }
+  };
 
   return (
-    <div >
+    <div>
       <Head>
         <title>Info Corona</title>
       </Head>
-      <Container maxWidth="lg" style={{ height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+      <Container maxWidth='lg' className={styles.container}>
         <div>
-          <h3 style={{ textAlign: 'center' }}>Connect to the internet </h3>
-          <p style={{ textAlign: 'center' }}>You're offline. Check your connection</p>
-          <Button onClick={handleReload} variant="outlined" style={{ margin: "10px auto auto auto", display: 'block', textTransform: 'capitalize' }}>Try Again</Button>
+          <h3 className={styles.errorMessage}>Connect to the internet </h3>
+          <p className={styles.textCenter}>You're offline. Check your connection</p>
+          <Button onClick={handleReload} variant='outlined' className={styles.btnCustom}>
+            Try Again
+          </Button>
         </div>
       </Container>
-    </div >
-  )
+    </div>
+  );
 }

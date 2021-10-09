@@ -1,5 +1,6 @@
 import Head from "next/head";
-import { Container, Box } from "@mui/material";
+import { Container } from "@mui/material";
+import styles from "../styles/pages/vaccine.module.css";
 
 export default function Vaccine() {
   return (
@@ -8,7 +9,7 @@ export default function Vaccine() {
         <title>Vaccine</title>
       </Head>
       <Container maxWidth='lg'>
-        <h2 style={{ marginTop: "10px", fontWeight: 500, fontSize: "18px" }}>About</h2>
+        <h2 className={styles.title}>Vaccine</h2>
       </Container>
     </div>
   );

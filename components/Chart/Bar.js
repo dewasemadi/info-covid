@@ -2,7 +2,9 @@ import { Bar } from "react-chartjs-2";
 import { useState, useEffect } from "react";
 import { useGetDataByProvincesQuery } from "../../redux/services/covid-indonesia.service";
 import { Box, Skeleton } from "@mui/material";
+import styles from "./Bar.module.css";
 import MyTooltip from "../Tooltip/Tooltip";
+import { dataSource, options } from "./Configuration";
 const format = require("lodash");
 
 export default function BarChart() {
@@ -28,59 +30,6 @@ export default function BarChart() {
     }
   }, [data]);
 
-  const dataSource = {
-    labels: provinces,
-    datasets: [
-      {
-        label: "Confirmed Cases",
-        data: cases,
-        backgroundColor: "rgb(251, 53, 117)",
-      },
-      {
-        label: "Treated",
-        data: treated,
-        backgroundColor: "rgb(247, 188, 67)",
-      },
-      {
-        label: "Recovered",
-        data: recovered,
-        backgroundColor: "rgb(100, 212, 31)",
-      },
-      {
-        label: "Death",
-        data: death,
-        backgroundColor: "rgb(0, 0, 0)",
-      },
-    ],
-  };
-
-  const options = {
-    interaction: {
-      mode: "index",
-      axis: "y",
-    },
-    maintainAspectRatio: false,
-    scales: {
-      xAxex: {
-        title: {
-          display: true,
-          text: "Provinces",
-        },
-        ticks: {
-          autoSkip: false,
-          maxRotation: 90,
-          minRotation: 90,
-        },
-      },
-      yAxes: {
-        title: {
-          display: true,
-          text: "Number of cases",
-        },
-      },
-    },
-  };
-
   return (
     <div>
       {error ? (
@@ -93,13 +42,11 @@ export default function BarChart() {
               lg: 900,
             },
           }}>
-          <div style={{ display: "flex", justifyContent: "center", marginTop: "40px" }}>
-            <h2 style={{ textAlign: "center", fontWeight: 500, margin: "auto 0", fontSize: "18px" }}>Statistics by Provinces</h2>
-            <div style={{ marginLeft: "5px" }}>
-              <MyTooltip place='top' title='Use PC to get better experience in reading charts' />
-            </div>
+          <div className={styles.container}>
+            <h2 className={styles.title}>Statistics by Provinces</h2>
+            <MyTooltip place='top' title='Use PC to get better experience in reading charts' className={styles.ml} />
           </div>
-          <Skeleton variant='rectangular' animation='wave' height={550} style={{ marginTop: "15px" }} />
+          <Skeleton variant='rectangular' animation='wave' height={550} className={styles.mt} />
         </Box>
       ) : data ? (
         <Box
@@ -109,7 +56,15 @@ export default function BarChart() {
               lg: 900,
             },
           }}>
-          <Bar data={dataSource} options={options} responsive='true' height={550} />
+          <div className={styles.container}>
+            <h2 className={styles.title}>Statistics by Provinces</h2>
+            <div className={styles.ml}>
+              <MyTooltip place='top' title='Use PC to get better experience in reading charts' />
+            </div>
+          </div>
+          <div>
+            <Bar data={dataSource(provinces, cases, treated, recovered, death)} options={options} responsive='true' height={550} />
+          </div>
         </Box>
       ) : null}
     </div>

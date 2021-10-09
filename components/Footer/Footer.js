@@ -18,9 +18,9 @@ const navLinks2 = [
 ];
 
 const socialMedia = [
-  { title: "Twitter", path: "/", icon: <TwitterIcon style={{ color: "rgba(0, 0, 0, 0.6)" }} /> },
-  { title: "Instagram", path: "/", icon: <InstagramIcon style={{ color: "rgba(0, 0, 0, 0.6)" }} /> },
-  { title: "Linkedin", path: "/", icon: <LinkedInIcon style={{ color: "rgba(0, 0, 0, 0.6)" }} /> },
+  { title: "Twitter", path: "/", icon: <TwitterIcon className={styles.grey} /> },
+  { title: "Instagram", path: "/", icon: <InstagramIcon className={styles.grey} /> },
+  { title: "Linkedin", path: "/", icon: <LinkedInIcon className={styles.grey} /> },
 ];
 
 export default function Footer() {
@@ -30,20 +30,20 @@ export default function Footer() {
         {/* left */}
         <Grid container spacing={{ xs: 1, md: 4 }}>
           <Grid item xs={12} sm={12} md={5}>
-            <h2 style={{ fontSize: "16px", fontWeight: 500, marginBottom: "10px", color: "rgba(0, 0, 0, 0.8)" }}>infoCovid</h2>
-            <p style={{ fontSize: "14px", color: "rgba(0, 0, 0, 0.6)" }}>
+            <h2 className={styles.title}>infoCovid</h2>
+            <p className={styles.desc}>
               This website is for health information and advice about coronavirus (COVID-19), how to prevent yourself from the disease.
             </p>
-            <div style={{ display: "flex", marginTop: "auto", marginBottom: "-10px" }}>
-              <Box style={{ cursor: "pointer", margin: "10px 10px 10px 0" }}>
+            <div className={styles.iconContainer}>
+              <Box className={styles.fbContainer}>
                 <Link href='/' passhref>
                   <Tooltip title='Facebook'>
-                    <FacebookIcon style={{ color: "rgba(0, 0, 0, 0.6)" }} />
+                    <FacebookIcon className={styles.grey} />
                   </Tooltip>
                 </Link>
               </Box>
               {socialMedia.map(({ title, path, icon }, idx) => (
-                <Box key={idx} style={{ cursor: "pointer", margin: "10px" }}>
+                <Box key={idx} className={styles.icon}>
                   <Link href={path} passhref>
                     <Tooltip title={title}>{icon}</Tooltip>
                   </Link>
@@ -58,22 +58,22 @@ export default function Footer() {
               sx={{
                 display: { xs: `none`, md: `flex` },
               }}>
-              <h2 style={{ fontSize: "16px", fontWeight: 500, marginBottom: "10px", color: "rgba(0, 0, 0, 0.8)" }}>Menu</h2>
+              <h2 className={styles.title}>Menu</h2>
               <Grid container spacing={{ sm: 1, md: 6 }}>
                 <Grid item>
                   {navLinks1.map(({ title, path }, idx) => (
-                    <div key={idx} style={{ marginRight: "10px" }}>
+                    <div key={idx} className={styles.mr}>
                       <Link href={path} passhref>
-                        <a style={{ fontSize: "14px", color: "rgba(0, 0, 0, 0.6)" }}>{title}</a>
+                        <a className={styles.link}>{title}</a>
                       </Link>
                     </div>
                   ))}
                 </Grid>
                 <Grid item>
                   {navLinks2.map(({ title, path }, idx) => (
-                    <div key={idx} style={{ marginRight: "10px" }}>
+                    <div key={idx} className={styles.mr}>
                       <Link href={path} passhref>
-                        <a style={{ fontSize: "14px", color: "rgba(0, 0, 0, 0.6)" }}>{title}</a>
+                        <a className={styles.link}>{title}</a>
                       </Link>
                     </div>
                   ))}
@@ -84,18 +84,16 @@ export default function Footer() {
 
           {/* right */}
           <Grid item xs={12} sm={12} md={4}>
-            <h2 style={{ fontSize: "16px", fontWeight: 500, marginBottom: "10px", color: "rgba(0, 0, 0, 0.8)" }}>Repository</h2>
-            <Box style={{ cursor: "pointer" }}>
+            <h2 className={styles.title}>Repository</h2>
+            <Box className={styles.pointer}>
               <Link href='https://github.com/dewasemadi/info-covid' passhref>
-                <a style={{ display: "flex" }} target='_blank' rel='noreferrer'>
-                  <GitHubIcon style={{ color: "rgba(0, 0, 0, 0.6)" }} />
-                  <p style={{ margin: "auto 0 auto 10px", display: "block", fontSize: "14px", color: "rgba(0, 0, 0, 0.6)" }}>Github</p>
+                <a className={styles.gitContainer} target='_blank' rel='noreferrer'>
+                  <GitHubIcon />
+                  <p className={styles.github}>Github</p>
                 </a>
               </Link>
             </Box>
-            <Box sx={{ marginTop: { md: "25px" } }}>
-              <p className={styles.marginFooter}>&copy; 2021 Copyright All Rights Reserved</p>
-            </Box>
+            <p className={styles.marginFooter}>&copy; 2021 Copyright All Rights Reserved</p>
           </Grid>
         </Grid>
       </Container>

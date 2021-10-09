@@ -3,6 +3,7 @@ import { Box, Skeleton, Card, CardContent, Button, Grid } from "@mui/material";
 import { formatDateToUs } from "../../utils/formatter";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
+import styles from "./Summary.module.css";
 
 export default function Summary() {
   const router = useRouter();
@@ -25,15 +26,15 @@ export default function Summary() {
   };
 
   const list = (params) => (
-    <Grid container spacing={{ xs: 2, md: 2 }} columns={{ xs: 4, sm: 8, lg: 12 }} style={{ marginTop: "20px" }}>
+    <Grid container spacing={{ xs: 2, md: 2 }} columns={{ xs: 4, sm: 8, lg: 12 }} className={styles.mt20}>
       {params.map((data, idx) => (
         <Grid item xs={12} sm={4} md={2} key={idx}>
           <Card sx={{ minWidth: 210 }} variant='outlined'>
-            <CardContent style={{ paddingBottom: "16px" }}>
+            <CardContent className={styles.pt16}>
               {data ? (
                 <>
                   <h3 style={{ color: data.color, textAlign: "center" }}>{data.cases.toLocaleString()}</h3>
-                  <p style={{ textAlign: "center" }}> {data.title}</p>
+                  <p className={styles.textCenter}> {data.title}</p>
                 </>
               ) : (
                 <>
@@ -51,13 +52,10 @@ export default function Summary() {
   return (
     <div>
       {error ? (
-        <div style={{ height: "100vh", display: "flex", marginTop: "-64px", justifyContent: "center", alignItems: "center" }}>
+        <div className={styles.container}>
           <div>
-            <p style={{ textAlign: "center", marginTop: "10px" }}>Oops.. Something went wrong. Failed to get data, please try again.</p>
-            <Button
-              onClick={handleReload}
-              variant='outlined'
-              style={{ margin: "10px auto auto auto", display: "block", textTransform: "capitalize" }}>
+            <p className={styles.errorMessage}>Oops.. Something went wrong. Failed to get data, please try again.</p>
+            <Button onClick={handleReload} variant='outlined' className={styles.btnCustom}>
               Try Again
             </Button>
           </div>
@@ -70,23 +68,17 @@ export default function Summary() {
               md: 350,
             },
           }}>
-          <h2 style={{ textAlign: "center", marginTop: "10px", fontWeight: 500, fontSize: "18px" }}>Covid-19 Cases in Indonesia</h2>
+          <h2 className={styles.title}>Covid-19 Cases in Indonesia</h2>
           <Skeleton variant='text' animation='wave' height={24} />
         </Box>
       ) : data ? (
-        <p style={{ textAlign: "center" }}>Last Update on {formatDateToUs(data.lastUpdate)}</p>
-      ) : null}
-
-      {error ? (
-        <></>
-      ) : isLoading ? (
-        list([...Array(4)])
-      ) : data ? (
         <>
-          <h2 style={{ textAlign: "center", marginTop: "10px", fontWeight: 500, fontSize: "18px" }}>Covid-19 Cases in Indonesia</h2>
-          list(res)
+          <h2 className={styles.title}>Covid-19 Cases in Indonesia</h2>
+          <p className={styles.desc}>Last Update on {formatDateToUs(data.lastUpdate)}</p>
         </>
       ) : null}
+
+      {error ? <></> : isLoading ? list([...Array(4)]) : data ? list(res) : null}
     </div>
   );
 }

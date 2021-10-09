@@ -1,0 +1,46 @@
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.textCenter {
+  text-align: center;
+}
+
+.btnCustom {
+  margin: 10px auto auto auto;
+  display: block;
+  text-transform: capitalize;
+}
+
+.ml {
+  margin-left: 5px;
+}
+
+.titleContainer {
+  display: flex;
+  justify-content: start;
+  margin-top: 10px;
+}
+
+.title {
+  margin: auto 0;
+  font-weight: 500;
+  font-size: 18px !important;
+  text-align: center;
+}
+
+.errorMessageContainer {
+  height: 100vh;
+  display: flex;
+  margin-top: -64px;
+  justify-content: center;
+  align-items: center;
+}
+
+.errorMessage {
+  text-align: center;
+  margin-top: 10px;
+}

@@ -8,6 +8,7 @@ import Header from "../components/Header/Header";
 import Navigation from "../components/Navigation/Navigation";
 import Footer from "../components/Footer/Footer";
 import { Box } from "@mui/material";
+import styles from "../styles/pages/_app.module.css";
 
 Router.events.on("routeChangeStart", NProgress.start);
 Router.events.on("routeChangeError", NProgress.done);
@@ -18,7 +19,7 @@ function MyApp({ Component, pageProps }) {
     <div>
       <Header />
       <Provider store={store}>
-        <Box sx={{ height: "100vh", display: "block" }}>
+        <Box className={styles.container}>
           <Component {...pageProps} />
           <Footer />
         </Box>

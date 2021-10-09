@@ -13,6 +13,7 @@ import {
 } from "@mui/material";
 import { useGetProvincesQuery, useGetCitiesByProvinceQuery } from "../../redux/services/bed-rs.service";
 import { useRouter } from "next/router";
+import styles from "./Search.module.css";
 
 export default function Search() {
   const router = useRouter();
@@ -48,7 +49,7 @@ export default function Search() {
             md: 500,
           },
         }}>
-        <p style={{ margin: "20px 0 10px 0" }}>Select Your Province</p>
+        <p className={styles.formTitle}>Select Your Province</p>
         <Autocomplete
           disablePortal
           id='select-provinces'
@@ -57,7 +58,7 @@ export default function Search() {
           getOptionLabel={(provinces) => provinces.name}
           onChange={(_, province) => setProvince(province)}
           noOptionsText={"Province not found"}
-          style={{ marginLeft: "auto", marginRight: "auto" }}
+          className={styles.mAuto}
           renderInput={(params) => (
             <TextField
               {...params}
@@ -75,7 +76,7 @@ export default function Search() {
           )}
         />
 
-        <p style={{ margin: "20px 0 10px 0" }}>Select Your City</p>
+        <p className={styles.formTitle}>Select Your City</p>
         <Autocomplete
           disablePortal
           id='combo-box-demo'
@@ -86,7 +87,7 @@ export default function Search() {
           getOptionLabel={(cities) => cities.name}
           onChange={(_, city) => setcity(city)}
           noOptionsText={"City not found"}
-          style={{ marginLeft: "auto", marginRight: "auto" }}
+          className={styles.mAuto}
           renderInput={(params) => (
             <TextField
               {...params}
@@ -103,10 +104,10 @@ export default function Search() {
             />
           )}
         />
-        <FormHelperText>Please select your province first</FormHelperText>
+        <FormHelperText className={styles.helperMargin}>Please select your province first</FormHelperText>
 
         <FormControl component='fieldset'>
-          <p style={{ margin: "20px 0 5px 0" }}>Choose bed type</p>
+          <p className={styles.bedTypeTitle}>Choose bed type</p>
           <RadioGroup row aria-label='gender' name='row-radio-buttons-group' value={type} onChange={handleChange}>
             <FormControlLabel value='1' control={<Radio />} label='Covid-19' />
             <FormControlLabel value='2' control={<Radio />} label='Non Covid-19' />
@@ -119,7 +120,7 @@ export default function Search() {
             onClick={handleRoute}
             variant='contained'
             disableElevation
-            style={{ marginTop: "10px", width: "100%", textTransform: "capitalize" }}>
+            className={styles.btnCustom}>
             Search
           </Button>
         </div>

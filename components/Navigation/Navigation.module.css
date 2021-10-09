@@ -1,0 +1,9 @@
+.active {
+  padding-top: 6px !important;
+  color: #1976d2 !important;
+  font-size: 12px !important;
+}
+
+.deactive {
+  color: rgba(0, 0, 0, 0.6) !important;
+}
