@@ -20,7 +20,7 @@ function MyApp({ Component, pageProps }) {
         <Component {...pageProps} />
       </Provider>
       <Navigation />
-      <br />
+      <br></br>
       <Footer />
     </div>
   );
