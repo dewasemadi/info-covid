@@ -5,6 +5,7 @@ import NProgress from 'nprogress';
 import store from '../redux/store';
 import { Provider } from 'react-redux';
 import Header from '../components/Header/Header';
+import Footer from '../components/Footer/Footer';
 
 Router.events.on('routeChangeStart', NProgress.start);
 Router.events.on('routeChangeError', NProgress.done);
@@ -17,6 +18,8 @@ function MyApp({ Component, pageProps }) {
       <Provider store={store}>
         <Component {...pageProps} />
       </Provider>
+      <br/>
+      <Footer />
     </div>
   );
 }
