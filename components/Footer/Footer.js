@@ -1,13 +1,11 @@
 import link from "next/link";
 import { Grid, Container, Link } from "@mui/material";
 import { makeStyles } from "@mui/styles";
-import { ReactElement } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTwitter } from "@fortawesome/free-brands-svg-icons";
-import { faInstagram } from "@fortawesome/free-brands-svg-icons";
-import { faFacebook } from "@fortawesome/free-brands-svg-icons";
-import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import styles from './Footer.style';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import FacebookIcon from '@mui/icons-material/Facebook';
 
 const useStyles = makeStyles(styles);
 
@@ -23,7 +21,13 @@ const classes = useStyles();
                             <br/>
                             <p style={{textAlign:'left'}}>This website is for health information and advice about coronavirus (COVID-19), 
                                 how to prevent and prevent yourself from the disease</p>
-                            <br/>
+                            <div>
+                                <Link href="#" style={{color:'#FFFFFF'}}><FacebookIcon/></Link>
+                                <Link href="#" style={{color:'#FFFFFF'}}><TwitterIcon/></Link>
+                                <Link href="#" style={{color:'#FFFFFF'}}><InstagramIcon/></Link>
+                                <Link href="#" style={{color:'#FFFFFF'}}><LinkedInIcon/></Link>
+                            </div>
+                            <br></br>
                         </Grid>
                         <Grid item xs={4}>
                             <h1>Menu</h1>
