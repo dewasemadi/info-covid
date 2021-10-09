@@ -1,13 +1,12 @@
-import { Bar } from 'react-chartjs-2';
-import { useState, useEffect } from 'react';
-import { useGetDataByProvincesQuery } from '../../redux/services/covid-indonesia.service';
-import { Box, Skeleton, Button } from '@mui/material';
-import { useRouter } from 'next/router'
-const format = require('lodash');
+import { Bar } from "react-chartjs-2";
+import { useState, useEffect } from "react";
+import { useGetDataByProvincesQuery } from "../../redux/services/covid-indonesia.service";
+import { Box, Skeleton } from "@mui/material";
+import MyTooltip from "../Tooltip/Tooltip";
+const format = require("lodash");
 
 export default function BarChart() {
-  const router = useRouter();
-  const { data, error, isLoading } = useGetDataByProvincesQuery('');
+  const { data, error, isLoading } = useGetDataByProvincesQuery("");
   const [provinces, setProvinces] = useState([]);
   const [cases, setCases] = useState([]);
   const [treated, setTreated] = useState([]);
@@ -33,39 +32,39 @@ export default function BarChart() {
     labels: provinces,
     datasets: [
       {
-        label: 'Confirmed Cases',
+        label: "Confirmed Cases",
         data: cases,
-        backgroundColor: 'rgb(251, 53, 117)',
+        backgroundColor: "rgb(251, 53, 117)",
       },
       {
-        label: 'Treated',
+        label: "Treated",
         data: treated,
-        backgroundColor: 'rgb(247, 188, 67)',
+        backgroundColor: "rgb(247, 188, 67)",
       },
       {
-        label: 'Recovered',
+        label: "Recovered",
         data: recovered,
-        backgroundColor: 'rgb(100, 212, 31)',
+        backgroundColor: "rgb(100, 212, 31)",
       },
       {
-        label: 'Death',
+        label: "Death",
         data: death,
-        backgroundColor: 'rgb(0, 0, 0)',
+        backgroundColor: "rgb(0, 0, 0)",
       },
     ],
   };
 
   const options = {
     interaction: {
-      mode: 'index',
-      axis: 'y',
+      mode: "index",
+      axis: "y",
     },
     maintainAspectRatio: false,
     scales: {
       xAxex: {
         title: {
           display: true,
-          text: 'Provinces',
+          text: "Provinces",
         },
         ticks: {
           autoSkip: false,
@@ -76,45 +75,41 @@ export default function BarChart() {
       yAxes: {
         title: {
           display: true,
-          text: 'Number of cases',
+          text: "Number of cases",
         },
       },
     },
   };
 
-
-  const handleReload = () => {
-    router.reload();
-  }
-
   return (
     <div>
       {error ? (
-        <>
-          <p style={{ textAlign: 'center', marginTop: '10px' }}>Oops.. Something went wrong. Failed to get data, please try again.</p>
-          <Button onClick={handleReload} variant="outlined" style={{ margin: "10px auto auto auto", display: 'block', textTransform: 'capitalize' }}>Try Again</Button>
-        </>
+        <></>
       ) : isLoading ? (
         <Box
-          m="auto"
+          m='auto'
           sx={{
             width: {
               lg: 900,
             },
-          }}
-        >
-          <Skeleton variant="rectangular" animation="wave" height={550} style={{ marginTop: '15px' }} />
+          }}>
+          <div style={{ display: "flex", justifyContent: "center", marginTop: "40px" }}>
+            <h2 style={{ textAlign: "center", fontWeight: 500, margin: "auto 0", fontSize: "18px" }}>Statistics by Provinces</h2>
+            <div style={{ marginLeft: "5px" }}>
+              <MyTooltip place='top' title='Use PC to get better experience in reading charts' />
+            </div>
+          </div>
+          <Skeleton variant='rectangular' animation='wave' height={550} style={{ marginTop: "15px" }} />
         </Box>
       ) : data ? (
         <Box
-          m="auto"
+          m='auto'
           sx={{
             width: {
               lg: 900,
             },
-          }}
-        >
-          <Bar data={dataSource} options={options} responsive="true" height={550} />
+          }}>
+          <Bar data={dataSource} options={options} responsive='true' height={550} />
         </Box>
       ) : null}
     </div>
