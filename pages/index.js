@@ -1,15 +1,15 @@
-import Head from 'next/head';
+import Head from "next/head";
+import { Container } from "@mui/material";
 
 export default function Home() {
   return (
     <div>
       <Head>
         <title>Info Covid</title>
-        <meta name="description" content="Info Covid" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <h1 style={{ textAlign: 'center' }}>Home</h1>
+      <Container maxWidth='lg'>
+        <h2 style={{ marginTop: "10px", fontWeight: 500, fontSize: "18px" }}>Home</h2>
+      </Container>
     </div>
   );
 }

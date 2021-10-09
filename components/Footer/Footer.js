@@ -5,6 +5,7 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
+import styles from "./Footer.module.css";
 
 const navLinks1 = [
   { title: `Statistics`, path: "/statistics" },
@@ -24,7 +25,7 @@ const socialMedia = [
 
 export default function Footer() {
   return (
-    <Box style={{ padding: "40px 0", marginTop: "50px", backgroundColor: "white" }} sx={{ borderTop: 1, borderColor: "grey.400" }}>
+    <Box className={styles.boxMargin} sx={{ borderTop: 1, borderColor: "grey.400" }}>
       <Container maxWidth='lg'>
         {/* left */}
         <Grid container spacing={{ xs: 1, md: 4 }}>
@@ -93,9 +94,7 @@ export default function Footer() {
               </Link>
             </Box>
             <Box sx={{ marginTop: { md: "25px" } }}>
-              <p style={{ marginTop: "10px", marginBottom: "56px", fontSize: "14px", color: "rgba(0, 0, 0, 0.6)" }}>
-                &copy; 2021 Copyright All Rights Reserved
-              </p>
+              <p className={styles.marginFooter}>&copy; 2021 Copyright All Rights Reserved</p>
             </Box>
           </Grid>
         </Grid>

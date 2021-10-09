@@ -49,7 +49,7 @@ export default function Navbar(props) {
             size='large'
             startIcon={<CallRoundedIcon />}
             className={classes.hotline}
-            style={{ fontSize: "14px", textTransform: "capitalize" }}>
+            style={{ fontSize: "14px", textTransform: "capitalize", color: "rgba(0, 0, 0, 0.6)" }}>
             Covid-19 Hotline 119
           </Button>
         </Link>
@@ -59,7 +59,7 @@ export default function Navbar(props) {
             size='large'
             startIcon={<HelpRoundedIcon />}
             className={classes.hotline}
-            style={{ fontSize: "14px", textTransform: "capitalize" }}>
+            style={{ fontSize: "14px", textTransform: "capitalize", color: "rgba(0, 0, 0, 0.6)" }}>
             About Us
           </Button>
         </Link>
@@ -81,7 +81,7 @@ export default function Navbar(props) {
               ) : null}
 
               <Link href='/' passHref>
-                <a style={{ fontSize: "18px", color: "#1976d2", fontWeight: 500 }}>Lawan Corona</a>
+                <a style={{ fontSize: "18px", color: "rgba(0, 0, 0, 1)", fontWeight: 500 }}>infoCovid</a>
               </Link>
 
               <Stack
@@ -92,13 +92,16 @@ export default function Navbar(props) {
                 }}>
                 {navLinks.map(({ title, path }, idx) => (
                   <Link key={idx} href={path} passHref>
-                    <Button size='medium' style={{ textTransform: "capitalize", fontSize: "16px" }}>
+                    <Button size='medium' style={{ textTransform: "capitalize", fontSize: "16px", color: "rgba(0, 0, 0, 0.6)" }}>
                       {title}
                     </Button>
                   </Link>
                 ))}
                 <Link href='tel:119' passHref>
-                  <Button size='medium' startIcon={<CallRoundedIcon />} style={{ textTransform: "capitalize" }}>
+                  <Button
+                    size='medium'
+                    startIcon={<CallRoundedIcon />}
+                    style={{ textTransform: "capitalize", color: "rgba(0, 0, 0, 0.6)" }}>
                     Covid-19 Hotline 119
                   </Button>
                 </Link>
@@ -109,8 +112,13 @@ export default function Navbar(props) {
                 sx={{
                   display: { xs: `flex`, md: `none` },
                 }}>
-                <IconButton onClick={toggleDrawer(true)} aria-label='menu' size='medium' color='primary'>
-                  <MenuRoundedIcon fontSize='inherit' />
+                <IconButton
+                  onClick={toggleDrawer(true)}
+                  aria-label='menu'
+                  size='medium'
+                  color='primary'
+                  style={{ color: "rgba(0, 0, 0, 0.6)" }}>
+                  <MenuRoundedIcon fontSize='inherit' style={{ color: "rgba(0, 0, 0, 0.6)" }} />
                 </IconButton>
                 <SwipeableDrawer anchor='right' open={isOpen} onClose={toggleDrawer(false)} onOpen={toggleDrawer(true)}>
                   {list(navLinks)}

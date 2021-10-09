@@ -8,9 +8,7 @@ export default function Vaccine() {
         <title>Vaccine</title>
       </Head>
       <Container maxWidth='lg'>
-        <Box sx={{ height: "100%" }}>
-          <h1 style={{ textAlign: "center" }}>Vaccine</h1>
-        </Box>
+        <h2 style={{ marginTop: "10px", fontWeight: 500, fontSize: "18px" }}>About</h2>
       </Container>
     </div>
   );
