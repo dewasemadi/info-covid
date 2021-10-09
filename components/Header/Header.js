@@ -5,8 +5,10 @@ import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import CallRoundedIcon from "@mui/icons-material/CallRounded";
 import HelpRoundedIcon from "@mui/icons-material/HelpRounded";
 import ArrowBackRoundedIcon from "@mui/icons-material/ArrowBackRounded";
-import styles from "./Header.module.css";
 import { useRouter } from "next/router";
+import { makeStyles } from "@mui/styles";
+import styles from "./Header.style";
+const useStyles = makeStyles(styles);
 
 const navLinks = [
   { title: `Home`, path: "/" },
@@ -30,6 +32,7 @@ function ElevationScroll(props) {
 }
 
 export default function Navbar(props) {
+  const classes = useStyles();
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
 
@@ -40,9 +43,9 @@ export default function Navbar(props) {
 
   const list = () => (
     <Box sx={{ width: 250 }} role='presentation' onClick={toggleDrawer(false)} onKeyDown={toggleDrawer(false)}>
-      <Stack spacing={1} className={styles.stack}>
+      <Stack spacing={1} className={classes.stack}>
         <Link href='tel:119' passHref>
-          <Button size='large' startIcon={<CallRoundedIcon />} className={styles.hotline}>
+          <Button size='large' startIcon={<CallRoundedIcon />} className={classes.hotline}>
             Covid-19 Hotline 119
           </Button>
         </Link>
@@ -51,7 +54,7 @@ export default function Navbar(props) {
           <Button
             size='large'
             startIcon={<HelpRoundedIcon />}
-            className={router.pathname === "/about" ? styles.aboutActive : styles.aboutDeactive}>
+            className={router.pathname === "/about" ? classes.aboutActive : classes.aboutDeactive}>
             About Us
           </Button>
         </Link>
@@ -65,7 +68,7 @@ export default function Navbar(props) {
       <ElevationScroll {...props}>
         <AppBar style={{ backgroundColor: "white" }}>
           <Container maxWidth='lg'>
-            <Toolbar className={styles.toolBar}>
+            <Toolbar className={classes.toolBar}>
               {router.pathname === "/hospital/bed" || router.pathname === "/hospital/detail" ? (
                 <IconButton
                   onClick={() => router.back()}
@@ -73,13 +76,13 @@ export default function Navbar(props) {
                   size='medium'
                   color='primary'
                   sx={{ display: { md: `none` } }}
-                  className={styles.grey}>
-                  <ArrowBackRoundedIcon fontSize='inherit' className={styles.grey} />
+                  className={classes.grey}>
+                  <ArrowBackRoundedIcon fontSize='inherit' className={classes.grey} />
                 </IconButton>
               ) : null}
 
               <Link href='/' passHref>
-                <a className={styles.brand}>infoCovid</a>
+                <a className={classes.brand}>infoCovid</a>
               </Link>
 
               <Stack
@@ -90,13 +93,13 @@ export default function Navbar(props) {
                 }}>
                 {navLinks.map(({ title, path }, idx) => (
                   <Link key={idx} href={path} passHref>
-                    <Button size='medium' className={router.pathname === `${path}` ? styles.navActive : styles.navDeactive}>
+                    <Button size='medium' className={router.pathname === `${path}` ? classes.navActive : classes.navDeactive}>
                       {title}
                     </Button>
                   </Link>
                 ))}
                 <Link href='tel:119' passHref>
-                  <Button size='medium' startIcon={<CallRoundedIcon />} className={styles.hotlineDesktop}>
+                  <Button size='medium' startIcon={<CallRoundedIcon />} className={classes.hotlineDesktop}>
                     Covid-19 Hotline 119
                   </Button>
                 </Link>
@@ -107,8 +110,8 @@ export default function Navbar(props) {
                 sx={{
                   display: { xs: `flex`, md: `none` },
                 }}>
-                <IconButton onClick={toggleDrawer(true)} aria-label='menu' size='medium' color='primary' className={styles.grey}>
-                  <MenuRoundedIcon fontSize='inherit' className={styles.grey} />
+                <IconButton onClick={toggleDrawer(true)} aria-label='menu' size='medium' color='primary' className={classes.grey}>
+                  <MenuRoundedIcon fontSize='inherit' className={classes.grey} />
                 </IconButton>
                 <SwipeableDrawer anchor='right' open={isOpen} onClose={toggleDrawer(false)} onOpen={toggleDrawer(true)}>
                   {list(navLinks)}
