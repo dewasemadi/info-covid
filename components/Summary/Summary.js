@@ -52,7 +52,7 @@ export default function Summary() {
     <div>
       {error ? (
         <div style={{ height: "100vh", display: "flex", marginTop: "-64px", justifyContent: "center", alignItems: "center" }}>
-          <dix>
+          <div>
             <p style={{ textAlign: "center", marginTop: "10px" }}>Oops.. Something went wrong. Failed to get data, please try again.</p>
             <Button
               onClick={handleReload}
@@ -60,7 +60,7 @@ export default function Summary() {
               style={{ margin: "10px auto auto auto", display: "block", textTransform: "capitalize" }}>
               Try Again
             </Button>
-          </dix>
+          </div>
         </div>
       ) : isLoading ? (
         <Box

@@ -1,4 +1,5 @@
-import Head from 'next/head'
+import Head from "next/head";
+import { Container, Box } from "@mui/material";
 
 export default function Vaccine() {
   return (
@@ -6,7 +7,11 @@ export default function Vaccine() {
       <Head>
         <title>Vaccine</title>
       </Head>
-      <h1 style={{ textAlign: 'center' }}>Vaccine</h1>
+      <Container maxWidth='lg'>
+        <Box sx={{ height: "100%" }}>
+          <h1 style={{ textAlign: "center" }}>Vaccine</h1>
+        </Box>
+      </Container>
     </div>
-  )
+  );
 }

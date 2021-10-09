@@ -6,7 +6,8 @@ import store from "../redux/store";
 import { Provider } from "react-redux";
 import Header from "../components/Header/Header";
 import Navigation from "../components/Navigation/Navigation";
-import Footer from "../components/Footer/Footer"
+import Footer from "../components/Footer/Footer";
+import { Box } from "@mui/material";
 
 Router.events.on("routeChangeStart", NProgress.start);
 Router.events.on("routeChangeError", NProgress.done);
@@ -17,11 +18,12 @@ function MyApp({ Component, pageProps }) {
     <div>
       <Header />
       <Provider store={store}>
-        <Component {...pageProps} />
+        <Box sx={{ height: "100vh", display: "block" }}>
+          <Component {...pageProps} />
+          <Footer />
+        </Box>
       </Provider>
       <Navigation />
-      <br></br>
-      <Footer />
     </div>
   );
 }

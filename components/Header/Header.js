@@ -54,7 +54,7 @@ export default function Navbar(props) {
           </Button>
         </Link>
 
-        <Link href='tel:119' passHref>
+        <Link href='/about' passHref>
           <Button
             size='large'
             startIcon={<HelpRoundedIcon />}
