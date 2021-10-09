@@ -63,7 +63,7 @@ export default function Navbar(props) {
     <Fragment>
       <CssBaseline />
       <ElevationScroll {...props}>
-        <AppBar className={styles.bgWhite}>
+        <AppBar style={{ backgroundColor: "white" }}>
           <Container maxWidth='lg'>
             <Toolbar className={styles.toolBar}>
               {router.pathname === "/hospital/bed" || router.pathname === "/hospital/detail" ? (
