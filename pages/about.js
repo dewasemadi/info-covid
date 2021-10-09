@@ -1,4 +1,4 @@
-import Head from 'next/head';
+import Head from "next/head";
 
 export default function About() {
   return (
@@ -6,7 +6,7 @@ export default function About() {
       <Head>
         <title>About</title>
       </Head>
-      <h1 style={{ textAlign: 'center' }}>About</h1>;
+      <h1 style={{ textAlign: "center" }}>About</h1>
     </div>
-  )
+  );
 }
