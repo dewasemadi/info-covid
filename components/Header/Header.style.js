@@ -1,4 +1,4 @@
-const headerStyle = (theme) => ({
+const headerStyle = {
   stack: { padding: "0 10px" },
   hotline: {
     marginTop: "10px",
@@ -8,7 +8,7 @@ const headerStyle = (theme) => ({
     textTransform: "capitalize",
     color: "rgba(0, 0, 0, 0.6)",
     fontWeight: 400,
-    "&.hover": {
+    "&:hover": {
       backgroundColor: "rgba(233, 233, 233, 0.3)",
     },
   },
@@ -48,7 +48,7 @@ const headerStyle = (theme) => ({
     fontSize: "16px",
     color: "#1976d2",
     fontWeight: 500,
-    "&.hover": {
+    "&:hover": {
       backgroundColor: "rgba(233, 233, 233, 0.3)",
     },
   },
@@ -57,7 +57,7 @@ const headerStyle = (theme) => ({
     fontSize: "16px",
     color: "rgba(0, 0, 0, 0.6)",
     fontWeight: 400,
-    "&.hover": {
+    "&:hover": {
       backgroundColor: "rgba(233, 233, 233, 0.3)",
     },
   },
@@ -66,16 +66,16 @@ const headerStyle = (theme) => ({
     fontSize: "16px",
     color: "rgba(0, 0, 0, 0.6)",
     fontWeight: 400,
-    "&.hover": {
+    "&:hover": {
       backgroundColor: "rgba(233, 233, 233, 0.3)",
     },
   },
   grey: {
     color: "rgba(0, 0, 0, 0.6)",
-    "&.hover": {
+    "&:hover": {
       backgroundColor: "rgba(233, 233, 233, 0.3)",
     },
   },
-});
+};
 
 export default headerStyle;

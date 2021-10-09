@@ -2,12 +2,15 @@ import { Bar } from "react-chartjs-2";
 import { useState, useEffect } from "react";
 import { useGetDataByProvincesQuery } from "../../redux/services/covid-indonesia.service";
 import { Box, Skeleton } from "@mui/material";
-import styles from "./Bar.module.css";
 import MyTooltip from "../Tooltip/Tooltip";
 import { dataSource, options } from "./Configuration";
+import { makeStyles } from "@mui/styles";
+import styles from "./Bar.style";
+const useStyles = makeStyles(styles);
 const format = require("lodash");
 
 export default function BarChart() {
+  const classes = useStyles();
   const { data, error, isLoading } = useGetDataByProvincesQuery("");
   const [provinces, setProvinces] = useState([]);
   const [cases, setCases] = useState([]);
@@ -42,11 +45,11 @@ export default function BarChart() {
               lg: 900,
             },
           }}>
-          <div className={styles.container}>
-            <h2 className={styles.title}>Statistics by Provinces</h2>
-            <MyTooltip place='top' title='Use PC to get better experience in reading charts' className={styles.ml} />
+          <div className={classes.container}>
+            <h2 className={classes.title}>Statistics by Provinces</h2>
+            <MyTooltip place='top' title='Use PC to get better experience in reading charts' className={classes.ml} />
           </div>
-          <Skeleton variant='rectangular' animation='wave' height={550} className={styles.mt} />
+          <Skeleton variant='rectangular' animation='wave' height={550} className={classes.mt} />
         </Box>
       ) : data ? (
         <Box
@@ -56,9 +59,9 @@ export default function BarChart() {
               lg: 900,
             },
           }}>
-          <div className={styles.container}>
-            <h2 className={styles.title}>Statistics by Provinces</h2>
-            <div className={styles.ml}>
+          <div className={classes.container}>
+            <h2 className={classes.title}>Statistics by Provinces</h2>
+            <div className={classes.ml}>
               <MyTooltip place='top' title='Use PC to get better experience in reading charts' />
             </div>
           </div>

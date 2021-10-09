@@ -8,18 +8,21 @@ import Header from "../components/Header/Header";
 import Navigation from "../components/Navigation/Navigation";
 import Footer from "../components/Footer/Footer";
 import { Box } from "@mui/material";
-import styles from "../styles/pages/_app.module.css";
+import { makeStyles } from "@mui/styles";
+import styles from "../styles/pages/_app.style";
+const useStyles = makeStyles(styles);
 
 Router.events.on("routeChangeStart", NProgress.start);
 Router.events.on("routeChangeError", NProgress.done);
 Router.events.on("routeChangeComplete", NProgress.done);
 
 function MyApp({ Component, pageProps }) {
+  const classes = useStyles();
   return (
     <div>
       <Header />
       <Provider store={store}>
-        <Box className={styles.container}>
+        <Box className={classes.container}>
           <Component {...pageProps} />
           <Footer />
         </Box>

@@ -93,7 +93,13 @@ export default function Navbar(props) {
                 }}>
                 {navLinks.map(({ title, path }, idx) => (
                   <Link key={idx} href={path} passHref>
-                    <Button size='medium' className={router.pathname === `${path}` ? classes.navActive : classes.navDeactive}>
+                    <Button
+                      size='medium'
+                      className={
+                        router.pathname === `${path}` || router.pathname === `${path}/bed` || router.pathname === `${path}/detail`
+                          ? classes.navActive
+                          : classes.navDeactive
+                      }>
                       {title}
                     </Button>
                   </Link>

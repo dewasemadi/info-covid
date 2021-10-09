@@ -3,9 +3,12 @@ import { Box, Skeleton, Card, CardContent, Button, Grid } from "@mui/material";
 import { formatDateToUs } from "../../utils/formatter";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import styles from "./Summary.module.css";
+import { makeStyles } from "@mui/styles";
+import styles from "./Summary.style";
+const useStyles = makeStyles(styles);
 
 export default function Summary() {
+  const classes = useStyles();
   const router = useRouter();
   const { data, error, isLoading } = useGetSummaryQuery("");
   const [res, setRes] = useState([]);
@@ -26,15 +29,15 @@ export default function Summary() {
   };
 
   const list = (params) => (
-    <Grid container spacing={{ xs: 2, md: 2 }} columns={{ xs: 4, sm: 8, lg: 12 }} className={styles.mt20}>
+    <Grid container spacing={{ xs: 2, md: 2 }} columns={{ xs: 4, sm: 8, lg: 12 }} className={classes.mt20}>
       {params.map((data, idx) => (
         <Grid item xs={12} sm={4} md={2} key={idx}>
           <Card sx={{ minWidth: 210 }} variant='outlined'>
-            <CardContent className={styles.pt16}>
+            <CardContent className={classes.pt16}>
               {data ? (
                 <>
                   <h3 style={{ color: data.color, textAlign: "center" }}>{data.cases.toLocaleString()}</h3>
-                  <p className={styles.textCenter}> {data.title}</p>
+                  <p className={classes.textCenter}> {data.title}</p>
                 </>
               ) : (
                 <>
@@ -52,10 +55,10 @@ export default function Summary() {
   return (
     <div>
       {error ? (
-        <div className={styles.container}>
+        <div className={classes.container}>
           <div>
-            <p className={styles.errorMessage}>Oops.. Something went wrong. Failed to get data, please try again.</p>
-            <Button onClick={handleReload} variant='outlined' className={styles.btnCustom}>
+            <p className={classes.errorMessage}>Oops.. Something went wrong. Failed to get data, please try again.</p>
+            <Button onClick={handleReload} variant='outlined' className={classes.btnCustom}>
               Try Again
             </Button>
           </div>
@@ -68,13 +71,13 @@ export default function Summary() {
               md: 350,
             },
           }}>
-          <h2 className={styles.title}>Covid-19 Cases in Indonesia</h2>
+          <h2 className={classes.title}>Covid-19 Cases in Indonesia</h2>
           <Skeleton variant='text' animation='wave' height={24} />
         </Box>
       ) : data ? (
         <>
-          <h2 className={styles.title}>Covid-19 Cases in Indonesia</h2>
-          <p className={styles.desc}>Last Update on {formatDateToUs(data.lastUpdate)}</p>
+          <h2 className={classes.title}>Covid-19 Cases in Indonesia</h2>
+          <p className={classes.desc}>Last Update on {formatDateToUs(data.lastUpdate)}</p>
         </>
       ) : null}
 

@@ -3,9 +3,12 @@ import { useState } from "react";
 import { Box, Container } from "@mui/material";
 import Search from "../../components/Search/Search";
 import MyTooltip from "../../components/Tooltip/Tooltip";
-import styles from "../../styles/pages/hospital.module.css";
+import { makeStyles } from "@mui/styles";
+import styles from "../../styles/pages/hospital.style";
+const useStyles = makeStyles(styles);
 
 export default function Hospital() {
+  const classes = useStyles();
   return (
     <div>
       <Head>
@@ -18,9 +21,9 @@ export default function Hospital() {
               md: 500,
             },
           }}>
-          <div className={styles.titleContainer}>
-            <h2 className={styles.title}>Hospital Bed Availability</h2>
-            <div className={styles.ml}>
+          <div className={classes.titleContainer}>
+            <h2 className={classes.title}>Hospital Bed Availability</h2>
+            <div className={classes.ml}>
               <MyTooltip place='bottom' title='The data displayed may be an error because the data center changes frequently' />
             </div>
           </div>

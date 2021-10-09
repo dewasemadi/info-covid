@@ -12,10 +12,14 @@ import {
   CircularProgress,
 } from "@mui/material";
 import { useGetProvincesQuery, useGetCitiesByProvinceQuery } from "../../redux/services/bed-rs.service";
+import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
 import { useRouter } from "next/router";
-import styles from "./Search.module.css";
+import { makeStyles } from "@mui/styles";
+import styles from "./Search.style";
+const useStyles = makeStyles(styles);
 
 export default function Search() {
+  const classes = useStyles();
   const router = useRouter();
   const [provinces, setProvinces] = useState([]);
   const [province, setProvince] = useState("");
@@ -49,7 +53,7 @@ export default function Search() {
             md: 500,
           },
         }}>
-        <p className={styles.formTitle}>Select Your Province</p>
+        <p className={classes.formTitle}>Select Your Province</p>
         <Autocomplete
           disablePortal
           id='select-provinces'
@@ -58,7 +62,7 @@ export default function Search() {
           getOptionLabel={(provinces) => provinces.name}
           onChange={(_, province) => setProvince(province)}
           noOptionsText={"Province not found"}
-          className={styles.mAuto}
+          className={classes.mAuto}
           renderInput={(params) => (
             <TextField
               {...params}
@@ -76,7 +80,7 @@ export default function Search() {
           )}
         />
 
-        <p className={styles.formTitle}>Select Your City</p>
+        <p className={classes.formTitle}>Select Your City</p>
         <Autocomplete
           disablePortal
           id='combo-box-demo'
@@ -87,7 +91,7 @@ export default function Search() {
           getOptionLabel={(cities) => cities.name}
           onChange={(_, city) => setcity(city)}
           noOptionsText={"City not found"}
-          className={styles.mAuto}
+          className={classes.mAuto}
           renderInput={(params) => (
             <TextField
               {...params}
@@ -104,10 +108,10 @@ export default function Search() {
             />
           )}
         />
-        <FormHelperText className={styles.helperMargin}>Please select your province first</FormHelperText>
+        <FormHelperText className={classes.helperMargin}>Please select your province first</FormHelperText>
 
         <FormControl component='fieldset'>
-          <p className={styles.bedTypeTitle}>Choose bed type</p>
+          <p className={classes.bedTypeTitle}>Choose bed type</p>
           <RadioGroup row aria-label='gender' name='row-radio-buttons-group' value={type} onChange={handleChange}>
             <FormControlLabel value='1' control={<Radio />} label='Covid-19' />
             <FormControlLabel value='2' control={<Radio />} label='Non Covid-19' />
@@ -120,7 +124,9 @@ export default function Search() {
             onClick={handleRoute}
             variant='contained'
             disableElevation
-            className={styles.btnCustom}>
+            size='large'
+            endIcon={<SearchRoundedIcon />}
+            className={classes.btnCustom}>
             Search
           </Button>
         </div>

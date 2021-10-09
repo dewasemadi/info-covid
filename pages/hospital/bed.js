@@ -1,12 +1,13 @@
-import Link from "next/link";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useGetHospitalQuery } from "../../redux/services/bed-rs.service";
 import { Skeleton, Card, CardContent, Button, Grid, Container, CircularProgress } from "@mui/material";
-import ArrowBackTwoToneIcon from "@mui/icons-material/ArrowBackTwoTone";
-import styles from "../../styles/pages/hospital.module.css";
+import { makeStyles } from "@mui/styles";
+import styles from "../../styles/pages/hospital.style";
+const useStyles = makeStyles(styles);
 
 export default function Bed() {
+  const classes = useStyles();
   const router = useRouter();
   const { province_id, city_id, type } = router.query;
   const { data, error, isLoading } = useGetHospitalQuery({ province_id, city_id, type });
@@ -25,10 +26,10 @@ export default function Bed() {
       <Container maxWidth='lg'>
         <div>
           {error ? (
-            <div className={styles.errorMessageContainer}>
+            <div className={classes.errorMessageContainer}>
               <div>
-                <p className={styles.errorMessage}>Oops.. Something went wrong. Failed to get data, please try again.</p>
-                <Button onClick={handleReload} variant='outlined' className={styles.btnCustom}>
+                <p className={classes.errorMessage}>Oops.. Something went wrong. Failed to get data, please try again.</p>
+                <Button onClick={handleReload} variant='outlined' className={classes.btnCustom}>
                   Try Again
                 </Button>
               </div>
@@ -56,7 +57,7 @@ export default function Bed() {
                   ))}
                 </Grid>
               ) : (
-                <div className={styles.errorMessageContainer}>
+                <div className={classes.errorMessageContainer}>
                   <p>Oops.. Hospital not found</p>
                 </div>
               )}

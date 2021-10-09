@@ -2,9 +2,12 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import { useGetBedDetailByHospitalQuery } from "../../redux/services/bed-rs.service";
 import { Button, Skeleton, Card, CardContent, Grid, Container, CircularProgress } from "@mui/material";
-import styles from "../../styles/pages/hospital.module.css";
+import { makeStyles } from "@mui/styles";
+import styles from "../../styles/pages/hospital.style";
+const useStyles = makeStyles(styles);
 
 export default function Detail() {
+  const classes = useStyles();
   const router = useRouter();
   const { hospital_id, type } = router.query;
   const { data, error, isLoading } = useGetBedDetailByHospitalQuery({ hospital_id, type });
@@ -23,10 +26,10 @@ export default function Detail() {
       <Container maxWidth='lg'>
         <div>
           {error ? (
-            <div className={styles.errorMessageContainer}>
+            <div className={classes.errorMessageContainer}>
               <div>
-                <p className={styles.errorMessage}>Oops.. Something went wrong. Failed to get data, please try again.</p>
-                <Button onClick={handleReload} variant='outlined' className={styles.btnCustom}>
+                <p className={classes.errorMessage}>Oops.. Something went wrong. Failed to get data, please try again.</p>
+                <Button onClick={handleReload} variant='outlined' className={classes.btnCustom}>
                   Try Again
                 </Button>
               </div>
