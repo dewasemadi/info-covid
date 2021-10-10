@@ -29,7 +29,7 @@ export default function HospitalList({ list, type }) {
                         <LocationOnRoundedIcon sx={{ fontSize: 17, mr: 1 }} className={classes.icon} />
                         <p className={classes.address}>{hospital.address}</p>
                       </div>
-                      <Link href={`tel:${hospital.phone}`} passHref>
+                      <Link href={`tel:${hospital.phone ? hospital.phone : ""}`} passHref>
                         <div className={classes.container}>
                           <PhoneRoundedIcon sx={{ fontSize: 17, mr: 1 }} className={classes.icon} />
                           <p className={classes.phone}>{hospital.phone ? hospital.phone : "No phone number"}</p>

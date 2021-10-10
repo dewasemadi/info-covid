@@ -1,90 +1,68 @@
 import Link from "next/link";
-import { Box, Grid, Container, Stack, Tooltip } from "@mui/material";
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
+import Image from "next/image";
+import { Box, Grid, Tooltip } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import styles from "./Member.style";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import img from "../../public/no-image.png";
 const useStyles = makeStyles(styles);
 
+const developers = [
+  {
+    name: "I Dewa Putu Semadi",
+    picture: img,
+    role: "Team Leader & Frontend Developer",
+    github: "https://github.com/dewasemadi",
+    linkedin: "https://www.linkedin.com/in/dewasemadi/",
+  },
+  {
+    name: "Faris Ilham Noormandiri",
+    picture: img,
+    role: "Frontend Developer",
+    github: "https://github.com/Nif21",
+    linkedin: "https://www.linkedin.com/in/faris-ilham-noormandiri-6956b4208/",
+  },
+  {
+    name: "Tio Ramadhan",
+    picture: img,
+    role: "UI Designer",
+    github: "https://github.com/tioramadhn",
+    linkedin: "https://www.linkedin.com/in/tio-ramadhan-ab77431a2/",
+  },
+];
+
 export default function Member() {
-    const classes = useStyles();
-    return (
-        <Box className={classes.boxMargin}>
-            <Container maxWidth='lg' style={{ display:'flex', justifyContent:'center' }}>
-                <Grid container spacing={{ xs: 1, md: 4 }}>
-                    <Grid item xs={12} sm={12} md={12}>
-                        <Card sx={{ maxWidth: 345 }}>
-                            <CardMedia
-                                component="img"
-                                height="300"
-                                image="./exp.png"
-                                alt="Ris"
-                            />
-                            <CardContent>
-                                <Typography gutterBottom variant="h5" component="div">
-                                    Faris Ilham Noormandiri
-                                </Typography>
-                                <Typography variant="body2" color="text.secondary">
-                                    As Support
-                                </Typography>
-                            </CardContent>
-                            <CardActions>
-                               Baik Hati & Tidak Sombong
-                            </CardActions>
-                        </Card>
-                    </Grid>
-                </Grid>
-                <Grid container spacing={{ xs: 1, md: 4 }}>
-                    <Grid item xs={12} sm={12} md={12}>
-                        <Card sx={{ maxWidth: 345 }}>
-                            <CardMedia
-                                component="img"
-                                height="300"
-                                image="./exp.png"
-                                alt="Putu"
-                            />
-                            <CardContent>
-                                <Typography gutterBottom variant="h5" component="div">
-                                    I Dewa Putu Semadi
-                                </Typography>
-                                <Typography variant="body2" color="text.secondary">
-                                    As Hard Carry
-                                </Typography>
-                            </CardContent>
-                            <CardActions>
-                                Tampan & Pemberani
-                            </CardActions>
-                        </Card>
-                    </Grid>
-                </Grid>
-                <Grid container spacing={{ xs: 1, md: 4 }}>
-                    <Grid item xs={12} sm={12} md={12}>
-                        <Card sx={{ maxWidth: 345 }}>
-                            <CardMedia
-                                component="img"
-                                height="300"
-                                image="./exp.png"
-                                alt="Tio"
-                            />
-                            <CardContent>
-                                <Typography gutterBottom variant="h5" component="div">
-                                    Tio Ramadhan
-                                </Typography>
-                                <Typography variant="body2" color="text.secondary">
-                                    As Mage
-                                </Typography>
-                            </CardContent>
-                            <CardActions>
-                               Rupawan & Cekatan
-                            </CardActions>
-                        </Card>
-                    </Grid>
-                </Grid>
-            </Container>
-        </Box>
-    );
+  const classes = useStyles();
+  return (
+    <div>
+      <Grid container spacing={2} style={{ marginTop: "20px" }}>
+        {developers.map((developer, idx) => (
+          <Grid item xs={12} sm={12} md={4} key={idx}>
+            <Box sx={{ textAlign: "center" }}>
+              <Image src={developer.picture} alt={developer.name} width={200} height={200} />
+              <h2 className={classes.name}>{developer.name}</h2>
+              <p className={classes.role}>{developer.role}</p>
+            </Box>
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <Link href={developer.github}>
+                <a target='_blank' rel='noreferrer'>
+                  <Tooltip title='Github'>
+                    <GitHubIcon className={classes.icon} />
+                  </Tooltip>
+                </a>
+              </Link>
+              <Link href={developer.github}>
+                <a target='_blank' rel='noreferrer'>
+                  <Tooltip title='LinkedIn'>
+                    <LinkedInIcon className={classes.icon} />
+                  </Tooltip>
+                </a>
+              </Link>
+            </div>
+          </Grid>
+        ))}
+      </Grid>
+    </div>
+  );
 }

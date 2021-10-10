@@ -1,19 +1,22 @@
 const memberStyle = {
-    boxMargin: {
-        marginTop: "50px",
-        backgroundColor: "white",
-        padding: "15px 0",
-        "@media screen and (min-width: 900px)": {
-          padding: "50px 0",
-        },
+  name: {
+    fontSize: "16px",
+    fontWeight: 500,
+  },
+  role: {
+    fontSize: "14px",
+    fontWeight: 400,
+    color: "rgba(0, 0, 0, 0.6)",
+  },
+  icon: {
+    color: "rgba(0, 0, 0, 0.6)",
+    margin: "5px",
+    "@media screen and (min-width: 900px)": {
+      "&:hover": {
+        color: "rgba(0, 0, 0, 1)",
+      },
     },
-    cardFlex: {
-        display: "flex",
-        flexDirection: "row",
-        alignItems: "center",
-        justifyContent: "center",
-    },
-    centerText: {
-        textAlign: "center",
-    }
-}
+  },
+};
+
+export default memberStyle;
