@@ -30,6 +30,9 @@ const hospitalStyle = {
     justifyContent: "center",
     alignItems: "center",
   },
+  textCenter: {
+    textAlign: "center",
+  },
   errorMessage: { textAlign: "center", marginTop: "10px" },
 };
 

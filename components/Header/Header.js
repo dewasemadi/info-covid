@@ -77,7 +77,7 @@ export default function Navbar(props) {
                   color='primary'
                   sx={{ display: { md: `none` } }}
                   className={classes.grey}>
-                  <ArrowBackRoundedIcon fontSize='inherit' className={classes.grey} />
+                  <ArrowBackRoundedIcon fontSize='inherit' className={classes.icon} />
                 </IconButton>
               ) : null}
 
@@ -117,7 +117,7 @@ export default function Navbar(props) {
                   display: { xs: `flex`, md: `none` },
                 }}>
                 <IconButton onClick={toggleDrawer(true)} aria-label='menu' size='medium' color='primary' className={classes.grey}>
-                  <MenuRoundedIcon fontSize='inherit' className={classes.grey} />
+                  <MenuRoundedIcon fontSize='inherit' className={classes.icon} />
                 </IconButton>
                 <SwipeableDrawer anchor='right' open={isOpen} onClose={toggleDrawer(false)} onOpen={toggleDrawer(true)}>
                   {list(navLinks)}

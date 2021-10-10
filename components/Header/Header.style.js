@@ -82,6 +82,9 @@ const headerStyle = {
       backgroundColor: "rgba(233, 233, 233, 0.3)",
     },
   },
+  icon: {
+    color: "rgba(0, 0, 0, 0.6)",
+  },
 };
 
 export default headerStyle;

@@ -1,8 +1,10 @@
 import Head from "next/head";
+import Image from "next/image";
 import { useRouter } from "next/router";
 import { useGetHospitalQuery } from "../../redux/services/bed-rs.service";
 import { Skeleton, Card, CardContent, Button, Grid, Container, CircularProgress } from "@mui/material";
 import { makeStyles } from "@mui/styles";
+import doctor from "../../public/doctor.svg";
 import styles from "../../styles/pages/hospital.style";
 const useStyles = makeStyles(styles);
 
@@ -58,7 +60,10 @@ export default function Bed() {
                 </Grid>
               ) : (
                 <div className={classes.errorMessageContainer}>
-                  <p>Oops.. Hospital not found</p>
+                  <div>
+                    <Image src={doctor} alt='hospital not found' width={350} height={250} />
+                    <p className={classes.textCenter}>Oops.. Hospital not found</p>
+                  </div>
                 </div>
               )}
             </>
