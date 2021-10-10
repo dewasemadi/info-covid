@@ -7,6 +7,7 @@ const hospitalStyle = {
     display: "flex",
     marginTop: "5px",
     cursor: "pointer",
+    "-webkit-tap-highlight-color": "transparent",
   },
   address: {
     color: "rgba(0, 0, 0, 0.6)",

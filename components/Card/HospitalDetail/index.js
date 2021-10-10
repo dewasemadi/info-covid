@@ -1,5 +1,4 @@
 export default function HospitalCard({ data }) {
-  console.log(data);
   return (
     <div>
       <p>{data.name}</p>

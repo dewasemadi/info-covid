@@ -11,14 +11,14 @@ import ArrowForwardRoundedIcon from "@mui/icons-material/ArrowForwardRounded";
 import styles from "./HospitalList.style";
 const useStyles = makeStyles(styles);
 
-export default function HospitalList({ data, type }) {
+export default function HospitalList({ list, type }) {
   const router = useRouter();
   const classes = useStyles();
   return (
     <div>
-      {Array.isArray(data) && data.length ? (
+      {Array.isArray(list) && list.length ? (
         <Grid container spacing={{ xs: 2, md: 2 }} columns={{ xs: 4, sm: 8, lg: 12 }} className={classes.mt5}>
-          {data.map((hospital, idx) => (
+          {list.map((hospital, idx) => (
             <Grid item xs={12} sm={4} md={4} key={idx}>
               <Card variant='outlined'>
                 <CardContent style={{ paddingBottom: "16px" }}>

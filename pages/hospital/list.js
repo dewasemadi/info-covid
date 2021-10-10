@@ -17,8 +17,6 @@ export default function List() {
     router.reload();
   };
 
-  if (data) console.log(data);
-
   return (
     <div>
       <Head>
@@ -40,7 +38,7 @@ export default function List() {
               <CircularProgress />
             </Stack>
           ) : data ? (
-            <HospitalCard data={data.hospitals} type={type} />
+            <HospitalCard list={data.hospitals} type={type} />
           ) : null}
         </div>
       </Container>

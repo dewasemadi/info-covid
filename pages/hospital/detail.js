@@ -23,8 +23,6 @@ export default function Detail() {
     if (data) setName(data.data.name);
   }, [data]);
 
-  if (data) console.log(data);
-
   return (
     <div>
       <Head>
