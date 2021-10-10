@@ -20,6 +20,9 @@ const headerStyle = {
     textTransform: "capitalize",
     color: "#1976d2",
     fontWeight: 500,
+    "&:hover": {
+      backgroundColor: "rgba(233, 233, 233, 0.3)",
+    },
   },
   aboutDeactive: {
     marginTop: "10px",
@@ -29,6 +32,9 @@ const headerStyle = {
     textTransform: "capitalize",
     color: "rgba(0, 0, 0, 0.6)",
     fontWeight: 400,
+    "&:hover": {
+      backgroundColor: "rgba(233, 233, 233, 0.3)",
+    },
   },
   navlinkmobile: {
     justifyContent: "start",
