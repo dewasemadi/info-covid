@@ -1,8 +1,8 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const indonesiaCovidApi = createApi({
-  reducerPath: 'indonesiaCovidApi',
-  baseQuery: fetchBaseQuery({ baseUrl: 'https://apicovid19indonesia-v2.vercel.app/api/indonesia' }),
+  reducerPath: "indonesiaCovidApi",
+  baseQuery: fetchBaseQuery({ baseUrl: "https://apicovid19indonesia-v2.vercel.app/api/indonesia" }),
   endpoints: (builder) => ({
     getSummary: builder.query({
       query: () => ``,

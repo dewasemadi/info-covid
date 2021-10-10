@@ -4,9 +4,10 @@ const notFoundStyle = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+    marginTop: "-56px",
   },
   errorMessage: {
-    textAlign: ["center", "center"],
+    textAlign: "center",
     fontWeight: 500,
     fontSize: "18px",
   },

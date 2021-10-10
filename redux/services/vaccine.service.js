@@ -1,8 +1,8 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const vaccineApi = createApi({
-  reducerPath: 'vaccineApi',
-  baseQuery: fetchBaseQuery({ baseUrl: 'https://cekdiri.id/vaksinasi/' }),
+  reducerPath: "vaccineApi",
+  baseQuery: fetchBaseQuery({ baseUrl: "https://cekdiri.id/vaksinasi/" }),
   endpoints: (builder) => ({
     getIndonesiaVaccineSummary: builder.query({
       query: () => ``,

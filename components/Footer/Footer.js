@@ -40,7 +40,7 @@ export default function Footer() {
             </p>
             <div className={classes.iconContainer}>
               <Box className={classes.fbContainer}>
-                <Link href='/' passhref>
+                <Link href='/' passHref>
                   <Tooltip title='Facebook'>
                     <FacebookIcon className={classes.grey} />
                   </Tooltip>
@@ -48,7 +48,7 @@ export default function Footer() {
               </Box>
               {socialMedia.map(({ title, path, icon }, idx) => (
                 <Box key={idx} className={classes.icon}>
-                  <Link href={path} passhref>
+                  <Link href={path} passHref>
                     <Tooltip title={title}>{icon}</Tooltip>
                   </Link>
                 </Box>
@@ -67,7 +67,7 @@ export default function Footer() {
                 <Grid item>
                   {navLinks1.map(({ title, path }, idx) => (
                     <div key={idx} className={classes.mr}>
-                      <Link href={path} passhref>
+                      <Link href={path} passHref>
                         <a className={classes.link}>{title}</a>
                       </Link>
                     </div>
@@ -76,7 +76,7 @@ export default function Footer() {
                 <Grid item>
                   {navLinks2.map(({ title, path }, idx) => (
                     <div key={idx} className={classes.mr}>
-                      <Link href={path} passhref>
+                      <Link href={path} passHref>
                         <a className={classes.link}>{title}</a>
                       </Link>
                     </div>
@@ -90,7 +90,7 @@ export default function Footer() {
           <Grid item xs={12} sm={12} md={4}>
             <h2 className={classes.title}>Repository</h2>
             <Box className={classes.pointer}>
-              <Link href='https://github.com/dewasemadi/info-covid' passhref>
+              <Link href='https://github.com/dewasemadi/info-covid' passHref>
                 <a className={classes.gitContainer} target='_blank' rel='noreferrer'>
                   <GitHubIcon />
                   <p className={classes.github}>Github</p>

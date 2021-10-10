@@ -1,8 +1,8 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const bedRsApi = createApi({
-  reducerPath: 'bedRsApi',
-  baseQuery: fetchBaseQuery({ baseUrl: 'https://rs-bed-covid-api.vercel.app/api' }),
+  reducerPath: "bedRsApi",
+  baseQuery: fetchBaseQuery({ baseUrl: "https://rs-bed-covid-api.vercel.app/api" }),
   endpoints: (builder) => ({
     getProvinces: builder.query({
       query: () => `/get-provinces`,
