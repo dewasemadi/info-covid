@@ -69,7 +69,7 @@ export default function Navbar(props) {
         <AppBar style={{ backgroundColor: "white" }}>
           <Container maxWidth='lg'>
             <Toolbar className={classes.toolBar}>
-              {router.pathname === "/hospital/bed" || router.pathname === "/hospital/detail" ? (
+              {router.pathname === "/hospital/list" || router.pathname === "/hospital/detail" ? (
                 <IconButton
                   onClick={() => router.back()}
                   aria-label='back'
@@ -96,7 +96,7 @@ export default function Navbar(props) {
                     <Button
                       size='medium'
                       className={
-                        router.pathname === `${path}` || router.pathname === `${path}/bed` || router.pathname === `${path}/detail`
+                        router.pathname === `${path}` || router.pathname === `${path}/list` || router.pathname === `${path}/detail`
                           ? classes.navActive
                           : classes.navDeactive
                       }>

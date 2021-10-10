@@ -1,34 +1,28 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
-import HospitalCard from "../../components/Card/HospitalDetail";
-import { useGetBedDetailByHospitalQuery } from "../../redux/services/bed-rs.service";
+import HospitalCard from "../../components/Card/HospitalList";
+import { useGetHospitalQuery } from "../../redux/services/bed-rs.service";
 import { Button, Container, CircularProgress, Stack } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import styles from "../../styles/pages/hospital.style";
 const useStyles = makeStyles(styles);
-import { useState, useEffect } from "react";
 
-export default function Detail() {
+export default function List() {
   const classes = useStyles();
   const router = useRouter();
-  const { hospital_id, type } = router.query;
-  const { data, error, isLoading } = useGetBedDetailByHospitalQuery({ hospital_id, type });
-  const [name, setName] = useState("");
+  const { province_id, city_id, type } = router.query;
+  const { data, error, isLoading } = useGetHospitalQuery({ province_id, city_id, type });
 
   const handleReload = () => {
     router.reload();
   };
-
-  useEffect(() => {
-    if (data) setName(data.data.name);
-  }, [data]);
 
   if (data) console.log(data);
 
   return (
     <div>
       <Head>
-        <title>{name ? name : "hospital"} Detail</title>
+        <title>List of Hospital</title>
       </Head>
       <Container maxWidth='lg'>
         <div>
@@ -46,7 +40,7 @@ export default function Detail() {
               <CircularProgress />
             </Stack>
           ) : data ? (
-            <HospitalCard data={data.data} />
+            <HospitalCard data={data.hospitals} type={type} />
           ) : null}
         </div>
       </Container>

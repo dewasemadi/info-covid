@@ -43,7 +43,7 @@ export default function Navigation() {
         {navLinks.map(({ title, path, icon }, idx) => (
           <CustomizedBottomNavigationAction
             className={
-              router.pathname === `${path}` || router.pathname === `${path}/bed` || router.pathname === `${path}/detail`
+              router.pathname === `${path}` || router.pathname === `${path}/list` || router.pathname === `${path}/detail`
                 ? classes.active
                 : classes.deactive
             }

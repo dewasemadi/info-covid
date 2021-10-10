@@ -42,7 +42,7 @@ export default function Search() {
   };
 
   const handleRoute = () => {
-    router.push(`/hospital/bed?province_id=${selectedProvince}&city_id=${city.id}&type=${type}`);
+    router.push(`/hospital/list?province_id=${selectedProvince}&city_id=${city.id}&type=${type}`);
   };
 
   return (
