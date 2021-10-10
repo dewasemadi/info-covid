@@ -33,7 +33,7 @@ export default function Footer() {
       <Container maxWidth='lg'>
         {/* left */}
         <Grid container spacing={{ xs: 1, md: 4 }}>
-          <Grid item xs={12} sm={12} md={5}>
+          <Grid item xs={12} sm={12} md={4}>
             <h2 className={classes.title}>infoCovid</h2>
             <p className={classes.desc}>
               This website is for health information and advice about coronavirus (COVID-19), how to prevent yourself from the disease.
@@ -57,7 +57,7 @@ export default function Footer() {
           </Grid>
 
           {/* center */}
-          <Grid item xs={12} sm={12} md={3}>
+          <Grid item xs={12} sm={12} md={4}>
             <Stack
               sx={{
                 display: { xs: `none`, md: `flex` },
