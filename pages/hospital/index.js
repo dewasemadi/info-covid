@@ -24,7 +24,7 @@ export default function Hospital() {
           <div className={classes.titleContainer}>
             <h2 className={classes.title}>Hospital Bed Availability</h2>
             <div className={classes.ml}>
-              <MyTooltip place='bottom' title='The data displayed may be an error because the data center changes frequently' />
+              <MyTooltip place='bottom' title='There may be misinformation because the data center changes frequently' />
             </div>
           </div>
         </Box>
