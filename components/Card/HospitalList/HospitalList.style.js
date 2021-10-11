@@ -6,16 +6,11 @@ const hospitalStyle = {
   container: {
     display: "flex",
     marginTop: "5px",
-    cursor: "pointer",
     "-webkit-tap-highlight-color": "transparent",
   },
   address: {
     color: "rgba(0, 0, 0, 0.6)",
     fontSize: "14px",
-    "&:hover": {
-      borderBottom: "1px solid rgba(0, 0, 0, 0.6)",
-      marginBottom: "-1px",
-    },
   },
   update: {
     color: "rgba(0, 0, 0, 0.6)",
@@ -25,6 +20,7 @@ const hospitalStyle = {
   phone: {
     color: "rgba(0, 0, 0, 0.6)",
     fontSize: "14px",
+    cursor: "pointer",
     "&:hover": {
       borderBottom: "1px solid rgba(0, 0, 0, 0.6)",
       marginBottom: "-1px",

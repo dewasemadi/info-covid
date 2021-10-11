@@ -1,9 +1,6 @@
 export default function HospitalCard({ data }) {
   return (
     <div>
-      <p>{data.name}</p>
-      <p>{data.address}</p>
-      <p>{data.phone}</p>
       {data.bedDetail.map((detail, idx) => (
         <div key={idx} style={{ margin: "30px 0" }}>
           <p>{detail.stats.title}</p>

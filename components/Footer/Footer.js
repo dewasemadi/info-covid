@@ -29,7 +29,7 @@ export default function Footer() {
   ];
 
   return (
-    <Box className={classes.boxMargin} sx={{ borderTop: 1, borderColor: "grey.400" }}>
+    <Box className={classes.boxMargin} sx={{ borderTop: 1, borderColor: "rgba(0, 0, 0, 0.12)" }}>
       <Container maxWidth='lg'>
         {/* left */}
         <Grid container spacing={{ xs: 1, md: 4 }}>
