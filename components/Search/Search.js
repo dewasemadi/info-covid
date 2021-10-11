@@ -111,7 +111,7 @@ export default function Search() {
         <FormHelperText className={classes.helperMargin}>Please select your province first</FormHelperText>
 
         <FormControl component='fieldset'>
-          <p className={classes.bedTypeTitle}>Choose bed type</p>
+          <p className={classes.bedTypeTitle}>Choose Bed Type</p>
           <RadioGroup row aria-label='gender' name='row-radio-buttons-group' value={type} onChange={handleChange}>
             <FormControlLabel value='1' control={<Radio />} label='Covid-19' />
             <FormControlLabel value='2' control={<Radio />} label='Non Covid-19' />

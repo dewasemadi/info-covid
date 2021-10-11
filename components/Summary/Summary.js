@@ -77,7 +77,7 @@ export default function Summary() {
       ) : data ? (
         <>
           <h2 className={classes.title}>Covid-19 Cases in Indonesia</h2>
-          <p className={classes.desc}>Last Update on {formatDateToUs(data.lastUpdate)}</p>
+          <p className={classes.desc}>Last Updated on {formatDateToUs(data.lastUpdate)}</p>
         </>
       ) : null}
 

@@ -39,10 +39,12 @@ export default function HospitalList({ list, type }) {
                     </Grid>
                     <Grid item xs={12} sm={12} md={4} lg={5} className={classes.availability}>
                       <MyChip length={hospital.bed_availability} />
-                      <Box sx={{ display: "flex" }}>
-                        <UpdateIcon sx={{ fontSize: 18, mr: 1 }} className={classes.icon} style={{ marginTop: "5px" }} />
-                        <p className={classes.update}>{hospital.info}</p>
-                      </Box>
+                      {hospital.info && (
+                        <Box sx={{ display: "flex" }}>
+                          <UpdateIcon sx={{ fontSize: 18, mr: 1 }} className={classes.icon} style={{ marginTop: "5px" }} />
+                          <p className={classes.update}>{hospital.info}</p>
+                        </Box>
+                      )}
                     </Grid>
                   </Grid>
 

@@ -15,7 +15,7 @@ export default function HospitalCard({ data }) {
               <p className={classes.name}>{detail.stats.title}</p>
               <Box sx={{ display: "flex" }}>
                 <UpdateIcon className={classes.icon} sx={{ fontSize: 19, mr: 1 }} />
-                <p className={classes.time}>Last update on {detail.time}</p>
+                <p className={classes.time}>Last updated on {detail.time}</p>
               </Box>
 
               <div className={classes.chipContainer}>
