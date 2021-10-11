@@ -20,14 +20,8 @@ const summaryStyle = {
     marginTop: "10px",
     fontWeight: 500,
     fontSize: "18px",
-    "@media screen and (max-width: 900px)": {
-      textAlign: "start",
-    },
   },
   desc: { textAlign: "center" },
-  "@media screen and (max-width: 900px)": {
-    desc: { textAlign: "start" },
-  },
 };
 
 export default summaryStyle;

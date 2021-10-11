@@ -54,7 +54,7 @@ export default function Member() {
                   </Tooltip>
                 </a>
               </Link>
-              <Link href={developer.github}>
+              <Link href={developer.linkedin}>
                 <a target='_blank' rel='noreferrer'>
                   <Tooltip title='LinkedIn'>
                     <LinkedInIcon className={classes.icon} />
