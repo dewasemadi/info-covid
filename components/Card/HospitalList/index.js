@@ -3,11 +3,12 @@ import Image from "next/image";
 import MyChip from "../../Chip/Chip";
 import { useRouter } from "next/router";
 import doctor from "../../../public/doctor.svg";
-import { Card, CardContent, Button, Grid } from "@mui/material";
+import { Card, CardContent, Button, Grid, Box } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import LocationOnRoundedIcon from "@mui/icons-material/LocationOnRounded";
 import PhoneRoundedIcon from "@mui/icons-material/PhoneRounded";
 import ArrowForwardRoundedIcon from "@mui/icons-material/ArrowForwardRounded";
+import UpdateIcon from "@mui/icons-material/Update";
 import styles from "./HospitalList.style";
 const useStyles = makeStyles(styles);
 
@@ -38,7 +39,10 @@ export default function HospitalList({ list, type }) {
                     </Grid>
                     <Grid item xs={12} sm={12} md={4} lg={5} className={classes.availability}>
                       <MyChip length={hospital.bed_availability} />
-                      <p className={classes.update}>{hospital.info}</p>
+                      <Box sx={{ display: "flex" }}>
+                        <UpdateIcon sx={{ fontSize: 18, mr: 1 }} className={classes.icon} style={{ marginTop: "5px" }} />
+                        <p className={classes.update}>{hospital.info}</p>
+                      </Box>
                     </Grid>
                   </Grid>
 

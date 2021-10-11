@@ -15,6 +15,9 @@ const detailStyle = {
     borderRadius: "3px",
     marginLeft: "15px",
   },
+  icon: {
+    color: "rgba(0, 0, 0, 0.6)",
+  },
 };
 
 export default detailStyle;

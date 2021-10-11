@@ -2,6 +2,7 @@ const memberStyle = {
   name: {
     fontSize: "16px",
     fontWeight: 500,
+    marginTop: "10px",
   },
   role: {
     fontSize: "14px",

@@ -1,5 +1,6 @@
 import { Card, CardContent, Grid, Chip, Box } from "@mui/material";
 import { makeStyles } from "@mui/styles";
+import UpdateIcon from "@mui/icons-material/Update";
 import styles from "./HospitalDetail.style";
 const useStyles = makeStyles(styles);
 
@@ -12,8 +13,10 @@ export default function HospitalCard({ data }) {
           <Card variant='outlined'>
             <CardContent style={{ paddingBottom: "16px" }}>
               <p className={classes.name}>{detail.stats.title}</p>
-              <p className={classes.time}>Updated on {detail.time}</p>
-              <p>{detail.stats.time}</p>
+              <Box sx={{ display: "flex" }}>
+                <UpdateIcon className={classes.icon} sx={{ fontSize: 19, mr: 1 }} />
+                <p className={classes.time}>Last update on {detail.time}</p>
+              </Box>
 
               <div className={classes.chipContainer}>
                 <Chip
