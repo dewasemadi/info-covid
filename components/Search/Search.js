@@ -46,91 +46,84 @@ export default function Search() {
   };
 
   return (
-    <div>
-      <Box
-        sx={{
-          width: {
-            md: 500,
-          },
-        }}>
-        <p className={classes.formTitle}>Select Your Province</p>
-        <Autocomplete
-          disablePortal
-          id='select-provinces'
-          hiddenlabel='true'
-          options={provinces}
-          getOptionLabel={(provinces) => provinces.name}
-          onChange={(_, province) => setProvince(province)}
-          noOptionsText={"Province not found"}
-          className={classes.mAuto}
-          renderInput={(params) => (
-            <TextField
-              {...params}
-              placeholder='Provinces...'
-              InputProps={{
-                ...params.InputProps,
-                endAdornment: (
-                  <>
-                    {getProvinces.isFetching ? <CircularProgress color='inherit' size={20} /> : null}
-                    {params.InputProps.endAdornment}
-                  </>
-                ),
-              }}
-            />
-          )}
-        />
+    <Box>
+      <p className={classes.formTitle}>Select Your Province</p>
+      <Autocomplete
+        disablePortal
+        id='select-provinces'
+        hiddenlabel='true'
+        options={provinces}
+        getOptionLabel={(provinces) => provinces.name}
+        onChange={(_, province) => setProvince(province)}
+        noOptionsText={"Province not found"}
+        className={classes.mAuto}
+        renderInput={(params) => (
+          <TextField
+            {...params}
+            placeholder='Provinces...'
+            InputProps={{
+              ...params.InputProps,
+              endAdornment: (
+                <>
+                  {getProvinces.isFetching ? <CircularProgress color='inherit' size={20} /> : null}
+                  {params.InputProps.endAdornment}
+                </>
+              ),
+            }}
+          />
+        )}
+      />
 
-        <p className={classes.formTitle}>Select Your City</p>
-        <Autocomplete
-          disablePortal
-          id='combo-box-demo'
-          hiddenlabel='true'
-          options={cities}
-          key={getCities.isFetching ? getCities.isFetching : province}
-          disabled={!province ? true : getCities.isFetching ? true : false}
-          getOptionLabel={(cities) => cities.name}
-          onChange={(_, city) => setcity(city)}
-          noOptionsText={"City not found"}
-          className={classes.mAuto}
-          renderInput={(params) => (
-            <TextField
-              {...params}
-              placeholder='Cities...'
-              InputProps={{
-                ...params.InputProps,
-                endAdornment: (
-                  <>
-                    {getCities.isFetching ? <CircularProgress color='inherit' size={20} /> : null}
-                    {params.InputProps.endAdornment}
-                  </>
-                ),
-              }}
-            />
-          )}
-        />
-        <FormHelperText className={classes.helperMargin}>Please select your province first</FormHelperText>
+      <p className={classes.formTitle}>Select Your City</p>
+      <Autocomplete
+        disablePortal
+        id='combo-box-demo'
+        hiddenlabel='true'
+        options={cities}
+        key={getCities.isFetching ? getCities.isFetching : province}
+        disabled={!province ? true : getCities.isFetching ? true : false}
+        getOptionLabel={(cities) => cities.name}
+        onChange={(_, city) => setcity(city)}
+        noOptionsText={"City not found"}
+        className={classes.mAuto}
+        renderInput={(params) => (
+          <TextField
+            {...params}
+            placeholder='Cities...'
+            InputProps={{
+              ...params.InputProps,
+              endAdornment: (
+                <>
+                  {getCities.isFetching ? <CircularProgress color='inherit' size={20} /> : null}
+                  {params.InputProps.endAdornment}
+                </>
+              ),
+            }}
+          />
+        )}
+      />
+      <FormHelperText className={classes.helperMargin}>Please select your province first</FormHelperText>
 
-        <FormControl component='fieldset'>
-          <p className={classes.bedTypeTitle}>Choose Bed Type</p>
-          <RadioGroup row aria-label='gender' name='row-radio-buttons-group' value={type} onChange={handleChange}>
-            <FormControlLabel value='1' control={<Radio />} label='Covid-19' />
-            <FormControlLabel value='2' control={<Radio />} label='Non Covid-19' />
-          </RadioGroup>
-        </FormControl>
+      <FormControl component='fieldset'>
+        <p className={classes.bedTypeTitle}>Choose Bed Type</p>
+        <RadioGroup row aria-label='gender' name='row-radio-buttons-group' value={type} onChange={handleChange}>
+          <FormControlLabel value='1' control={<Radio />} label='Covid-19' />
+          <FormControlLabel value='2' control={<Radio />} label='Non Covid-19' />
+        </RadioGroup>
+      </FormControl>
 
-        <div>
-          <Button
-            disabled={province && city ? false : true}
-            onClick={handleRoute}
-            variant='contained'
-            disableElevation
-            size='large'
-            startIcon={<SearchRoundedIcon />}
-            className={classes.btnCustom}>
-            Search
-          </Button>
-        </div>
-      </Box>
-    </div>
+      <div>
+        <Button
+          disabled={province && city ? false : true}
+          onClick={handleRoute}
+          variant='contained'
+          disableElevation
+          size='large'
+          startIcon={<SearchRoundedIcon />}
+          className={classes.btnCustom}>
+          Search
+        </Button>
+      </div>
+    </Box>
   );
 }
