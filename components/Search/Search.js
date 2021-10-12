@@ -55,7 +55,7 @@ export default function Search() {
         options={provinces}
         getOptionLabel={(provinces) => provinces.name}
         onChange={(_, province) => setProvince(province)}
-        noOptionsText={"Province not found"}
+        noOptionsText={getProvinces.isFetching ? "Please wait..." : "Province not found"}
         className={classes.mAuto}
         renderInput={(params) => (
           <TextField
@@ -84,7 +84,7 @@ export default function Search() {
         disabled={!province ? true : getCities.isFetching ? true : false}
         getOptionLabel={(cities) => cities.name}
         onChange={(_, city) => setcity(city)}
-        noOptionsText={"City not found"}
+        noOptionsText={getCities.isFetching ? "Please wait..." : "City not found"}
         className={classes.mAuto}
         renderInput={(params) => (
           <TextField
