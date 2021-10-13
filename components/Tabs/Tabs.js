@@ -38,7 +38,7 @@ TabPanel.propTypes = {
   value: PropTypes.number.isRequired,
 };
 
-function a11yProps(index) {
+function A11yProps(index) {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down("md"));
 
@@ -84,8 +84,8 @@ export default function MyTabs() {
           value={value}
           onChange={handleChange}
           aria-label='tabs'>
-          <Tab label='Phase 1' {...a11yProps(0)} style={{ textTransform: "capitalize" }} />
-          <Tab label='Phase 2' {...a11yProps(1)} style={{ textTransform: "capitalize" }} />
+          <Tab label='Phase 1' {...A11yProps(0)} style={{ textTransform: "capitalize" }} />
+          <Tab label='Phase 2' {...A11yProps(1)} style={{ textTransform: "capitalize" }} />
         </Tabs>
         <TabPanel value={value} index={0} style={{ width: "-webkit-fill-available" }}>
           {error ? (
