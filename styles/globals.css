@@ -14,10 +14,6 @@ a {
   -webkit-tap-highlight-color: transparent;
 }
 
-.Mui-selected {
-  font-size: 12px !important;
-}
-
 .map-container {
   width: 100%;
   height: 65vh;

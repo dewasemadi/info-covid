@@ -2,13 +2,13 @@ import Head from "next/head";
 import { Container } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import styles from "../styles/pages/vaccine.style";
+import MyTabs from "../components/Tabs/Tabs";
 const useStyles = makeStyles(styles);
 
 const contents = [
   {
     title: "What is Vaccination?",
     text: "Vaccination is a simple, safe, and effective way of protecting you against harmful diseases, before you come into contact with them. It uses your body’s natural defenses to build resistance to specific infections and makes your immune system stronger.",
-
   },
   {
     title: "The Goals of Vaccination",
@@ -36,13 +36,14 @@ export default function Vaccine() {
         <title>Vaccine</title>
       </Head>
       <Container maxWidth='lg'>
-        {contents.map((content, idx) => (
-            <div>
-              <h2 className={classes.title}>{content.title}</h2>
-              <p className={classes.text}>{content.text}</p>
-              <br></br>
-            </div>
-          ))}
+        {/* {contents.map((content, idx) => (
+          <div key={idx}>
+            <h2 className={classes.title}>{content.title}</h2>
+            <p className={classes.text}>{content.text}</p>
+            <br></br>
+          </div>
+        ))} */}
+        <MyTabs />
       </Container>
     </div>
   );
