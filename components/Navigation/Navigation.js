@@ -38,6 +38,11 @@ export default function Navigation() {
         value={value}
         onChange={(_, newValue) => {
           setValue(newValue);
+        }}
+        sx={{
+          "& .Mui-selected": {
+            fontSize: "12px",
+          },
         }}>
         <CssBaseline />
         {navLinks.map(({ title, path, icon }, idx) => (
