@@ -53,7 +53,7 @@ export default function Navigation() {
             key={idx}
             sx={{
               "& .Mui-selected": {
-                fontSize: "12px",
+                fontSize: "12px !important",
               },
             }}
           />
