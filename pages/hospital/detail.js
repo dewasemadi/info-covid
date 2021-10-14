@@ -35,7 +35,7 @@ export default function Detail() {
   return (
     <div>
       <Head>
-        <title>{name ? name : "hospital"} Detail</title>
+        <title>{name ? name : "Hospital"} Detail</title>
       </Head>
       <Container maxWidth='lg'>
         <div>
