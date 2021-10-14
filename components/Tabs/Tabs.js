@@ -161,7 +161,7 @@ export default function MyTabs() {
             <p>Oops.. Something went wrong. Failed to get data, please try again.</p>
           ) : isLoading ? (
             <Grid container spacing={{ xs: 1, sm: 1, md: 2 }}>
-              {[...Array(6)].map((idx) => (
+              {[...Array(6)].map((_, idx) => (
                 <Grid item xs={12} sm={6} md={4} key={idx}>
                   <MySkeleton />
                 </Grid>
@@ -182,7 +182,7 @@ export default function MyTabs() {
             <p>Oops.. Something went wrong. Failed to get data, please try again.</p>
           ) : isLoading ? (
             <Grid container spacing={{ xs: 1, sm: 1, md: 2 }}>
-              {[...Array(6)].map((idx) => (
+              {[...Array(6)].map((_, idx) => (
                 <Grid item xs={12} sm={6} md={4} key={idx}>
                   <MySkeleton />
                 </Grid>
