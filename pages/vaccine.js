@@ -36,13 +36,12 @@ export default function Vaccine() {
         <title>Vaccine</title>
       </Head>
       <Container maxWidth='lg'>
-        {/* {contents.map((content, idx) => (
-          <div key={idx}>
-            <h2 className={classes.title}>{content.title}</h2>
-            <p className={classes.text}>{content.text}</p>
-            <br></br>
+        {contents.map((content, idx) => (
+          <div key={idx} style={{ margin: "20px 0" }}>
+            <h3>{content.title}</h3>
+            <p>{content.text}</p>
           </div>
-        ))} */}
+        ))}
         <MyTabs />
       </Container>
     </div>

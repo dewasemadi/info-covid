@@ -1,6 +1,6 @@
 const summaryStyle = {
   mt20: { marginTop: "10px" },
-  pt16: { paddingTop: "16px" },
+  pt16: { paddingTop: "16px", paddingBottom: "16px !important" },
   textCenter: { textAlign: "center" },
   container: {
     height: "100vh",

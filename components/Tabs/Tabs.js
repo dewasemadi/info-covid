@@ -1,79 +1,147 @@
-import PropTypes from "prop-types";
-import { makeStyles } from "@mui/styles";
-import { useState } from "react";
-import { useTheme } from "@mui/material/styles";
-import { Box, Tab, Tabs, Grid, Container } from "@mui/material";
-import useMediaQuery from "@mui/material/useMediaQuery";
 import MyCard from "./Card";
+import { useState } from "react";
+import TabPanel from "./TabPanel";
 import styles from "./Tabs.style";
+import { useRouter } from "next/router";
+import { A11yProps } from "./A11yProps";
+import { makeStyles } from "@mui/styles";
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import { formatDateToUs, formattingNumber } from "../../utils/formatter";
+import { Box, Tab, Tabs, Grid, Card, CardContent, Skeleton, Typography, Button } from "@mui/material";
+import { useGetIndonesiaVaccineSummaryQuery } from "../../redux/services/vaccine.service";
+import MySkeleton from "./Skeleton";
 const useStyles = makeStyles(styles);
 
-import { formatDateToUs } from "../../utils/formatter";
-import { useGetIndonesiaVaccineSummaryQuery } from "../../redux/services/vaccine.service";
-
-function TabPanel(props) {
-  const { children, value, index, ...other } = props;
-  const theme = useTheme();
-  const matches = useMediaQuery(theme.breakpoints.down("sm"));
-
-  return (
-    <div
-      role='tabpanel'
-      hidden={value !== index}
-      id={matches ? `vertical-tabpanel-${index}` : `simple-tabpanel-${index}`}
-      aria-labelledby={matches ? `vertical-tab-${index}` : `simple-tab-${index}`}
-      {...other}>
-      {value === index && (
-        <Box>
-          <div>{children}</div>
-        </Box>
-      )}
-    </div>
-  );
-}
-
-TabPanel.propTypes = {
-  children: PropTypes.node,
-  index: PropTypes.number.isRequired,
-  value: PropTypes.number.isRequired,
-};
-
-function A11yProps(index) {
-  const theme = useTheme();
-  const matches = useMediaQuery(theme.breakpoints.down("md"));
-
-  return {
-    id: matches ? `vertical-tab-${index}` : `simple-tab-${index}`,
-    "aria-controls": matches ? `vertical-tabpanel-${index}` : `simple-tabpanel-${index}`,
-  };
-}
-
 export default function MyTabs() {
-  const [value, setValue] = useState(0);
   const classes = useStyles();
   const theme = useTheme();
+  const router = useRouter();
+  const [value, setValue] = useState(0);
   const matches = useMediaQuery(theme.breakpoints.down("sm"));
   const { data, error, isLoading } = useGetIndonesiaVaccineSummaryQuery("");
 
-  const handleChange = (event, newValue) => {
+  const handleChange = (_, newValue) => {
     setValue(newValue);
   };
 
-  let idx = "";
-  if (data) idx = data.monitoring.length - 1;
+  const handleReload = () => {
+    router.reload();
+  };
 
-  if (data) console.log(data.monitoring[idx]);
+  let idx = "";
+  let vaccine1 = "";
+  let vaccine2 = "";
+  let updatedData = [];
+
+  if (data) {
+    idx = data.monitoring.length - 1;
+    updatedData = data.monitoring[idx];
+
+    vaccine1 = [
+      {
+        title: "All Vaccination Phase 1",
+        tahapan: updatedData.vaksinasi1,
+        target: updatedData.total_sasaran_vaksinasi,
+      },
+      {
+        title: "Elderly",
+        tahapan: updatedData.tahapan_vaksinasi.lansia.sudah_vaksin1,
+        target: updatedData.sasaran_vaksinasi_lansia,
+      },
+      {
+        title: "Public Officer",
+        tahapan: updatedData.tahapan_vaksinasi.petugas_publik.sudah_vaksin1,
+        target: updatedData.sasaran_vaksinasi_petugas_publik,
+      },
+      {
+        title: "General Public",
+        tahapan: updatedData.tahapan_vaksinasi.masyarakat_umum.sudah_vaksin1,
+        target: updatedData.sasaran_vaksinasi_masyarakat_umum,
+      },
+      {
+        title: "Health Workers",
+        tahapan: updatedData.tahapan_vaksinasi.sdm_kesehatan.sudah_vaksin1,
+        target: updatedData.sasaran_vaksinasi_sdmk,
+      },
+      {
+        title: "Age Group 12-17",
+        tahapan: updatedData.tahapan_vaksinasi.kelompok_usia_12_17.sudah_vaksin1,
+        target: updatedData.sasaran_vaksinasi_kelompok_1217,
+      },
+    ];
+
+    vaccine2 = [
+      {
+        title: "All Vaccination Phase 2",
+        tahapan: updatedData.vaksinasi2,
+        target: updatedData.total_sasaran_vaksinasi,
+      },
+      {
+        title: "Elderly",
+        tahapan: updatedData.tahapan_vaksinasi.lansia.sudah_vaksin2,
+        target: updatedData.sasaran_vaksinasi_lansia,
+      },
+      {
+        title: "Public Officer",
+        tahapan: updatedData.tahapan_vaksinasi.petugas_publik.sudah_vaksin2,
+        target: updatedData.sasaran_vaksinasi_petugas_publik,
+      },
+      {
+        title: "General Public",
+        tahapan: updatedData.tahapan_vaksinasi.masyarakat_umum.sudah_vaksin2,
+        target: updatedData.sasaran_vaksinasi_masyarakat_umum,
+      },
+      {
+        title: "Health Workers",
+        tahapan: updatedData.tahapan_vaksinasi.sdm_kesehatan.sudah_vaksin2,
+        target: updatedData.sasaran_vaksinasi_sdmk,
+      },
+      {
+        title: "Age Group 12-17",
+        tahapan: updatedData.tahapan_vaksinasi.kelompok_usia_12_17.sudah_vaksin2,
+        target: updatedData.sasaran_vaksinasi_kelompok_1217,
+      },
+    ];
+  }
 
   return (
-    <div>
+    <div style={{ marginTop: "30px" }}>
       <Grid container spacing={{ sm: 1, md: 2 }}>
-        <Grid item xs={12} sm={12} md={7}>
-          <p>#AyoVaksinasi</p>
+        <Grid item xs={12} sm={12} md={7} style={{ marginBottom: "20px" }}>
+          <p>#AYOVAKSINASI</p>
           <h2 className={classes.title}>Progress of Indonesia's Covid-19 Vaccination</h2>
-          {data ? <p>Last updated on {formatDateToUs(data.last_updated)} </p> : null}
+          {error ? (
+            <p>Last Updated on -</p>
+          ) : isLoading ? (
+            <Skeleton variant='text' animation='wave' width={matches ? "" : 300} />
+          ) : data ? (
+            <p>Last updated on {formatDateToUs(data.last_updated)} </p>
+          ) : null}
         </Grid>
         <Grid item xs={12} sm={12} md={5}>
-          <p>ye</p>
+          <Card variant='outlined'>
+            <CardContent className={classes.cardContainer}>
+              {error ? (
+                <div>
+                  <p className={classes.title2}>Total Vaccination Target</p>
+                  <h3 style={{ fontSize: "20px" }}>-</h3>
+                </div>
+              ) : isLoading ? (
+                <div>
+                  <p className={classes.title2}>Total Vaccination Target</p>
+                  <Typography variant='h4'>
+                    <Skeleton variant='text' animation='wave' />
+                  </Typography>
+                </div>
+              ) : data ? (
+                <div>
+                  <p className={classes.title2}>Total Vaccination Target</p>
+                  <h3 style={{ fontSize: "20px" }}>{formattingNumber(updatedData.total_sasaran_vaksinasi)}</h3>
+                </div>
+              ) : null}
+            </CardContent>
+          </Card>
         </Grid>
       </Grid>
 
@@ -83,75 +151,50 @@ export default function MyTabs() {
           variant='scrollable'
           value={value}
           onChange={handleChange}
-          aria-label='tabs'>
-          <Tab label='Phase 1' {...A11yProps(0)} style={{ textTransform: "capitalize" }} />
-          <Tab label='Phase 2' {...A11yProps(1)} style={{ textTransform: "capitalize" }} />
+          aria-label='tabs'
+          className={classes.tabStyle}>
+          <Tab label='Phase 1' {...A11yProps(0)} className={classes.btnCustom} />
+          <Tab label='Phase 2' {...A11yProps(1)} className={classes.btnCustom} />
         </Tabs>
-        <TabPanel value={value} index={0} style={{ width: "-webkit-fill-available" }}>
+        <TabPanel value={value} index={0} className={classes.tabPanelContainer}>
           {error ? (
-            <p>ye</p>
+            <p>Oops.. Something went wrong. Failed to get data, please try again.</p>
           ) : isLoading ? (
-            <p>loding</p>
+            <Grid container spacing={{ xs: 1, sm: 1, md: 2 }}>
+              {[...Array(6)].map((idx) => (
+                <Grid item xs={12} sm={6} md={4} key={idx}>
+                  <MySkeleton />
+                </Grid>
+              ))}
+            </Grid>
           ) : data ? (
             <Grid container spacing={{ xs: 1, sm: 1, md: 2 }}>
-              <Grid item xs={12} sm={6} md={4}>
-                <MyCard
-                  title='Semua vaksinasi'
-                  tahapan={data.monitoring[idx].vaksinasi1}
-                  percent={data.monitoring[idx].cakupan.vaksinasi1}
-                  target={data.monitoring[idx].total_sasaran_vaksinasi}
-                />
-              </Grid>
-              <Grid item xs={12} sm={6} md={4}>
-                <MyCard
-                  title='Semua vaksinasi'
-                  tahapan={data.monitoring[idx].vaksinasi1}
-                  percent={data.monitoring[idx].cakupan.vaksinasi1}
-                  target={data.monitoring[idx].total_sasaran_vaksinasi}
-                />
-              </Grid>
-              <Grid item xs={12} sm={6} md={4}>
-                <MyCard
-                  title='Semua vaksinasi'
-                  tahapan={data.monitoring[idx].vaksinasi1}
-                  percent={data.monitoring[idx].cakupan.vaksinasi1}
-                  target={data.monitoring[idx].total_sasaran_vaksinasi}
-                />
-              </Grid>
+              {vaccine1.map(({ title, tahapan, percent, target }, idx) => (
+                <Grid item xs={12} sm={6} md={4} key={idx}>
+                  <MyCard title={title} tahapan={tahapan} percent={percent} target={target} />
+                </Grid>
+              ))}
             </Grid>
           ) : null}
         </TabPanel>
-        <TabPanel value={value} index={1} style={{ width: "-webkit-fill-available" }}>
+        <TabPanel value={value} index={1} className={classes.tabPanelContainer}>
           {error ? (
-            <p>ye</p>
+            <p>Oops.. Something went wrong. Failed to get data, please try again.</p>
           ) : isLoading ? (
-            <p>loding</p>
+            <Grid container spacing={{ xs: 1, sm: 1, md: 2 }}>
+              {[...Array(6)].map((idx) => (
+                <Grid item xs={12} sm={6} md={4} key={idx}>
+                  <MySkeleton />
+                </Grid>
+              ))}
+            </Grid>
           ) : data ? (
             <Grid container spacing={{ xs: 1, sm: 1, md: 2 }}>
-              <Grid item xs={12} sm={6} md={4}>
-                <MyCard
-                  title='Semua vaksinasi'
-                  tahapan={data.monitoring[idx].vaksinasi1}
-                  percent={data.monitoring[idx].cakupan.vaksinasi1}
-                  target={data.monitoring[idx].total_sasaran_vaksinasi}
-                />
-              </Grid>
-              <Grid item xs={12} sm={6} md={4}>
-                <MyCard
-                  title='Semua vaksinasi'
-                  tahapan={data.monitoring[idx].vaksinasi1}
-                  percent={data.monitoring[idx].cakupan.vaksinasi1}
-                  target={data.monitoring[idx].total_sasaran_vaksinasi}
-                />
-              </Grid>
-              <Grid item xs={12} sm={6} md={4}>
-                <MyCard
-                  title='Semua vaksinasi'
-                  tahapan={data.monitoring[idx].vaksinasi1}
-                  percent={data.monitoring[idx].cakupan.vaksinasi1}
-                  target={data.monitoring[idx].total_sasaran_vaksinasi}
-                />
-              </Grid>
+              {vaccine2.map(({ title, tahapan, percent, target }, idx) => (
+                <Grid item xs={12} sm={6} md={4} key={idx}>
+                  <MyCard title={title} tahapan={tahapan} percent={percent} target={target} />
+                </Grid>
+              ))}
             </Grid>
           ) : null}
         </TabPanel>
