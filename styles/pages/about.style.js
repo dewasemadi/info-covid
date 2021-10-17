@@ -6,7 +6,7 @@ const aboutStyle = {
     textAlign: "center",
     marginBottom: '40px',
     color: '#0093E9',
-    backgroundImage:'linear-gradient(to right, #000, #c4c4c4)'
+    backgroundImage:'linear-gradient(to right, #000, #c4c4c4)',
   },
   title2: {
     marginTop: "20px",
