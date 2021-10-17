@@ -10,10 +10,10 @@ export default function Faq() {
   return (
     <div>
       <Head>
-        <title>Frequently Asked Questions</title>
+        <title>FAQ</title>
       </Head>
       <Container maxWidth='lg'>
-        <h2 className={classes.title}>Frequently Asked Questions</h2>
+        <h2 className={classes.title}>FAQ</h2>
         <MyFaq />
       </Container>
     </div>

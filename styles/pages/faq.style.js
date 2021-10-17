@@ -2,9 +2,10 @@ const faqStyle = {
   title: {
     marginTop: '10px',
     fontWeight: 500,
-    fontSize: '18px',
+    fontSize: '40px',
     textAlign: 'center',
     marginBottom: '20px',
+    color: '#0093E9',
   },
 };
 
