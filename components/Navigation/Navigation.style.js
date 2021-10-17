@@ -1,11 +1,11 @@
 const navigationStyle = {
   active: {
-    paddingTop: "6px !important",
-    color: "#1976d2 !important",
-    fontSize: "12px !important",
+    paddingTop: '6px !important',
+    fontSize: '12px !important',
+    color: '#0093e9',
   },
   deactive: {
-    color: "rgba(0, 0, 0, 0.6) !important",
+    color: '#42B3D7',
   },
 };
 

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Box, Grid, Container, Stack, Tooltip } from '@mui/material';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
@@ -8,6 +9,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import FavoriteRoundedIcon from '@mui/icons-material/FavoriteRounded';
 import { makeStyles } from '@mui/styles';
 import styles from './Footer.style';
+import logo from '../../public/logo.png';
 const useStyles = makeStyles(styles);
 
 const navLinks1 = [
@@ -35,7 +37,9 @@ export default function Footer() {
         {/* left */}
         <Grid container spacing={{ xs: 1, md: 4 }}>
           <Grid item xs={12} sm={12} md={5}>
-            <h2 className={classes.title}>infoCovid</h2>
+            <div className={classes.brand}>
+              <Image src={logo} alt='logo' />
+            </div>
             <p className={classes.desc}>
               This website is for health information and advice about coronavirus (COVID-19), how to prevent yourself from the disease.
             </p>
@@ -98,18 +102,19 @@ export default function Footer() {
                 </a>
               </Link>
             </Box>
-            <div className={classes.withLove}>
-              <p>Build with</p>
-              <FavoriteRoundedIcon sx={{ margin: '0 2px', fontSize: 18 }} color='error' />
-              <p>by</p>
-              <Link href='/about' passHref>
-                <p className={classes.doaIbu}>Doa Ibu</p>
-              </Link>
-            </div>
+
             <p className={classes.marginFooter}>&copy; 2021 Copyright All Rights Reserved</p>
           </Grid>
         </Grid>
       </Container>
+      <div className={classes.withLove}>
+        <p className={classes.doa}>Build with</p>
+        <FavoriteRoundedIcon sx={{ margin: '0 2px', fontSize: 18 }} color='error' />
+        <p className={classes.doa}>by</p>
+        <Link href='/about' passHref>
+          <p className={classes.doaIbu}>Doa Ibu</p>
+        </Link>
+      </div>
     </Box>
   );
 }

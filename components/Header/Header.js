@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { cloneElement, useState, Fragment } from 'react';
 import { Container, AppBar, Toolbar, CssBaseline, useScrollTrigger, Box, Stack, Button, SwipeableDrawer, IconButton } from '@mui/material';
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
@@ -7,6 +8,7 @@ import HelpRoundedIcon from '@mui/icons-material/HelpRounded';
 import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
 import { useRouter } from 'next/router';
 import { makeStyles } from '@mui/styles';
+import logo from '../../public/logo.png';
 import styles from './Header.style';
 const useStyles = makeStyles(styles);
 
@@ -49,7 +51,7 @@ export default function Navbar(props) {
           </Button>
         </Link>
 
-        <Link href='/about' passHref>
+        <Link href='/faq' passHref>
           <Button
             size='large'
             startIcon={<HelpRoundedIcon />}
@@ -81,7 +83,9 @@ export default function Navbar(props) {
               ) : null}
 
               <Link href='/' passHref>
-                <a className={classes.brand}>infoCovid</a>
+                <div className={classes.brand}>
+                  <img src='/logo.png' alt='logo' className={classes.block} />
+                </div>
               </Link>
 
               <Stack

@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-document-import-in-page */
-import React from "react";
-import Document, { Html, Head, Main, NextScript } from "next/document";
-import { ServerStyleSheets } from "@mui/styles";
+import React from 'react';
+import Document, { Html, Head, Main, NextScript } from 'next/document';
+import { ServerStyleSheets } from '@mui/styles';
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const sheets = new ServerStyleSheets();
