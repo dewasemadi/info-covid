@@ -1,7 +1,7 @@
 const appStyle = {
   container: {
-    height: "100vh",
-    display: "block",
+    height: '100vh',
+    display: 'block',
   },
 };
 

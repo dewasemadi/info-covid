@@ -1,7 +1,7 @@
-import Head from "next/head";
-import { Container } from "@mui/material";
-import { makeStyles } from "@mui/styles";
-import styles from "../styles/pages/home.style";
+import Head from 'next/head';
+import { Container } from '@mui/material';
+import { makeStyles } from '@mui/styles';
+import styles from '../styles/pages/home.style';
 const useStyles = makeStyles(styles);
 
 export default function Home() {
