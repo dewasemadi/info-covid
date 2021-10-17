@@ -30,7 +30,7 @@ const faq = [
       'No, antibiotics only work against bacteria, not viruses. Because COVID-19 is caused by a virus, antibiotics cannot be used as a means of prevention or treatment. However, if you are hospitalized and diagnosed with COVID-19, you may be given antibiotics, as secondary infections are often caused by bacteria.',
   },
   {
-    question: 'I have questions that are not here, where should i ask?',
+    question: 'I have questions that are not here, where should I ask?',
     answer:
       'You can call 119 for questions and information about COVID-19. ',
   },
@@ -45,7 +45,7 @@ export default function MyAccordion() {
   };
 
   return (
-    <div>
+    <div styles={{backgroundImage:'../public/bg.svg'}}>
       {faq.map(({ question, answer }, idx) => (
         <Accordion
           expanded={expanded === `${idx}`}
@@ -59,10 +59,10 @@ export default function MyAccordion() {
             aria-controls={`${idx}-content`}
             id={`${idx}-header`}
             style={{ borderColor: 'none' }}>
-            <Typography>{question}</Typography>
+            <Typography className={classes.blueText}>{question}</Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography>{answer}</Typography>
+            <Typography className={classes.blueText}>{answer}</Typography>
           </AccordionDetails>
         </Accordion>
       ))}

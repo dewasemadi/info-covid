@@ -75,7 +75,7 @@ export default function Vaccine() {
               ))}
             </ul>
           </div>
-          <div style={{ marginBottom:'20px' }}>
+          <div style={{ marginBottom: '20px' }}>
             <h3>Facts</h3>
             <ul>
               {facts.map((fact, idx) => (
