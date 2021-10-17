@@ -12,12 +12,12 @@ const faq = [
   {
     question: 'What are Covid-19 symptomps?',
     answer:
-      'The most common symtomps of Covid-19 are fever, cough, tiredness, and lost of taste or smell ',
+      'The most common symtomps of Covid-19 are fever, cough, tiredness, and lost of taste or smell. ',
   },
   {
-    question: 'Lorem ipsum dolor sit amet?',
+    question: 'What should I do if I have Covid-19 symptomps?',
     answer:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas id consectetur lacus. Nunc condimentum metus id nisl elementum placerat. Nunc metus turpis, iaculis sit amet volutpat et, accumsan egestas neque. Maecenas cursus, risus vitae facilisis ornare, dui dolor venenatis erat, a semper turpis massa ut velit. ',
+      'Seek immediate medical attention if you have serious symptoms like difficulty breathing or short of breath, lost of speech or mobility, confusion, and chest pain.  Always call before visiting your doctor or health facility. People with mild/common symptoms who are otherwise healthy should manage their symptoms at home.  On average it takes 5–6 days from when someone is infected with the virus for symptoms to show, however it can take up to 14 days. ',
   },
   {
     question: 'Lorem ipsum dolor sit amet?',
