@@ -45,7 +45,7 @@ export default function MyAccordion() {
   };
 
   return (
-    <div style={{backgroundImage:'../public/bg.svg'}}>
+    <div>
       {faq.map(({ question, answer }, idx) => (
         <Accordion
           expanded={expanded === `${idx}`}
@@ -59,10 +59,10 @@ export default function MyAccordion() {
             aria-controls={`${idx}-content`}
             id={`${idx}-header`}
             style={{ borderColor: 'none' }}>
-            <Typography className={classes.blueText}>{question}</Typography>
+            <Typography className="textGradient">{question}</Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography className={classes.blueText}>{answer}</Typography>
+            <Typography className="textGradient">{answer}</Typography>
           </AccordionDetails>
         </Accordion>
       ))}
