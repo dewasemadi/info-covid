@@ -5,6 +5,9 @@ const accordionStyle = {
       display: 'none',
     },
   },
+  blueText: {
+    color: '#0093E9',
+  },
 };
 
 export default accordionStyle;
