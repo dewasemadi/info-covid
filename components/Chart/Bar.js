@@ -1,17 +1,17 @@
-import { Bar } from "react-chartjs-2";
-import { useState, useEffect } from "react";
-import { useGetDataByProvincesQuery } from "../../redux/services/covid-indonesia.service";
-import { Box, Skeleton } from "@mui/material";
-import MyTooltip from "../Tooltip/Tooltip";
-import { dataSource, options } from "./Configuration";
-import { makeStyles } from "@mui/styles";
-import styles from "./Bar.style";
+import { Bar } from 'react-chartjs-2';
+import { useState, useEffect } from 'react';
+import { useGetDataByProvincesQuery } from '../../redux/services/covid-indonesia.service';
+import { Box, Skeleton } from '@mui/material';
+import MyTooltip from '../Tooltip/Tooltip';
+import { dataSource, options } from './Configuration';
+import { makeStyles } from '@mui/styles';
+import { capitalize } from '../../utils/formatter';
+import styles from './Bar.style';
 const useStyles = makeStyles(styles);
-const format = require("lodash");
 
 export default function BarChart() {
   const classes = useStyles();
-  const { data, error, isLoading } = useGetDataByProvincesQuery("");
+  const { data, error, isLoading } = useGetDataByProvincesQuery('');
   const [provinces, setProvinces] = useState([]);
   const [cases, setCases] = useState([]);
   const [treated, setTreated] = useState([]);
@@ -20,12 +20,7 @@ export default function BarChart() {
 
   useEffect(() => {
     if (data) {
-      setProvinces(
-        data.map((arg) => {
-          const lower = format.toLower(arg.provinsi);
-          return format.startCase(lower);
-        })
-      );
+      setProvinces(data.map((arg) => capitalize(arg.provinsi)));
       setCases(data.map((arg) => arg.kasus));
       setTreated(data.map((arg) => arg.dirawat));
       setRecovered(data.map((arg) => arg.sembuh));
