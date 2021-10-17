@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from 'next/link';
 import { Container } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import styles from '../styles/pages/vaccine.style';
@@ -12,7 +13,7 @@ const contents = [
   },
   {
     title: 'The Goals of Vaccination',
-    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque imperdiet lobortis nisi, ac vestibulum metus efficitur vel. Sed venenatis auctor odio, quis pretium erat. In erat lorem, lacinia a lectus ultricies, congue porta tellus. Sed ut imperdiet metus. Mauris sagittis sodales ipsum, sed ultrices odio fringilla quis. Nullam a vehicula mauris. Maecenas in libero turpis.',
+    text: 'Two key reasons to get vaccinated are to protect ourselves and to protect those around us. Because not everyone can be vaccinated – including very young babies, those who are seriously ill or have certain allergies – they depend on others being vaccinated to ensure they are also safe from vaccine-preventable diseases.',
   },
   {
     title: 'Kinds of Vaccine',
@@ -28,6 +29,12 @@ const contents = [
   },
 ];
 
+const resources = [
+  {
+    list: 'https://www.who.int/news-room/q-a-detail/vaccines-and-immunization-what-is-vaccination',
+  },
+]
+
 export default function Vaccine() {
   const classes = useStyles();
   return (
@@ -42,6 +49,12 @@ export default function Vaccine() {
             <div key={idx} style={{ margin: '20px 0' }}>
               <h3>{content.title}</h3>
               <p>{content.text}</p>
+            </div>
+          ))}
+          <h3>Sumber</h3>
+          {resources.map((resource, idx) => (
+            <div key={idx} style={{ margin: '0 0 20px 0' }}>
+              <Link href="{resource.list}">{resource.list}</Link>
             </div>
           ))}
         </div>
