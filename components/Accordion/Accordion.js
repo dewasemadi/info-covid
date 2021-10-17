@@ -12,7 +12,7 @@ const faq = [
   {
     question: 'What are Covid-19 symptomps?',
     answer:
-      'The most common symtomps of Covid-19 are fever, cough, tiredness, and lost of taste or smell. The less common symptoms are sore throat, headache, aches and pains, diarrhea, a rash on skin, and irritated eyes.  The serious symptoms are difficulty breathing or shortness of breath, loss of speech or mobility, confusion, and chest pain',
+      'The most common symtomps of Covid-19 are fever, cough, tiredness, and lost of taste or smell. The less common symptoms are sore throat, headache, aches and pains, diarrhea, a rash on skin, and irritated eyes.  The serious symptoms are difficulty breathing or shortness of breath, loss of speech or mobility, confusion, and chest pain. ',
   },
   {
     question: 'What should I do if I have Covid-19 symptomps?',
