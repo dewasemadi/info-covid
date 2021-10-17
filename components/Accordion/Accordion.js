@@ -10,9 +10,9 @@ const useStyles = makeStyles(styles);
 
 const faq = [
   {
-    question: 'Lorem ipsum dolor sit amet?',
+    question: 'What are Covid-19 symptomps?',
     answer:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas id consectetur lacus. Nunc condimentum metus id nisl elementum placerat. Nunc metus turpis, iaculis sit amet volutpat et, accumsan egestas neque. Maecenas cursus, risus vitae facilisis ornare, dui dolor venenatis erat, a semper turpis massa ut velit. ',
+      'The most common symtomps of Covid-19 are fever, cough, tiredness, and lost of taste or smell ',
   },
   {
     question: 'Lorem ipsum dolor sit amet?',

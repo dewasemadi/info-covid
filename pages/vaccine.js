@@ -17,7 +17,7 @@ const contents = [
   },
   {
     title: 'Kinds of Vaccine',
-    text: 'Sinovac, Moderna, AstraZeneca, Pfizer',
+    text: 'AstraZeneca/Oxford Vaccine, Johnson & Johnson, Moderna, Pfizer/BionTech, Sinopharm, and Sinovac',
   },
   {
     title: 'How Does A Vaccine Work?',
@@ -33,6 +33,9 @@ const resources = [
   {
     list: 'https://www.who.int/news-room/q-a-detail/vaccines-and-immunization-what-is-vaccination',
   },
+  {
+    list: 'https://www.who.int/emergencies/diseases/novel-coronavirus-2019/covid-19-vaccines/advice'
+  }
 ]
 
 export default function Vaccine() {
@@ -52,11 +55,13 @@ export default function Vaccine() {
             </div>
           ))}
           <h3>Sumber</h3>
-          {resources.map((resource, idx) => (
-            <div key={idx} style={{ margin: '0 0 20px 0' }}>
-              <Link href="{resource.list}">{resource.list}</Link>
-            </div>
-          ))}
+          <ul>
+            {resources.map((resource, idx) => (
+              <div key={idx} style={{ margin: '0' }}>
+                <li><a href="{resource.list}">{resource.list}</a></li>
+              </div>
+            ))}
+          </ul>
         </div>
       </Container>
     </div>
