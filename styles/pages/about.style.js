@@ -1,9 +1,11 @@
 const aboutStyle = {
   title: {
     marginTop: "10px",
-    fontWeight: 500,
-    fontSize: "18px",
+    fontWeight: 700,
+    fontSize: "40px",
     textAlign: "center",
+    marginBottom: '40px',
+    color: '#0093E9',
   },
   title2: {
     marginTop: "20px",
