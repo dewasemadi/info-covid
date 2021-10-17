@@ -30,9 +30,9 @@ const faq = [
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas id consectetur lacus. Nunc condimentum metus id nisl elementum placerat. Nunc metus turpis, iaculis sit amet volutpat et, accumsan egestas neque. Maecenas cursus, risus vitae facilisis ornare, dui dolor venenatis erat, a semper turpis massa ut velit. ',
   },
   {
-    question: 'Lorem ipsum dolor sit amet?',
+    question: 'I have questions that are not here, where should i ask?',
     answer:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas id consectetur lacus. Nunc condimentum metus id nisl elementum placerat. Nunc metus turpis, iaculis sit amet volutpat et, accumsan egestas neque. Maecenas cursus, risus vitae facilisis ornare, dui dolor venenatis erat, a semper turpis massa ut velit. ',
+      'You can call 119 for questions and information about Covid-19. ',
   },
 ];
 

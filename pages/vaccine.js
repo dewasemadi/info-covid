@@ -17,25 +17,36 @@ const contents = [
   },
   {
     title: 'Kinds of Vaccine',
-    text: 'AstraZeneca/Oxford Vaccine, Johnson & Johnson, Moderna, Pfizer/BionTech, Sinopharm, and Sinovac',
+    text: 'AstraZeneca/Oxford Vaccine, Johnson & Johnson, Moderna, Pfizer/BionTech, Sinopharm, and Sinovac. ',
   },
   {
     title: 'How Does A Vaccine Work?',
     text: 'Vaccines reduce risks of getting a disease by working with your body’s natural defenses to build protection. When you get a vaccine, your immune system responds.  It recognizes the invading germ, such as the virus or bacteria, produces antibodies, also remembers the disease and how to fight it.  The vaccine is therefore a safe and clever way to produce an immune response in the body, without causing illness.',
   },
-  {
-    title: 'Facts & Myths About Vaccine',
-    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque imperdiet lobortis nisi, ac vestibulum metus efficitur vel. Sed venenatis auctor odio, quis pretium erat. In erat lorem, lacinia a lectus ultricies, congue porta tellus. Sed ut imperdiet metus. Mauris sagittis sodales ipsum, sed ultrices odio fringilla quis. Nullam a vehicula mauris. Maecenas in libero turpis.',
-  },
 ];
 
-const resources = [
+const facts = [
   {
-    list: 'https://www.who.int/news-room/q-a-detail/vaccines-and-immunization-what-is-vaccination',
+    list: ' Covid-19 vaccines do not create or cause variants of the virus that causes Covid-19.',
   },
   {
-    list: 'https://www.who.int/emergencies/diseases/novel-coronavirus-2019/covid-19-vaccines/advice'
+    list: ' Covid-19 vaccines do not contain microchips. Vaccines are developed to fight against disease and are not administered to track your movement. Vaccines work by stimulating your immune system to produce antibodies, exactly like it would if you were exposed to the disease. After getting vaccinated, you develop immunity to that disease, without having to get the disease first. ',
+  },
+  {
+    list: ' COVID-19 vaccines do not change or interact with your DNA in any way. Both mRNA and viral vector COVID-19 vaccines deliver instructions (genetic material) to our cells to start building protection against the virus that causes COVID-19. However, the material never enters the nucleus of the cell, which is where our DNA is kept.',
   }
+]
+
+const myths = [
+  {
+    list: ' I do not need mask anymore if I have been vaccinated. ',
+  },
+  {
+    list: ' COVID-19 vaccine enters my cells and changes my DNA. ',
+  },
+  {
+    list: ' If I have already had COVID-19, I don’t need a vaccine. '
+  },
 ]
 
 export default function Vaccine() {
@@ -54,14 +65,26 @@ export default function Vaccine() {
               <p>{content.text}</p>
             </div>
           ))}
-          <h3>Sumber</h3>
-          <ul>
-            {resources.map((resource, idx) => (
-              <div key={idx} style={{ margin: '0' }}>
-                <li><a href="{resource.list}">{resource.list}</a></li>
-              </div>
-            ))}
-          </ul>
+          <div style={{ marginBottom:'20px' }}>
+            <h3>Myths</h3>
+            <ul>
+              {myths.map((myth, idx) => (
+                <div key={idx} style={{ margin: '0' }}>
+                  <li><p>{myth.list}</p></li>
+                </div>
+              ))}
+            </ul>
+          </div>
+          <div style={{ marginBottom:'20px' }}>
+            <h3>Facts</h3>
+            <ul>
+              {facts.map((fact, idx) => (
+                <div key={idx} style={{ margin: '0' }}>
+                  <li><p>{fact.list}</p></li>
+                </div>
+              ))}
+            </ul>
+          </div>
         </div>
       </Container>
     </div>
