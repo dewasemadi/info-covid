@@ -22,7 +22,7 @@ export default function About() {
         <title>About Us</title>
       </Head>
       <Container maxWidth='lg'>
-        <h2 className={classes.title}>Meet Our Super Team</h2>
+        <h2 className="title textGradient">Meet Our Super Team</h2>
         <Member />
         {/*
           <h2 className={classes.title2}>Disclaimer</h2>
