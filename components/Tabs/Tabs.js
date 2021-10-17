@@ -1,37 +1,31 @@
-import MyCard from "./Card";
-import { useState } from "react";
-import TabPanel from "./TabPanel";
-import styles from "./Tabs.style";
-import { useRouter } from "next/router";
-import { A11yProps } from "./A11yProps";
-import { makeStyles } from "@mui/styles";
-import { useTheme } from "@mui/material/styles";
-import useMediaQuery from "@mui/material/useMediaQuery";
-import { formatDateToUs, formattingNumber } from "../../utils/formatter";
-import { Box, Tab, Tabs, Grid, Card, CardContent, Skeleton, Typography, Button } from "@mui/material";
-import { useGetIndonesiaVaccineSummaryQuery } from "../../redux/services/vaccine.service";
-import MySkeleton from "./Skeleton";
+import MyCard from './Card';
+import { useState } from 'react';
+import TabPanel from './TabPanel';
+import styles from './Tabs.style';
+import { A11yProps } from './A11yProps';
+import { makeStyles } from '@mui/styles';
+import { useTheme } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { formatDateToUs, formattingNumber } from '../../utils/formatter';
+import { Box, Tab, Tabs, Grid, Card, CardContent, Skeleton, Typography, Button } from '@mui/material';
+import { useGetIndonesiaVaccineSummaryQuery } from '../../redux/services/vaccine.service';
+import MySkeleton from './Skeleton';
 const useStyles = makeStyles(styles);
 
 export default function MyTabs() {
   const classes = useStyles();
   const theme = useTheme();
-  const router = useRouter();
   const [value, setValue] = useState(0);
-  const matches = useMediaQuery(theme.breakpoints.down("sm"));
-  const { data, error, isLoading } = useGetIndonesiaVaccineSummaryQuery("");
+  const matches = useMediaQuery(theme.breakpoints.down('sm'));
+  const { data, error, isLoading } = useGetIndonesiaVaccineSummaryQuery('');
 
   const handleChange = (_, newValue) => {
     setValue(newValue);
   };
 
-  const handleReload = () => {
-    router.reload();
-  };
-
-  let idx = "";
-  let vaccine1 = "";
-  let vaccine2 = "";
+  let idx = '';
+  let vaccine1 = '';
+  let vaccine2 = '';
   let updatedData = [];
 
   if (data) {
@@ -40,32 +34,32 @@ export default function MyTabs() {
 
     vaccine1 = [
       {
-        title: "All Vaccination Phase 1",
+        title: 'All Vaccination Phase 1',
         tahapan: updatedData.vaksinasi1,
         target: updatedData.total_sasaran_vaksinasi,
       },
       {
-        title: "Elderly",
+        title: 'Elderly',
         tahapan: updatedData.tahapan_vaksinasi.lansia.sudah_vaksin1,
         target: updatedData.sasaran_vaksinasi_lansia,
       },
       {
-        title: "Public Officer",
+        title: 'Public Officer',
         tahapan: updatedData.tahapan_vaksinasi.petugas_publik.sudah_vaksin1,
         target: updatedData.sasaran_vaksinasi_petugas_publik,
       },
       {
-        title: "General Public",
+        title: 'General Public',
         tahapan: updatedData.tahapan_vaksinasi.masyarakat_umum.sudah_vaksin1,
         target: updatedData.sasaran_vaksinasi_masyarakat_umum,
       },
       {
-        title: "Health Workers",
+        title: 'Health Workers',
         tahapan: updatedData.tahapan_vaksinasi.sdm_kesehatan.sudah_vaksin1,
         target: updatedData.sasaran_vaksinasi_sdmk,
       },
       {
-        title: "Age Group 12-17",
+        title: 'Age Group 12-17',
         tahapan: updatedData.tahapan_vaksinasi.kelompok_usia_12_17.sudah_vaksin1,
         target: updatedData.sasaran_vaksinasi_kelompok_1217,
       },
@@ -73,32 +67,32 @@ export default function MyTabs() {
 
     vaccine2 = [
       {
-        title: "All Vaccination Phase 2",
+        title: 'All Vaccination Phase 2',
         tahapan: updatedData.vaksinasi2,
         target: updatedData.total_sasaran_vaksinasi,
       },
       {
-        title: "Elderly",
+        title: 'Elderly',
         tahapan: updatedData.tahapan_vaksinasi.lansia.sudah_vaksin2,
         target: updatedData.sasaran_vaksinasi_lansia,
       },
       {
-        title: "Public Officer",
+        title: 'Public Officer',
         tahapan: updatedData.tahapan_vaksinasi.petugas_publik.sudah_vaksin2,
         target: updatedData.sasaran_vaksinasi_petugas_publik,
       },
       {
-        title: "General Public",
+        title: 'General Public',
         tahapan: updatedData.tahapan_vaksinasi.masyarakat_umum.sudah_vaksin2,
         target: updatedData.sasaran_vaksinasi_masyarakat_umum,
       },
       {
-        title: "Health Workers",
+        title: 'Health Workers',
         tahapan: updatedData.tahapan_vaksinasi.sdm_kesehatan.sudah_vaksin2,
         target: updatedData.sasaran_vaksinasi_sdmk,
       },
       {
-        title: "Age Group 12-17",
+        title: 'Age Group 12-17',
         tahapan: updatedData.tahapan_vaksinasi.kelompok_usia_12_17.sudah_vaksin2,
         target: updatedData.sasaran_vaksinasi_kelompok_1217,
       },
@@ -106,15 +100,15 @@ export default function MyTabs() {
   }
 
   return (
-    <div style={{ marginTop: "30px" }}>
+    <div style={{ marginTop: '30px' }}>
       <Grid container spacing={{ sm: 1, md: 2 }}>
-        <Grid item xs={12} sm={12} md={7} style={{ marginBottom: "20px" }}>
+        <Grid item xs={12} sm={12} md={7} style={{ marginBottom: '20px' }}>
           <p>#AYOVAKSINASI</p>
           <h2 className={classes.title}>Progress of Indonesia's Covid-19 Vaccination</h2>
           {error ? (
             <p>Last Updated on -</p>
           ) : isLoading ? (
-            <Skeleton variant='text' animation='wave' width={matches ? "" : 300} />
+            <Skeleton variant='text' animation='wave' width={matches ? '' : 300} />
           ) : data ? (
             <p>Last updated on {formatDateToUs(data.last_updated)} </p>
           ) : null}
@@ -125,7 +119,7 @@ export default function MyTabs() {
               {error ? (
                 <div>
                   <p className={classes.title2}>Total Vaccination Target</p>
-                  <h3 style={{ fontSize: "20px" }}>-</h3>
+                  <h3 style={{ fontSize: '20px' }}>-</h3>
                 </div>
               ) : isLoading ? (
                 <div>
@@ -137,7 +131,7 @@ export default function MyTabs() {
               ) : data ? (
                 <div>
                   <p className={classes.title2}>Total Vaccination Target</p>
-                  <h3 style={{ fontSize: "20px" }}>{formattingNumber(updatedData.total_sasaran_vaksinasi)}</h3>
+                  <h3 style={{ fontSize: '20px' }}>{formattingNumber(updatedData.total_sasaran_vaksinasi)}</h3>
                 </div>
               ) : null}
             </CardContent>
@@ -145,9 +139,9 @@ export default function MyTabs() {
         </Grid>
       </Grid>
 
-      <Box sx={matches ? { mt: 3 } : { flexGrow: 1, bgcolor: "background.paper", display: "flex", width: "100%", mt: 3 }}>
+      <Box sx={matches ? { mt: 3 } : { flexGrow: 1, bgcolor: 'background.paper', display: 'flex', width: '100%', mt: 3 }}>
         <Tabs
-          orientation={matches ? "horizontal" : "vertical"}
+          orientation={matches ? 'horizontal' : 'vertical'}
           variant='scrollable'
           value={value}
           onChange={handleChange}

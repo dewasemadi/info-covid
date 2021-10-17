@@ -1,8 +1,7 @@
-import Head from "next/head";
-import BarChart from "../components/Chart/Bar";
-import Summary from "../components/Summary/Summary";
-import { Container } from "@mui/material";
-import { useState } from "react";
+import Head from 'next/head';
+import BarChart from '../components/Chart/Bar';
+import Summary from '../components/Summary/Summary';
+import { Container } from '@mui/material';
 
 export default function Statistics() {
   return (

@@ -1,39 +1,40 @@
-import Link from "next/link";
-import { Box, Grid, Container, Stack, Tooltip } from "@mui/material";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import { makeStyles } from "@mui/styles";
-import styles from "./Footer.style";
+import Link from 'next/link';
+import { Box, Grid, Container, Stack, Tooltip } from '@mui/material';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import FavoriteRoundedIcon from '@mui/icons-material/FavoriteRounded';
+import { makeStyles } from '@mui/styles';
+import styles from './Footer.style';
 const useStyles = makeStyles(styles);
 
 const navLinks1 = [
-  { title: `Statistics`, path: "/statistics" },
-  { title: `Vaccine`, path: "/vaccine" },
+  { title: `Statistics`, path: '/statistics' },
+  { title: `Vaccine`, path: '/vaccine' },
 ];
 
 const navLinks2 = [
-  { title: `Hospital`, path: "/hospital" },
-  { title: `About Us`, path: "/about" },
+  { title: `Hospital`, path: '/hospital' },
+  { title: `FAQ`, path: '/faq' },
 ];
 
 export default function Footer() {
   const classes = useStyles();
 
   const socialMedia = [
-    { title: "Twitter", path: "/", icon: <TwitterIcon className={classes.grey} /> },
-    { title: "Instagram", path: "/", icon: <InstagramIcon className={classes.grey} /> },
-    { title: "Linkedin", path: "/", icon: <LinkedInIcon className={classes.grey} /> },
+    { title: 'Twitter', path: '/', icon: <TwitterIcon className={classes.grey} /> },
+    { title: 'Instagram', path: '/', icon: <InstagramIcon className={classes.grey} /> },
+    { title: 'Linkedin', path: '/', icon: <LinkedInIcon className={classes.grey} /> },
   ];
 
   return (
-    <Box className={classes.boxMargin} sx={{ borderTop: 1, borderColor: "rgba(0, 0, 0, 0.12)" }}>
+    <Box className={classes.boxMargin} sx={{ borderTop: 1, borderColor: 'rgba(0, 0, 0, 0.12)' }}>
       <Container maxWidth='lg'>
         {/* left */}
         <Grid container spacing={{ xs: 1, md: 4 }}>
-          <Grid item xs={12} sm={12} md={4}>
+          <Grid item xs={12} sm={12} md={5}>
             <h2 className={classes.title}>infoCovid</h2>
             <p className={classes.desc}>
               This website is for health information and advice about coronavirus (COVID-19), how to prevent yourself from the disease.
@@ -57,7 +58,7 @@ export default function Footer() {
           </Grid>
 
           {/* center */}
-          <Grid item xs={12} sm={12} md={4}>
+          <Grid item xs={12} sm={12} md={3}>
             <Stack
               sx={{
                 display: { xs: `none`, md: `flex` },
@@ -97,6 +98,14 @@ export default function Footer() {
                 </a>
               </Link>
             </Box>
+            <div className={classes.withLove}>
+              <p>Build with</p>
+              <FavoriteRoundedIcon sx={{ margin: '0 2px', fontSize: 18 }} color='error' />
+              <p>by</p>
+              <Link href='/about' passHref>
+                <p className={classes.doaIbu}>Doa Ibu</p>
+              </Link>
+            </div>
             <p className={classes.marginFooter}>&copy; 2021 Copyright All Rights Reserved</p>
           </Grid>
         </Grid>

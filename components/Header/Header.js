@@ -1,21 +1,20 @@
-import Link from "next/link";
-import { cloneElement, useState, Fragment } from "react";
-import { Container, AppBar, Toolbar, CssBaseline, useScrollTrigger, Box, Stack, Button, SwipeableDrawer, IconButton } from "@mui/material";
-import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
-import CallRoundedIcon from "@mui/icons-material/CallRounded";
-import HelpRoundedIcon from "@mui/icons-material/HelpRounded";
-import ArrowBackRoundedIcon from "@mui/icons-material/ArrowBackRounded";
-import { useRouter } from "next/router";
-import { makeStyles } from "@mui/styles";
-import styles from "./Header.style";
+import Link from 'next/link';
+import { cloneElement, useState, Fragment } from 'react';
+import { Container, AppBar, Toolbar, CssBaseline, useScrollTrigger, Box, Stack, Button, SwipeableDrawer, IconButton } from '@mui/material';
+import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
+import CallRoundedIcon from '@mui/icons-material/CallRounded';
+import HelpRoundedIcon from '@mui/icons-material/HelpRounded';
+import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
+import { useRouter } from 'next/router';
+import { makeStyles } from '@mui/styles';
+import styles from './Header.style';
 const useStyles = makeStyles(styles);
 
 const navLinks = [
-  { title: `Home`, path: "/" },
-  { title: `Statistics`, path: "/statistics" },
-  { title: `Vaccine`, path: "/vaccine" },
-  { title: `Hospital`, path: "/hospital" },
-  { title: `About Us`, path: "/about" },
+  { title: `Statistics`, path: '/statistics' },
+  { title: `Vaccine`, path: '/vaccine' },
+  { title: `Hospital`, path: '/hospital' },
+  { title: `FAQ`, path: '/faq' },
 ];
 
 function ElevationScroll(props) {
@@ -37,7 +36,7 @@ export default function Navbar(props) {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDrawer = (open) => (event) => {
-    if (event && event.type === "keydown" && (event.key === "Tab" || event.key === "Shift")) return;
+    if (event && event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) return;
     setIsOpen(open);
   };
 
@@ -46,7 +45,7 @@ export default function Navbar(props) {
       <Stack spacing={1} className={classes.stack}>
         <Link href='tel:119' passHref>
           <Button size='large' startIcon={<CallRoundedIcon />} className={classes.hotline}>
-            Covid-19 Hotline 119
+            Hotline
           </Button>
         </Link>
 
@@ -54,8 +53,8 @@ export default function Navbar(props) {
           <Button
             size='large'
             startIcon={<HelpRoundedIcon />}
-            className={router.pathname === "/about" ? classes.aboutActive : classes.aboutDeactive}>
-            About Us
+            className={router.pathname === '/faq' ? classes.aboutActive : classes.aboutDeactive}>
+            FAQ
           </Button>
         </Link>
       </Stack>
@@ -66,10 +65,10 @@ export default function Navbar(props) {
     <Fragment>
       <CssBaseline />
       <ElevationScroll {...props}>
-        <AppBar style={{ backgroundColor: "white" }}>
+        <AppBar style={{ backgroundColor: 'white' }}>
           <Container maxWidth='lg'>
             <Toolbar className={classes.toolBar}>
-              {router.pathname === "/hospital/list" || router.pathname === "/hospital/detail" ? (
+              {router.pathname === '/hospital/list' || router.pathname === '/hospital/detail' ? (
                 <IconButton
                   onClick={() => router.back()}
                   aria-label='back'
@@ -106,7 +105,7 @@ export default function Navbar(props) {
                 ))}
                 <Link href='tel:119' passHref>
                   <Button size='medium' startIcon={<CallRoundedIcon />} className={classes.hotlineDesktop}>
-                    Covid-19 Hotline 119
+                    Hotline
                   </Button>
                 </Link>
               </Stack>

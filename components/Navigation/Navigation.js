@@ -1,13 +1,13 @@
-import { useState } from "react";
-import { useRouter } from "next/router";
-import { Paper, BottomNavigationAction, BottomNavigation, CssBaseline } from "@mui/material";
-import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
-import BarChartRoundedIcon from "@mui/icons-material/BarChartRounded";
-import BubbleChartRoundedIcon from "@mui/icons-material/BubbleChartRounded";
-import AddModeratorRoundedIcon from "@mui/icons-material/AddModeratorRounded";
-import { styled } from "@mui/material/styles";
-import { makeStyles } from "@mui/styles";
-import styles from "./Navigation.style";
+import { useState } from 'react';
+import { useRouter } from 'next/router';
+import { Paper, BottomNavigationAction, BottomNavigation, CssBaseline } from '@mui/material';
+import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
+import BarChartRoundedIcon from '@mui/icons-material/BarChartRounded';
+import BubbleChartRoundedIcon from '@mui/icons-material/BubbleChartRounded';
+import AddModeratorRoundedIcon from '@mui/icons-material/AddModeratorRounded';
+import { styled } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
+import styles from './Navigation.style';
 const useStyles = makeStyles(styles);
 
 const CustomizedBottomNavigationAction = styled(BottomNavigationAction)`
@@ -25,14 +25,14 @@ export default function Navigation() {
   const [value, setValue] = useState(0);
 
   const navLinks = [
-    { title: `Home`, path: "/", icon: <HomeRoundedIcon /> },
-    { title: `Statistics`, path: "/statistics", icon: <BarChartRoundedIcon /> },
-    { title: `Vaccine`, path: "/vaccine", icon: <BubbleChartRoundedIcon /> },
-    { title: `Hospital`, path: "/hospital", icon: <AddModeratorRoundedIcon /> },
+    { title: `Home`, path: '/', icon: <HomeRoundedIcon /> },
+    { title: `Statistics`, path: '/statistics', icon: <BarChartRoundedIcon /> },
+    { title: `Vaccine`, path: '/vaccine', icon: <BubbleChartRoundedIcon /> },
+    { title: `Hospital`, path: '/hospital', icon: <AddModeratorRoundedIcon /> },
   ];
 
   return (
-    <Paper sx={{ position: "fixed", bottom: 0, left: 0, right: 0, display: { md: `none` } }} elevation={4}>
+    <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0, display: { md: `none` } }} elevation={4}>
       <BottomNavigation
         showLabels
         value={value}
@@ -52,8 +52,8 @@ export default function Navigation() {
             onClick={() => router.push(`${path}`)}
             key={idx}
             sx={{
-              "& .Mui-selected": {
-                fontSize: "12px !important",
+              '& .Mui-selected': {
+                fontSize: '12px !important',
               },
             }}
           />
