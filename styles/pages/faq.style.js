@@ -1,7 +1,7 @@
 const faqStyle = {
   title: {
     marginTop: '10px',
-    fontWeight: 500,
+    fontWeight: 700,
     fontSize: '40px',
     textAlign: 'center',
     marginBottom: '20px',

@@ -45,7 +45,7 @@ export default function MyAccordion() {
   };
 
   return (
-    <div styles={{backgroundImage:'../public/bg.svg'}}>
+    <div style={{backgroundImage:'../public/bg.svg'}}>
       {faq.map(({ question, answer }, idx) => (
         <Accordion
           expanded={expanded === `${idx}`}

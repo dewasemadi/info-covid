@@ -37,7 +37,7 @@ const developers = [
 export default function Member() {
   const classes = useStyles();
   return (
-    <div>
+    <div style={{backgroundImage:'../public/bg.svg'}}>
       <Grid container spacing={2} style={{ marginTop: "20px" }}>
         {developers.map((developer, idx) => (
           <Grid item xs={12} sm={12} md={4} key={idx}>
