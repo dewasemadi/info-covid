@@ -5,7 +5,7 @@ import person from '../../public/person.svg';
 export default function Banner() {
   return (
     <div>
-      <Grid container spacing={{ xs: 2, md: 2 }}>
+      <Grid container spacing={{ xs: 2, md: 2 }} className="textGradient">
         <Grid item xs={12} sm={12} md={5} style={{ margin: 'auto' }}>
           <h2>Corona Virus Info</h2>
           <p>

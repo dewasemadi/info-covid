@@ -4,7 +4,7 @@ import scientist from '../../public/scientist.svg';
 
 export default function Covid() {
   return (
-    <Grid container spacing={{ xs: 2, md: 2 }}>
+    <Grid container spacing={{ xs: 2, md: 2 }} className="textGradient">
       <Grid item xs={12} sm={12} md={3} style={{ margin: 'auto' }}>
         <div style={{ display: 'block !important' }}>
           <Image src={scientist} alt='illustration' width={200} height={200} layout='responsive' />
