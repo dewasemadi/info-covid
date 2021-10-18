@@ -32,7 +32,7 @@ class MyDocument extends Document {
             crossOrigin=''
           />
         </Head>
-        <body>
+        <body style={{ backgroundImage: 'url(/pattern.svg)' }}>
           <Main />
           <NextScript />
         </body>

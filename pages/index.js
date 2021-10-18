@@ -4,6 +4,7 @@ import { makeStyles } from '@mui/styles';
 import styles from '../styles/pages/home.style';
 import Banner from '../sections/landing-page/Banner';
 import Covid from '../sections/landing-page/Covid';
+import GlobalSummary from '../sections/landing-page/Summary';
 const useStyles = makeStyles(styles);
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
       </Head>
       <Container maxWidth='lg'>
         <Banner />
+        <GlobalSummary />
         <Covid />
       </Container>
     </div>

@@ -10,7 +10,7 @@ import Footer from '../components/Footer/Footer';
 import { Box } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import styles from '../styles/pages/_app.style';
-import "../styles/pages/about.css"
+import '../styles/pages/about.css';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 const useStyles = makeStyles(styles);
 
@@ -20,7 +20,7 @@ Router.events.on('routeChangeComplete', NProgress.done);
 
 const theme = createTheme({
   typography: {
-    fontFamily: ['Montserrat !important', 'Roboto', '"Helvetica Neue"', 'Arial', 'sans-serif'].join(','),
+    fontFamily: ['IBM Plex Sans !important', 'sans-serif'],
   },
 });
 
