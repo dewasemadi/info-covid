@@ -27,14 +27,23 @@ a {
 }
 
 .shadowHover {
+  box-shadow: 0;
+  transition: box-shadow 0.5s;
+}
+
+.cardHover {
   position: relative;
   top: 0px;
   transition: top ease 0.5s;
 }
 
-.shadowHover:hover {
-  box-shadow: 0 3px 6px 0 #9e9e9e;
-  top: -10px;
+@media screen and (min-width: 1080px) {
+  .shadowHover:hover {
+    box-shadow: 0 4px 8px 0 #3b3b3b;
+  }
+  .cardHover:hover {
+    top: -5px;
+  }
 }
 
 .title {
