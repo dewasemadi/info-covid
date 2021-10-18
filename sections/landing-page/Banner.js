@@ -19,7 +19,7 @@ export default function Banner() {
         </Grid>
         <Grid item xs={10} sm={6} md={4} style={{ display: 'block', margin: 'auto' }} order={{ xs: 1, sm: 2 }}>
           <div style={{ display: 'block !important' }}>
-            <Image src={person} alt='illustration' width={200} height={200} layout='responsive' />
+            <Image src={person} alt="illustration" width={200} height={200} layout="responsive" />
           </div>
         </Grid>
       </Grid>

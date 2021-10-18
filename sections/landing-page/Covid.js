@@ -8,7 +8,7 @@ export default function Covid() {
       <Grid container spacing={{ xs: 2, md: 2 }}>
         <Grid item xs={9} sm={5} md={3} style={{ margin: 'auto' }}>
           <div style={{ display: 'block !important' }}>
-            <Image src={scientist} alt='illustration' width={200} height={200} layout='responsive' />
+            <Image src={scientist} alt="illustration" width={200} height={200} layout="responsive" />
           </div>
         </Grid>
         <Grid item xs={12} sm={12} md={7} style={{ display: 'block', margin: 'auto' }}>
