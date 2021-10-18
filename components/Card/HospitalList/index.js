@@ -21,7 +21,7 @@ export default function HospitalList({ list, type }) {
         <Grid container spacing={{ xs: 2, md: 2 }} columns={{ xs: 4, sm: 8, lg: 12 }} className={classes.mt5}>
           {list.map((hospital, idx) => (
             <Grid item xs={12} sm={4} md={4} key={idx}>
-              <Card variant='outlined' className="shadowHover">
+              <Card variant='outlined' className="shadowHover cardHover">
                 <CardContent style={{ paddingBottom: "16px" }}>
                   <Grid container spacing={{ xs: 1, md: 3 }}>
                     <Grid item xs={12} sm={12} md={4} lg={7}>
