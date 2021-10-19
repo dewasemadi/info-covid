@@ -44,25 +44,23 @@ export default function MyAccordion() {
   };
 
   return (
-    <div>
+    <div style={{ marginTop: '20px' }}>
       {faq.map(({ question, answer }, idx) => (
         <Accordion
           expanded={expanded === `${idx}`}
           onChange={handleChange(`${idx}`)}
           key={idx}
           elevation={0}
-          className={classes.accordionContainer}
-        >
+          className={classes.accordionContainer}>
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
             aria-controls={`${idx}-content`}
             id={`${idx}-header`}
-            style={{ borderColor: 'none' }}
-          >
-            <Typography className="textGradient">{question}</Typography>
+            style={{ borderColor: 'none' }}>
+            <Typography className='textGradient'>{question}</Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography className="textGradient">{answer}</Typography>
+            <Typography className='textGradient'>{answer}</Typography>
           </AccordionDetails>
         </Accordion>
       ))}
