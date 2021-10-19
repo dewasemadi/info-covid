@@ -2,20 +2,22 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+- Node.js<br>
+  Download the Node.js installer [here](https://nodejs.org/en/download/)<br>
+  Run the installer
+- Text Editor<br>
+  You can choose any text editor that suits you the most, but I recomend using Visual Studio Code<br>
+  Download the VSCode installer [here](https://code.visualstudio.com/download)<br>
+  Run the installer
+- NPM<br>
+  Download npm in Command Line Interface by typing the command :<br>
 
-```bash
-npm run dev
-# or
-yarn dev
 ```
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+npm install npm@latest -g
+```
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+---
 
 ## Installation
 
@@ -40,7 +42,7 @@ npm install
 4. Run the project
 
 ```bash
-npm run-dev
+npm run dev
 ```
 
 5. Open with localhost
@@ -48,3 +50,28 @@ npm run-dev
 ```bash
 http://localhost:3000
 ```
+
+---
+
+## Tools
+
+- Visual Code Studio<br>
+  Download [here](https://code.visualstudio.com/download)
+- Postman<br>
+  Download [here](https://www.postman.com/downloads/)
+- Google Chrome
+
+
+---
+
+## Techstack
+- [Next.js](https://nextjs.org/)
+- [next-pwa](https://www.npmjs.com/package/next-pwa)
+- [Redux Toolkit](https://redux-toolkit.js.org/)
+- [Redux Thunk](https://www.npmjs.com/package/redux-thunk)
+- [Material UI](https://mui.com/)
+- [chart.js](https://www.chartjs.org/)
+- [Leaflet](https://leafletjs.com/)
+
+
+---
