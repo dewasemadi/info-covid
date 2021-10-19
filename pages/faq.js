@@ -13,7 +13,7 @@ export default function Faq() {
         <title>FAQ</title>
       </Head>
       <Container maxWidth='lg'>
-        <h2 className="title textGradient" style={{fontSize: "30px"}}>Frequently Asked Questions</h2>
+        <h2 style={{textAlign: "center"}}>Frequently Asked Questions</h2>
         <MyFaq />
       </Container>
     </div>
