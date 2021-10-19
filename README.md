@@ -2,7 +2,7 @@
 
 infoCovid is a website that provides information about covid-19 that displays statistical data on covid cases, vaccination data, finding beds in hospitals, and educating you on how to prevent from the disease. The data on this website comes from various public api sources and there may be misinformation with central government data.
 
-![info-korona netlify app_](https://user-images.githubusercontent.com/66185022/137914767-9d604451-fe0a-42a6-9766-3e2005a4f001.png)
+![info-korona netlify app_ (2)](https://user-images.githubusercontent.com/66185022/137922009-acdea146-c6e8-4cc8-83f8-f1eb47868df8.png)
 
 ## Getting Started
 
