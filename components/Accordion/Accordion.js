@@ -10,12 +10,12 @@ const useStyles = makeStyles(styles);
 
 const faq = [
   {
-    question: 'What are COVID-19 symptomps?',
+    question: 'What are COVID-19 symptoms?',
     answer:
-      'The most common symtomps of COVID-19 are fever, cough, tiredness, and lost of taste or smell. The less common symptoms are sore throat, headache, aches and pains, diarrhea, a rash on skin, and irritated eyes.  The serious symptoms are difficulty breathing or shortness of breath, loss of speech or mobility, confusion, and chest pain. ',
+      'The most common symptoms of COVID-19 are fever, cough, tiredness, and lost of taste or smell. The less common symptoms are sore throat, headache, aches and pains, diarrhea, a rash on skin, and irritated eyes.  The serious symptoms are difficulty breathing or shortness of breath, loss of speech or mobility, confusion, and chest pain. ',
   },
   {
-    question: 'What should I do if I have COVID-19 symptomps?',
+    question: 'What should I do if I have COVID-19 symptoms?',
     answer:
       'Seek immediate medical attention if you have serious symptoms like difficulty breathing or short of breath, lost of speech or mobility, confusion, and chest pain.  Always call before visiting your doctor or health facility. People with mild/common symptoms who are otherwise healthy should manage their symptoms at home.  On average it takes 5–6 days from when someone is infected with the virus for symptoms to show, however it can take up to 14 days. ',
   },
