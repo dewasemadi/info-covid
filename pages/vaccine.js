@@ -87,7 +87,7 @@ export default function Vaccine() {
               <h3>Myths About Vaccine</h3>
               <ul>
                 {myths.map((myth, idx) => (
-                  <div key={idx} style={{ margin: '0' }}>
+                  <div key={idx} style={{ margin: '0', paddingLeft: '17px' }}>
                     <li><p>{myth.list}</p></li>
                   </div>
                 ))}
@@ -103,7 +103,7 @@ export default function Vaccine() {
               <h3>Facts About Vaccine</h3>
               <ul>
                 {facts.map((fact, idx) => (
-                  <div key={idx} style={{ margin: '0' }}>
+                  <div key={idx} style={{ margin: '0', paddingLeft: '17px' }}>
                     <li><p>{fact.list}</p></li>
                   </div>
                 ))}
