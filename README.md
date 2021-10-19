@@ -25,23 +25,26 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 git clone https://github.com/dewasemadi/info-covid.git
 ```
 
-2. Install NPM packages
+2. Change the directory
+
+```bash
+cd info-covid
+```
+
+3. Install NPM packages
 
 ```bash
 npm install
 ```
 
-## Learn More
+4. Run the project
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run-dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+5. Open with localhost
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```bash
+http://localhost:3000
+```
