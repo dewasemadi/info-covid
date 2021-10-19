@@ -1,8 +1,8 @@
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 export const covidApi = createApi({
-  reducerPath: "covidApi",
-  baseQuery: fetchBaseQuery({ baseUrl: "https://covid19.mathdro.id/api" }),
+  reducerPath: 'covidApi',
+  baseQuery: fetchBaseQuery({ baseUrl: 'https://covid19.mathdro.id/api' }),
   endpoints: (builder) => ({
     getGlobalSummary: builder.query({
       query: () => ``,

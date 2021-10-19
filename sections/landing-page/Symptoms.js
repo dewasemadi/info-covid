@@ -7,7 +7,7 @@ const content = [
   { title: 'High Fever', desc: 'Most Common Symptoms', image: '/highFever.png' },
   { title: 'Cough', desc: 'Most Common Symptomps', image: '/cough.svg' },
   { title: 'Sore Throat', desc: 'Less Common Symptoms', image: '/soreThroat.svg' },
-  { title: 'Trouble Breath', desc: 'Serious Symtomps', image: '/troubleThroat.svg' },
+  { title: 'Trouble Breath', desc: 'Serious Symptomps', image: '/troubleThroat.svg' },
 ];
 
 export default function Symptoms() {

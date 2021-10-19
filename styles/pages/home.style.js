@@ -50,12 +50,29 @@ const homeStyle = {
       textAlign: 'end',
     },
   },
+  update2: {
+    marginTop: '20px',
+    width: '-webkit-fill-available',
+    paddingLeft: '16px',
+    textAlign: 'center',
+    '@media screen and (min-width: 900px)': {
+      width: '300px !important',
+      marginLeft: 'auto',
+      textAlign: 'end',
+    },
+  },
   shadow: {
     boxShadow: 'rgba(17, 17, 26, 0.1) 0px 0px 16px',
   },
   img: {
     display: 'block !important',
     margin: 'auto !important',
+  },
+  errorMessage: { textAlign: 'center', marginTop: '10px' },
+  btnCustom: {
+    margin: '10px auto auto auto',
+    display: 'block',
+    textTransform: 'capitalize',
   },
 };
 
