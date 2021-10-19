@@ -10,10 +10,10 @@ export default function Faq() {
   return (
     <div>
       <Head>
-        <title>Frequently Asked Questions</title>
+        <title>FAQ</title>
       </Head>
       <Container maxWidth='lg'>
-        <h2 className="title textGradient" style={{fontSize: "40px"}}>FAQ</h2>
+        <h2 className="title textGradient" style={{fontSize: "30px"}}>Frequently Asked Questions</h2>
         <MyFaq />
       </Container>
     </div>
