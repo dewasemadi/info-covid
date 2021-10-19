@@ -10,7 +10,7 @@ export default function Faq() {
   return (
     <div>
       <Head>
-        <title>FAQ</title>
+        <title>Frequently Asked Questions</title>
       </Head>
       <Container maxWidth='lg'>
         <h2 className="title textGradient">FAQ</h2>
