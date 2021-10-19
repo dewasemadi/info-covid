@@ -62,7 +62,7 @@ export default function Summary() {
               <Grid item xs={12} sm={12} md={4} key={idx}>
                 <Card className={classes.shadow}>
                   <CardContent style={{ paddingBottom: '16px' }}>
-                    <h3 style={{ textAlign: 'center', color: `${color}` }}>{cases}</h3>
+                    <h3 style={{ textAlign: 'center', color: `${color}` }}>{cases.toLocaleString()}</h3>
                     <p style={{ textAlign: 'center' }}>{title}</p>
                   </CardContent>
                 </Card>

@@ -1,8 +1,13 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# infoCovid
+
+infoCovid is for health information and advice about coronavirus (COVID-19), how to prevent yourself from the disease. infoCovid is not the official website of the Indonesian government. The data on this website comes from various public api sources and there may be misinformation with central government data.
+
+![info-korona netlify app_](https://user-images.githubusercontent.com/66185022/137914767-9d604451-fe0a-42a6-9766-3e2005a4f001.png)
 
 ## Getting Started
 
 ### Prerequisites
+
 - Node.js<br>
   Download the Node.js installer [here](https://nodejs.org/en/download/)<br>
   Run the installer
@@ -61,10 +66,10 @@ http://localhost:3000
   Download [here](https://www.postman.com/downloads/)
 - Google Chrome
 
-
 ---
 
 ## Techstack
+
 - [Next.js](https://nextjs.org/)
 - [next-pwa](https://www.npmjs.com/package/next-pwa)
 - [Redux Toolkit](https://redux-toolkit.js.org/)
@@ -73,5 +78,18 @@ http://localhost:3000
 - [chart.js](https://www.chartjs.org/)
 - [Leaflet](https://leafletjs.com/)
 
+---
+
+## Public API Sources
+
+- [Mathdroid Covid-19 API](https://github.com/mathdroid/covid-19-api)
+- [Covid-19 Indonesia V2 API](https://github.com/Reynadi531/api-covid19-indonesia-v2)
+- [Vaksin Covid Indonesia API](https://github.com/Reynadi531/vaksincovid19-api)
+- [RS Bed Covid API](https://github.com/satyawikananda/rs-bed-covid-indo-api)
 
 ---
+
+## Images Sources
+
+- [Freepik](https://freepik.com/)
+- [Storyset](https://storyset.com/)
