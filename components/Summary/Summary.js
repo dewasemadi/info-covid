@@ -32,7 +32,7 @@ export default function Summary() {
     <Grid container spacing={{ xs: 2, md: 2 }} columns={{ xs: 4, sm: 8, lg: 12 }} className={classes.mt20}>
       {params.map((data, idx) => (
         <Grid item xs={12} sm={4} md={2} key={idx}>
-          <Card sx={{ minWidth: 210 }} variant="outlined">
+          <Card sx={{ minWidth: 210 }} className={classes.cardContainer}>
             <CardContent className={classes.pt16}>
               {data ? (
                 <>
