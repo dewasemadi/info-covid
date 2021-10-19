@@ -58,6 +58,12 @@ a {
   list-style-type: none;
 }
 
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
 
 /* .textGradient {
   background-image: linear-gradient(to right, #f32170, #ff6b08, #cf23cf, #eedd44);
