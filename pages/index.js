@@ -14,9 +14,9 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Info Covid</title>
+        <title>infoCovid</title>
       </Head>
-      <Container maxWidth="lg">
+      <Container maxWidth='lg'>
         <Banner />
         <GlobalSummary />
         <Covid />

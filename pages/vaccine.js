@@ -5,7 +5,7 @@ import { makeStyles } from '@mui/styles';
 import styles from '../styles/pages/vaccine.style';
 import MyTabs from '../components/Tabs/Tabs';
 import Image from 'next/image';
-import vaccineDocs from '../public/VaccineDocs.png';
+import vaccineDocs from '../public/vaccineIllustration.png';
 import Grid from '@mui/material/Grid';
 const useStyles = makeStyles(styles);
 
@@ -29,7 +29,7 @@ const contents2 = [
     title: 'Kinds of Vaccine',
     text: 'AstraZeneca/Oxford Vaccine, Johnson & Johnson, Moderna, Pfizer/BionTech, Sinopharm, and Sinovac. ',
   },
-]
+];
 
 const facts = [
   {
@@ -40,8 +40,8 @@ const facts = [
   },
   {
     list: ' Covid-19 vaccines do not contain microchips ',
-  }
-]
+  },
+];
 
 const myths = [
   {
@@ -51,63 +51,65 @@ const myths = [
     list: ' COVID-19 vaccine enters my cells and changes my DNA ',
   },
   {
-    list: ' If I have already had COVID-19, I don’t need a vaccine '
+    list: ' If I have already had COVID-19, I don’t need a vaccine ',
   },
-]
+];
 
 export default function Vaccine() {
   const classes = useStyles();
+
   return (
     <div>
       <Head>
-        <title>Vaccine</title >
+        <title>Vaccine</title>
       </Head>
-      <Container maxWidth='lg'>
+      <Container maxWidth="lg">
         <MyTabs />
-        <div style={{
-          display: "flex",
-          justifyContent: "center",
-          margin: "20px 0 0 0",
-        }}>
-          <Image 
-            src={ vaccineDocs }
-            width={343}
-            height={295}
-            
-          />
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            margin: '50px 0',
+          }}
+        >
+          <Image src={vaccineDocs} width={343} height={295} quality={100} />
         </div>
-        <Grid container spacing={{ xs: 1, sm: 1, md: 8 }}>
+        <Grid container spacing={{ xs: 2, sm: 2, md: 8 }}>
           <Grid item xs={12} sm={6} md={6}>
-              {contents.map((content, idx) => (
-                <div key={idx} style={{ margin: '20px 0' }}>
-                  <h3>{content.title}</h3>
-                  <p>{content.text}</p>
+            {contents.map((content, idx) => (
+              <div key={idx} style={{ margin: '20px 0' }}>
+                <h3>{content.title}</h3>
+                <p>{content.text}</p>
+              </div>
+            ))}
+            <h3>Myths About Vaccine</h3>
+            <ul>
+              {myths.map((myth, idx) => (
+                <div key={idx} style={{ margin: '0', paddingLeft: '20px' }}>
+                  <li>
+                    <p>{myth.list}</p>
+                  </li>
                 </div>
               ))}
-              <h3>Myths About Vaccine</h3>
-              <ul>
-                {myths.map((myth, idx) => (
-                  <div key={idx} style={{ margin: '0', paddingLeft: '17px' }}>
-                    <li><p>{myth.list}</p></li>
-                  </div>
-                ))}
-              </ul>
+            </ul>
           </Grid>
           <Grid item xs={12} sm={6} md={6}>
-              {contents2.map((content2, idx) => (
-                <div key={idx} style={{ margin: '20px 0' }}>
-                  <h3>{content2.title}</h3>
-                  <p>{content2.text}</p>
+            {contents2.map((content2, idx) => (
+              <div key={idx} style={{ margin: '20px 0' }}>
+                <h3>{content2.title}</h3>
+                <p>{content2.text}</p>
+              </div>
+            ))}
+            <h3>Facts About Vaccine</h3>
+            <ul>
+              {facts.map((fact, idx) => (
+                <div key={idx} style={{ margin: '0', paddingLeft: '20px' }}>
+                  <li>
+                    <p>{fact.list}</p>
+                  </li>
                 </div>
               ))}
-              <h3>Facts About Vaccine</h3>
-              <ul>
-                {facts.map((fact, idx) => (
-                  <div key={idx} style={{ margin: '0', paddingLeft: '17px' }}>
-                    <li><p>{fact.list}</p></li>
-                  </div>
-                ))}
-              </ul>
+            </ul>
           </Grid>
         </Grid>
       </Container>

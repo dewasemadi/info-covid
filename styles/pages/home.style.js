@@ -46,7 +46,7 @@ const homeStyle = {
     '@media screen and (min-width: 900px)': {
       width: '700px',
       margin: 'auto',
-      marginTop: '10px',
+      marginTop: '20px',
       textAlign: 'end',
     },
   },

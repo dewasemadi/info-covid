@@ -101,14 +101,13 @@ export default function MyTabs() {
 
   return (
     <div style={{ marginTop: '30px' }}>
-      <Grid container spacing={{ sm: 1, md: 2 }}>
+      <Grid container spacing={{ xs: 2, sm: 2, md: 2 }}>
         <Grid item xs={12} sm={12} md={7} style={{ marginBottom: '20px' }}>
-          <p>#AYOVAKSINASI</p>
           <h2 className={classes.title}>Progress of Indonesia's Covid-19 Vaccination</h2>
           {error ? (
             <p>Last Updated on -</p>
           ) : isLoading ? (
-            <Skeleton variant="text" animation="wave" width={matches ? '' : 300} />
+            <Skeleton variant='text' animation='wave' width={matches ? '' : 300} />
           ) : data ? (
             <p>Last updated on {formatDateToUs(data.last_updated)} </p>
           ) : null}
@@ -124,8 +123,8 @@ export default function MyTabs() {
               ) : isLoading ? (
                 <div>
                   <p className={classes.title2}>Total Vaccination Target</p>
-                  <Typography variant="h4">
-                    <Skeleton variant="text" animation="wave" />
+                  <Typography variant='h4'>
+                    <Skeleton variant='text' animation='wave' />
                   </Typography>
                 </div>
               ) : data ? (
@@ -142,20 +141,19 @@ export default function MyTabs() {
       <Box sx={matches ? { mt: 3 } : { flexGrow: 1, bgcolor: 'background.paper', display: 'flex', width: '100%', mt: 3 }}>
         <Tabs
           orientation={matches ? 'horizontal' : 'vertical'}
-          variant="scrollable"
+          variant='scrollable'
           value={value}
           onChange={handleChange}
-          aria-label="tabs"
-          className={classes.tabStyle}
-        >
-          <Tab label="Phase 1" {...A11yProps(0)} className={classes.btnCustom} />
-          <Tab label="Phase 2" {...A11yProps(1)} className={classes.btnCustom} />
+          aria-label='tabs'
+          className={classes.tabStyle}>
+          <Tab label='Phase 1' {...A11yProps(0)} className={classes.btnCustom} />
+          <Tab label='Phase 2' {...A11yProps(1)} className={classes.btnCustom} />
         </Tabs>
         <TabPanel value={value} index={0} className={classes.tabPanelContainer}>
           {error ? (
             <p>Oops.. Something went wrong. Failed to get data, please try again.</p>
           ) : isLoading ? (
-            <Grid container spacing={{ xs: 1, sm: 1, md: 2 }}>
+            <Grid container spacing={{ xs: 2, sm: 2, md: 2 }}>
               {[...Array(6)].map((_, idx) => (
                 <Grid item xs={12} sm={6} md={4} key={idx}>
                   <MySkeleton />
@@ -163,7 +161,7 @@ export default function MyTabs() {
               ))}
             </Grid>
           ) : data ? (
-            <Grid container spacing={{ xs: 1, sm: 1, md: 2 }}>
+            <Grid container spacing={{ xs: 2, sm: 2, md: 2 }}>
               {vaccine1.map(({ title, tahapan, percent, target }, idx) => (
                 <Grid item xs={12} sm={6} md={4} key={idx}>
                   <MyCard title={title} tahapan={tahapan} percent={percent} target={target} />
@@ -176,7 +174,7 @@ export default function MyTabs() {
           {error ? (
             <p>Oops.. Something went wrong. Failed to get data, please try again.</p>
           ) : isLoading ? (
-            <Grid container spacing={{ xs: 1, sm: 1, md: 2 }}>
+            <Grid container spacing={{ xs: 2, sm: 2, md: 2 }}>
               {[...Array(6)].map((_, idx) => (
                 <Grid item xs={12} sm={6} md={4} key={idx}>
                   <MySkeleton />
@@ -184,7 +182,7 @@ export default function MyTabs() {
               ))}
             </Grid>
           ) : data ? (
-            <Grid container spacing={{ xs: 1, sm: 1, md: 2 }}>
+            <Grid container spacing={{ xs: 2, sm: 2, md: 2 }}>
               {vaccine2.map(({ title, tahapan, percent, target }, idx) => (
                 <Grid item xs={12} sm={6} md={4} key={idx}>
                   <MyCard title={title} tahapan={tahapan} percent={percent} target={target} />

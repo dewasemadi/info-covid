@@ -60,6 +60,7 @@ const footerStyle = {
   desc: {
     fontSize: '14px',
     color: 'rgba(0, 0, 0, 0.6)',
+    marginTop: '10px',
   },
   github: {
     margin: 'auto 0 auto 10px',
@@ -81,7 +82,7 @@ const footerStyle = {
     display: 'flex',
     marginBottom: '-10px',
     '@media screen and (min-width: 900px)': {
-      marginTop: '20px',
+      marginTop: '10px',
     },
   },
   fbContainer: {

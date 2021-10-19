@@ -19,10 +19,10 @@ export default function About() {
   return (
     <div>
       <Head>
-        <title>About Us</title>
+        <title>About</title>
       </Head>
-      <Container maxWidth="lg">
-        <h2 className="title textGradient">Meet Our Super Team</h2>
+      <Container maxWidth='lg'>
+        <h2 className='title textGradient'>Meet Our Super Team</h2>
         <Member />
 
         <h2 className={classes.title2}>Disclaimer</h2>
@@ -35,7 +35,7 @@ export default function About() {
         <div className={classes.sourceContainer}>
           {sources.map((source, idx) => (
             <Link href={source.link} passHref key={idx}>
-              <a target="_blank" rel="noreferrer">
+              <a target='_blank' rel='noreferrer'>
                 <div className={classes.source}>
                   <LinkIcon />
                   <p>{source.title}</p>

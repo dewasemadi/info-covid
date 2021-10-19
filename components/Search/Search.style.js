@@ -16,6 +16,7 @@ const searchStyle = {
   },
   helperMargin: {
     marginTop: '5px',
+    fontSize: '15px',
   },
 };
 
