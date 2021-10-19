@@ -48,14 +48,14 @@ a {
 
 .title {
   margin-top: 10px;
-  font-weight: 700;
-  font-size: 40px;
+  font-weight: 500;
+  font-size: 18px;
   text-align: center;
   margin-bottom: 40px;
 }
 
-.textGradient {
+/* .textGradient {
   background-image: linear-gradient(to right, #f32170, #ff6b08, #cf23cf, #eedd44);
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
-}
+} */

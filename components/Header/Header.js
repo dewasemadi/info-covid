@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { cloneElement, useState, Fragment } from 'react';
 import { Container, AppBar, Toolbar, CssBaseline, useScrollTrigger, Box, Stack, Button, SwipeableDrawer, IconButton } from '@mui/material';
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
@@ -8,7 +7,6 @@ import HelpRoundedIcon from '@mui/icons-material/HelpRounded';
 import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
 import { useRouter } from 'next/router';
 import { makeStyles } from '@mui/styles';
-import logo from '../../public/logo.png';
 import styles from './Header.style';
 const useStyles = makeStyles(styles);
 
@@ -43,19 +41,20 @@ export default function Navbar(props) {
   };
 
   const list = () => (
-    <Box sx={{ width: 250 }} role='presentation' onClick={toggleDrawer(false)} onKeyDown={toggleDrawer(false)}>
+    <Box sx={{ width: 250 }} role="presentation" onClick={toggleDrawer(false)} onKeyDown={toggleDrawer(false)}>
       <Stack spacing={1} className={classes.stack}>
-        <Link href='tel:119' passHref>
-          <Button size='large' startIcon={<CallRoundedIcon />} className={classes.hotline}>
+        <Link href="tel:119" passHref>
+          <Button size="large" startIcon={<CallRoundedIcon />} className={classes.hotline}>
             Hotline
           </Button>
         </Link>
 
-        <Link href='/faq' passHref>
+        <Link href="/faq" passHref>
           <Button
-            size='large'
+            size="large"
             startIcon={<HelpRoundedIcon />}
-            className={router.pathname === '/faq' ? classes.aboutActive : classes.aboutDeactive}>
+            className={router.pathname === '/faq' ? classes.aboutActive : classes.aboutDeactive}
+          >
             FAQ
           </Button>
         </Link>
@@ -68,47 +67,50 @@ export default function Navbar(props) {
       <CssBaseline />
       <ElevationScroll {...props}>
         <AppBar style={{ backgroundColor: 'white' }}>
-          <Container maxWidth='lg'>
+          <Container maxWidth="lg">
             <Toolbar className={classes.toolBar}>
               {router.pathname === '/hospital/list' || router.pathname === '/hospital/detail' ? (
                 <IconButton
                   onClick={() => router.back()}
-                  aria-label='back'
-                  size='medium'
-                  color='primary'
+                  aria-label="back"
+                  size="medium"
+                  color="primary"
                   sx={{ display: { md: `none` } }}
-                  className={classes.grey}>
-                  <ArrowBackRoundedIcon fontSize='inherit' className={classes.icon} />
+                  className={classes.grey}
+                >
+                  <ArrowBackRoundedIcon fontSize="inherit" className={classes.icon} />
                 </IconButton>
               ) : null}
 
-              <Link href='/' passHref>
+              <Link href="/" passHref>
                 <div className={classes.brand}>
-                  <img src='/logo.png' alt='logo' className={classes.block} />
+                  <img src="/logo.png" alt="logo" className={classes.block} />
                 </div>
               </Link>
 
               <Stack
-                direction='row'
+                direction="row"
                 spacing={1}
                 sx={{
                   display: { xs: `none`, md: `flex` },
-                }}>
+                }}
+              >
                 {navLinks.map(({ title, path }, idx) => (
                   <Link key={idx} href={path} passHref>
                     <Button
-                      size='medium'
+                      size="medium"
                       className={
                         router.pathname === `${path}` || router.pathname === `${path}/list` || router.pathname === `${path}/detail`
                           ? classes.navActive
                           : classes.navDeactive
-                      }>
+                      }
+                    >
                       {title}
                     </Button>
                   </Link>
                 ))}
-                <Link href='tel:119' passHref>
-                  <Button size='medium' startIcon={<CallRoundedIcon />} className={classes.hotlineDesktop}>
+                <Link href="tel:119" passHref>
+                  <Button size="medium" startIcon={<CallRoundedIcon />} className={classes.hotlineDesktop}>
                     Hotline
                   </Button>
                 </Link>
@@ -118,11 +120,12 @@ export default function Navbar(props) {
               <Box
                 sx={{
                   display: { xs: `flex`, md: `none` },
-                }}>
-                <IconButton onClick={toggleDrawer(true)} aria-label='menu' size='medium' color='primary' className={classes.grey}>
-                  <MenuRoundedIcon fontSize='inherit' className={classes.icon} />
+                }}
+              >
+                <IconButton onClick={toggleDrawer(true)} aria-label="menu" size="medium" color="primary" className={classes.grey}>
+                  <MenuRoundedIcon fontSize="inherit" className={classes.icon} />
                 </IconButton>
-                <SwipeableDrawer anchor='right' open={isOpen} onClose={toggleDrawer(false)} onOpen={toggleDrawer(true)}>
+                <SwipeableDrawer anchor="right" open={isOpen} onClose={toggleDrawer(false)} onOpen={toggleDrawer(true)}>
                   {list(navLinks)}
                 </SwipeableDrawer>
               </Box>

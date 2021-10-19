@@ -1,86 +1,75 @@
 const footerStyle = {
   marginFooter: {
-    marginTop: '25px',
+    // marginTop: "25px",
     fontSize: '14px',
-    color: '#42B3D7',
+    color: 'rgba(0, 0, 0, 0.6)',
     '@media screen and (max-width: 900px)': {
       marginTop: '10px',
+      marginBottom: '56px',
     },
   },
   withLove: {
-    backgroundImage: 'linear-gradient(to right, #0093e9, #80d0c7) !important',
-    justifyContent: 'center',
     marginTop: '15px',
     display: 'flex',
     alignItems: 'center',
+    color: 'rgba(0, 0, 0, 0.6)',
     fontSize: '14px',
-    '@media screen and (max-width: 900px)': {
-      marginTop: '10px',
-      marginBottom: '40px',
-    },
+    marginBottom: '5px',
   },
   doaIbu: {
     marginLeft: '3px',
     cursor: 'pointer',
     fontWeight: 500,
-    color: 'white',
-    padding: '7px 0',
+    '@media screen and (min-width: 900px)': {
+      '&:hover': {
+        color: 'rgba(0, 0, 0, 1)',
+      },
+    },
   },
   boxMargin: {
     marginTop: '50px',
     backgroundColor: 'white',
     padding: '15px 0',
     '@media screen and (min-width: 900px)': {
-      padding: '50px 0 0 0',
+      padding: '50px 0',
     },
   },
   grey: {
-    color: '#42B3D7',
+    color: 'rgba(0, 0, 0, 0.6)',
     '@media screen and (min-width: 900px)': {
       '&:hover': {
-        color: '#0093e9',
+        color: 'rgba(0, 0, 0, 1)',
       },
     },
   },
   link: {
     fontSize: '14px',
-    color: '#42B3D7',
+    color: 'rgba(0, 0, 0, 0.6)',
     '@media screen and (min-width: 900px)': {
       '&:hover': {
-        color: '#0093e9',
+        color: 'rgba(0, 0, 0, 1)',
       },
     },
-  },
-  brand: {
-    fontSize: '16px',
-    fontWeight: 500,
-    marginBottom: '10px',
-    color: 'rgba(0, 0, 0, 0.8)',
-    maxWidth: '100px !important',
-    cursor: 'pointer !important',
   },
   title: {
     fontSize: '16px',
     fontWeight: 500,
     marginBottom: '10px',
-    color: '#0093e9',
+    color: 'rgba(0, 0, 0, 0.8)',
   },
   desc: {
     fontSize: '14px',
-    color: '#42B3D7',
+    color: 'rgba(0, 0, 0, 0.6)',
   },
   github: {
     margin: 'auto 0 auto 10px',
     display: 'block',
     fontSize: '14px',
-    color: '#42B3D7',
-  },
-  doa: {
-    color: 'white',
+    color: 'rgba(0, 0, 0, 0.6)',
   },
   gitContainer: {
     display: 'flex',
-    color: '#42B3D7',
+    color: 'rgba(0, 0, 0, 0.6)',
   },
   pointer: {
     cursor: 'pointer',
@@ -90,8 +79,10 @@ const footerStyle = {
   },
   iconContainer: {
     display: 'flex',
-    marginTop: 'auto',
     marginBottom: '-10px',
+    '@media screen and (min-width: 900px)': {
+      marginTop: '20px',
+    },
   },
   fbContainer: {
     cursor: 'pointer',

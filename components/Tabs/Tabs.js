@@ -108,13 +108,13 @@ export default function MyTabs() {
           {error ? (
             <p>Last Updated on -</p>
           ) : isLoading ? (
-            <Skeleton variant='text' animation='wave' width={matches ? '' : 300} />
+            <Skeleton variant="text" animation="wave" width={matches ? '' : 300} />
           ) : data ? (
             <p>Last updated on {formatDateToUs(data.last_updated)} </p>
           ) : null}
         </Grid>
         <Grid item xs={12} sm={12} md={5}>
-          <Card variant='outlined'>
+          <Card className={classes.container}>
             <CardContent className={classes.cardContainer}>
               {error ? (
                 <div>
@@ -124,8 +124,8 @@ export default function MyTabs() {
               ) : isLoading ? (
                 <div>
                   <p className={classes.title2}>Total Vaccination Target</p>
-                  <Typography variant='h4'>
-                    <Skeleton variant='text' animation='wave' />
+                  <Typography variant="h4">
+                    <Skeleton variant="text" animation="wave" />
                   </Typography>
                 </div>
               ) : data ? (
@@ -142,13 +142,14 @@ export default function MyTabs() {
       <Box sx={matches ? { mt: 3 } : { flexGrow: 1, bgcolor: 'background.paper', display: 'flex', width: '100%', mt: 3 }}>
         <Tabs
           orientation={matches ? 'horizontal' : 'vertical'}
-          variant='scrollable'
+          variant="scrollable"
           value={value}
           onChange={handleChange}
-          aria-label='tabs'
-          className={classes.tabStyle}>
-          <Tab label='Phase 1' {...A11yProps(0)} className={classes.btnCustom} />
-          <Tab label='Phase 2' {...A11yProps(1)} className={classes.btnCustom} />
+          aria-label="tabs"
+          className={classes.tabStyle}
+        >
+          <Tab label="Phase 1" {...A11yProps(0)} className={classes.btnCustom} />
+          <Tab label="Phase 2" {...A11yProps(1)} className={classes.btnCustom} />
         </Tabs>
         <TabPanel value={value} index={0} className={classes.tabPanelContainer}>
           {error ? (

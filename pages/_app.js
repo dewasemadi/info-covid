@@ -10,7 +10,6 @@ import Footer from '../components/Footer/Footer';
 import { Box } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import styles from '../styles/pages/_app.style';
-import '../styles/pages/about.css';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 const useStyles = makeStyles(styles);
 

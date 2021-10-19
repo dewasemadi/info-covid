@@ -7,11 +7,10 @@ const headerStyle = {
     fontSize: '14px',
     textTransform: 'capitalize',
     fontWeight: 400,
-    backgroundImage: 'linear-gradient(to right, #0093e9, #80d0c7) !important',
+    backgroundColor: '#0093e9!important',
     color: 'white',
     paddingLeft: '20px',
     paddingRight: '20px',
-    borderRadius: '12px',
     '&:hover': {
       backgroundColor: 'rgba(233, 233, 233, 0.3)',
     },
@@ -26,7 +25,6 @@ const headerStyle = {
     fontWeight: 500,
     paddingLeft: '20px',
     paddingRight: '20px',
-    borderRadius: '12px',
     '&:hover': {
       backgroundColor: 'rgba(233, 233, 233, 0.3)',
     },
@@ -37,10 +35,10 @@ const headerStyle = {
     paddingLeft: '15px',
     fontSize: '14px',
     textTransform: 'capitalize',
+    color: 'rgb(0, 0, 0, 0.6)',
     fontWeight: 400,
     paddingLeft: '20px',
     paddingRight: '20px',
-    borderRadius: '12px',
     '&:hover': {
       backgroundColor: 'rgba(233, 233, 233, 0.3)',
     },
@@ -66,7 +64,6 @@ const headerStyle = {
     color: '#0093e9',
     paddingLeft: '20px',
     paddingRight: '20px',
-    borderRadius: '12px',
     fontWeight: 500,
     '&:hover': {
       backgroundColor: 'rgba(233, 233, 233, 0.3)',
@@ -75,10 +72,9 @@ const headerStyle = {
   navDeactive: {
     textTransform: 'capitalize',
     fontSize: '16px',
-    color: '#42B3D7',
+    color: 'rgb(0, 0, 0, 0.6)',
     paddingLeft: '20px',
     paddingRight: '20px',
-    borderRadius: '12px',
     fontWeight: 400,
     '&:hover': {
       backgroundColor: 'rgba(233, 233, 233, 0.3)',
@@ -88,22 +84,22 @@ const headerStyle = {
     textTransform: 'capitalize',
     fontSize: '16px',
     fontWeight: 400,
-    backgroundImage: 'linear-gradient(to right, #0093e9 , #80d0c7) !important',
+    backgroundColor: '#0093e9 !important',
     color: 'white',
     paddingLeft: '20px',
     paddingRight: '20px',
-    borderRadius: '12px',
     '&:hover': {
       backgroundColor: 'rgba(233, 233, 233, 0.3)',
     },
   },
   grey: {
+    color: 'rgb(0, 0, 0, 0.6)',
     '&:hover': {
       backgroundColor: 'rgba(233, 233, 233, 0.3)',
     },
   },
   icon: {
-    color: '#0093e9',
+    color: 'rgb(0, 0, 0, 0.6)',
   },
   block: {
     display: 'block !important',

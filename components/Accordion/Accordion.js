@@ -31,8 +31,7 @@ const faq = [
   },
   {
     question: 'I have questions that are not here, where should I ask?',
-    answer:
-      'You can call 119 for questions and information about COVID-19. ',
+    answer: 'You can call 119 for questions and information about COVID-19. ',
   },
 ];
 
@@ -53,12 +52,13 @@ export default function MyAccordion() {
           key={idx}
           elevation={0}
           className={classes.accordionContainer}
-          variant='outlined'>
+        >
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
             aria-controls={`${idx}-content`}
             id={`${idx}-header`}
-            style={{ borderColor: 'none' }}>
+            style={{ borderColor: 'none' }}
+          >
             <Typography className="textGradient">{question}</Typography>
           </AccordionSummary>
           <AccordionDetails>

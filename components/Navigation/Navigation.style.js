@@ -5,7 +5,7 @@ const navigationStyle = {
     color: '#0093e9',
   },
   deactive: {
-    color: '#42B3D7',
+    color: 'rgb(0, 0, 0, 0.6)',
   },
 };
 

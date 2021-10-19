@@ -1,8 +1,13 @@
 import Image from 'next/image';
 import { Grid } from '@mui/material';
 import scientist from '../../public/scientist.svg';
+import { makeStyles } from '@mui/styles';
+import styles from '../../styles/pages/home.style';
+const useStyles = makeStyles(styles);
 
 export default function Covid() {
+  const classes = useStyles();
+
   return (
     <div style={{ marginTop: '100px' }}>
       <Grid container spacing={{ xs: 2, md: 2 }}>
@@ -12,7 +17,7 @@ export default function Covid() {
           </div>
         </Grid>
         <Grid item xs={12} sm={12} md={7} style={{ display: 'block', margin: 'auto' }}>
-          <h2>What is Covid-19?</h2>
+          <h2 className={classes.title3}>What is Covid-19?</h2>
           <p>
             Coronaviruses are a large family of viruses that cause disease in humans and animals. In humans, it usually causes respiratory
             tract infections, ranging from the common cold to serious illnesses such as Middle East Respiratory Syndrome (MERS) and Severe

@@ -34,34 +34,38 @@ export default function BarChart() {
         <></>
       ) : isLoading ? (
         <Box
-          m='auto'
+          m="auto"
           sx={{
             width: {
               lg: 900,
             },
-          }}>
+          }}
+        >
           <div className={classes.container}>
             <h2 className={classes.title}>Statistics by Provinces</h2>
-            <MyTooltip place='top' title='Use PC to get better experience in reading charts' className={classes.ml} />
+            <MyTooltip place="top" title="Use PC to get better experience in reading charts" className={classes.ml} />
           </div>
-          <Skeleton variant='rectangular' animation='wave' height={550} className={classes.mt} />
+          <div className={classes.barContainer}>
+            <Skeleton variant="rectangular" animation="wave" height={550} />
+          </div>
         </Box>
       ) : data ? (
         <Box
-          m='auto'
+          m="auto"
           sx={{
             width: {
               lg: 900,
             },
-          }}>
+          }}
+        >
           <div className={classes.container}>
             <h2 className={classes.title}>Statistics by Provinces</h2>
             <div className={classes.ml}>
-              <MyTooltip place='top' title='Use PC to get better experience in reading charts' />
+              <MyTooltip place="top" title="Use PC to get better experience in reading charts" />
             </div>
           </div>
-          <div>
-            <Bar data={dataSource(provinces, cases, treated, recovered, death)} options={options} responsive='true' height={550} />
+          <div className={classes.barContainer}>
+            <Bar data={dataSource(provinces, cases, treated, recovered, death)} options={options} responsive="true" height={550} />
           </div>
         </Box>
       ) : null}

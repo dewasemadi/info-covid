@@ -5,6 +5,8 @@ import styles from '../styles/pages/home.style';
 import Banner from '../sections/landing-page/Banner';
 import Covid from '../sections/landing-page/Covid';
 import GlobalSummary from '../sections/landing-page/Summary';
+import Symptoms from '../sections/landing-page/Symptoms';
+import Prevention from '../sections/landing-page/Prevention';
 const useStyles = makeStyles(styles);
 
 export default function Home() {
@@ -14,10 +16,12 @@ export default function Home() {
       <Head>
         <title>Info Covid</title>
       </Head>
-      <Container maxWidth='lg'>
+      <Container maxWidth="lg">
         <Banner />
         <GlobalSummary />
         <Covid />
+        <Symptoms />
+        <Prevention />
       </Container>
     </div>
   );
