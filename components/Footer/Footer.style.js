@@ -15,6 +15,9 @@ const footerStyle = {
     color: 'rgba(0, 0, 0, 0.6)',
     fontSize: '14px',
     marginBottom: '5px',
+    '@media screen and (min-width: 900px)': {
+      marginTop: '35px',
+    },
   },
   doaIbu: {
     marginLeft: '3px',
@@ -81,9 +84,6 @@ const footerStyle = {
   iconContainer: {
     display: 'flex',
     marginBottom: '-10px',
-    '@media screen and (min-width: 900px)': {
-      marginTop: '10px',
-    },
   },
   fbContainer: {
     cursor: 'pointer',

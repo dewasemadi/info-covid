@@ -33,20 +33,21 @@ export default function Footer() {
 
   return (
     <Box className={classes.boxMargin} sx={{ borderTop: 1, borderColor: 'rgba(0, 0, 0, 0.12)' }}>
-      <Container maxWidth="lg">
+      <Container maxWidth='lg'>
         {/* left */}
         <Grid container spacing={{ xs: 1, md: 4 }}>
           <Grid item xs={12} sm={12} md={5}>
             <div className={classes.brand}>
-              <Image src={logo} alt="logo" />
+              <Image src={logo} alt='logo' />
             </div>
             <p className={classes.desc}>
-              This website is for health information and advice about coronavirus (COVID-19), how to prevent yourself from the disease.
+              infoCovid is a website that provides information about covid-19 that displays statistical data on covid cases, vaccination
+              data, finding beds in hospitals, and educating you on how to prevent from the disease.
             </p>
             <div className={classes.iconContainer}>
               <Box className={classes.fbContainer}>
-                <Link href="/" passHref>
-                  <Tooltip title="Facebook">
+                <Link href='/' passHref>
+                  <Tooltip title='Facebook'>
                     <FacebookIcon className={classes.grey} />
                   </Tooltip>
                 </Link>
@@ -66,8 +67,7 @@ export default function Footer() {
             <Stack
               sx={{
                 display: { xs: `none`, md: `flex` },
-              }}
-            >
+              }}>
               <h2 className={classes.title}>Menu</h2>
               <Grid container spacing={{ sm: 1, md: 6 }}>
                 <Grid item>
@@ -96,8 +96,8 @@ export default function Footer() {
           <Grid item xs={12} sm={12} md={4}>
             <h2 className={classes.title}>Repository</h2>
             <Box className={classes.pointer}>
-              <Link href="https://github.com/dewasemadi/info-covid" passHref>
-                <a className={classes.gitContainer} target="_blank" rel="noreferrer">
+              <Link href='https://github.com/dewasemadi/info-covid' passHref>
+                <a className={classes.gitContainer} target='_blank' rel='noreferrer'>
                   <GitHubIcon />
                   <p className={classes.github}>Github</p>
                 </a>
@@ -105,9 +105,9 @@ export default function Footer() {
             </Box>
             <div className={classes.withLove}>
               <p>Build with</p>
-              <FavoriteRoundedIcon sx={{ margin: '0 2px', fontSize: 18 }} color="error" />
+              <FavoriteRoundedIcon sx={{ margin: '0 2px', fontSize: 18 }} color='error' />
               <p>by</p>
-              <Link href="/about" passHref>
+              <Link href='/about' passHref>
                 <p className={classes.doaIbu}>Doa Ibu</p>
               </Link>
             </div>

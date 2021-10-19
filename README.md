@@ -1,6 +1,6 @@
 # infoCovid
 
-infoCovid is for health information and advice about coronavirus (COVID-19), how to prevent yourself from the disease. infoCovid is not the official website of the Indonesian government. The data on this website comes from various public api sources and there may be misinformation with central government data.
+infoCovid is a website that provides information about covid-19 that displays statistical data on covid cases, vaccination data, finding beds in hospitals, and educating you on how to prevent from the disease. The data on this website comes from various public api sources and there may be misinformation with central government data.
 
 ![info-korona netlify app_](https://user-images.githubusercontent.com/66185022/137914767-9d604451-fe0a-42a6-9766-3e2005a4f001.png)
 
