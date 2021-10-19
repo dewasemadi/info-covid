@@ -21,7 +21,7 @@ export default function Prevention() {
       <Grid container spacing={{ xs: 2, md: 2 }}>
         <Grid item xs={12} sm={12} md={4} style={{ margin: 'auto' }}>
           <h2 className={classes.title5}>Corona Virus Prevention</h2>
-          <p className={classes.desc}>Lorem ipsum dolor sit amet consertum</p>
+          <p className={classes.desc}>Ways to prevent corona virus</p>
         </Grid>
         <Grid item xs={12} sm={12} md={8}>
           <Grid container spacing={{ xs: 2, md: 2 }}>

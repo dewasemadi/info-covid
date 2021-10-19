@@ -21,9 +21,7 @@ export default function Covid() {
           <p>
             Coronaviruses are a large family of viruses that cause disease in humans and animals. In humans, it usually causes respiratory
             tract infections, ranging from the common cold to serious illnesses such as Middle East Respiratory Syndrome (MERS) and Severe
-            Acute Respiratory Syndrome (SARS). A new type of coronavirus found in humans since an extraordinary event appeared in Wuhan,
-            China, in December 2019, was later named Severe Acute Respiratory Syndrome Coronavirus 2 (SARS-COV2), and caused Coronavirus
-            Disease-2019 (COVID-19).
+            Acute Respiratory Syndrome (SARS). 
           </p>
         </Grid>
       </Grid>
