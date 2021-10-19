@@ -32,7 +32,9 @@ function MyApp({ Component, pageProps }) {
         <Provider store={store}>
           <Box className={classes.container}>
             <Component {...pageProps} />
-            <Footer />
+            <div>
+              <Footer />
+            </div>
           </Box>
         </Provider>
         <Navigation />

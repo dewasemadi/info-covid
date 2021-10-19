@@ -4,10 +4,10 @@ import styles from '../../styles/pages/home.style';
 const useStyles = makeStyles(styles);
 
 const content = [
-  { title: 'High Fever', desc: 'lorem ipsum dolor sit amet consertum', image: '/highFever.png' },
-  { title: 'Cough', desc: 'lorem ipsum dolor sit amet consertum', image: '/cough.svg' },
-  { title: 'Sore Throat', desc: 'lorem ipsum dolor sit amet consertum', image: '/soreThroat.svg' },
-  { title: 'Trouble Breath', desc: 'lorem ipsum dolor sit amet consertum', image: '/troubleThroat.svg' },
+  { title: 'High Fever', desc: 'Most Common Symptoms', image: '/highFever.png' },
+  { title: 'Cough', desc: 'Most Common Symptomps', image: '/cough.svg' },
+  { title: 'Sore Throat', desc: 'Less Common Symptoms', image: '/soreThroat.svg' },
+  { title: 'Trouble Breath', desc: 'Serious Symtomps', image: '/troubleThroat.svg' },
 ];
 
 export default function Symptoms() {
@@ -16,7 +16,7 @@ export default function Symptoms() {
   return (
     <div style={{ marginTop: '80px' }}>
       <h2 style={{ textAlign: 'center', marginTop: '10px' }}>Corona Virus Symptoms</h2>
-      <p style={{ textAlign: 'center', marginBottom: '30px' }}>Below are the most common symptoms</p>
+      <p style={{ textAlign: 'center', marginBottom: '30px' }}>Below are Some of Corona Virus Symptoms</p>
       <Grid container spacing={{ xs: 2, md: 2 }}>
         {content.map(({ title, desc, image }, idx) => (
           <Grid item xs={12} sm={6} md={3} key={idx}>
