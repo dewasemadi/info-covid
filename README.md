@@ -50,3 +50,28 @@ npm run-dev
 ```bash
 http://localhost:3000
 ```
+
+---
+
+## Tools
+
+- Visual Code Studio<br>
+  Download [here](https://code.visualstudio.com/download)
+- Postman<br>
+  Download [here](https://www.postman.com/downloads/)
+- Google Chrome
+
+
+---
+
+## Techstack
+- [Next.js](https://nextjs.org/)
+- [next-pwa](https://www.npmjs.com/package/next-pwa)
+- [Redux Toolkit](https://redux-toolkit.js.org/)
+- [Redux Thunk](https://www.npmjs.com/package/redux-thunk)
+- [Material UI](https://mui.com/)
+- [chart.js](https://www.chartjs.org/)
+- [Leaflet](https://leafletjs.com/)
+
+
+---
