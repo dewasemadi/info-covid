@@ -4,7 +4,8 @@ import { Container } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import styles from '../styles/pages/vaccine.style';
 import MyTabs from '../components/Tabs/Tabs';
-import { Card, CardContent, LinearProgress } from '@mui/material';
+import Image from 'next/image';
+import vaccineDocs from '../public/VaccineDocs.png';
 import Grid from '@mui/material/Grid';
 const useStyles = makeStyles(styles);
 
@@ -63,6 +64,18 @@ export default function Vaccine() {
       </Head>
       <Container maxWidth='lg'>
         <MyTabs />
+        <div style={{
+          display: "flex",
+          justifyContent: "center",
+          margin: "20px 0 0 0",
+        }}>
+          <Image 
+            src={ vaccineDocs }
+            width={343}
+            height={295}
+            
+          />
+        </div>
         <Grid container spacing={{ xs: 1, sm: 1, md: 8 }}>
           <Grid item xs={12} sm={6} md={6}>
               {contents.map((content, idx) => (
@@ -72,7 +85,7 @@ export default function Vaccine() {
                 </div>
               ))}
               <h3>Myths About Vaccine</h3>
-              <ul className="listNone">
+              <ul>
                 {myths.map((myth, idx) => (
                   <div key={idx} style={{ margin: '0' }}>
                     <li><p>{myth.list}</p></li>
@@ -88,7 +101,7 @@ export default function Vaccine() {
                 </div>
               ))}
               <h3>Facts About Vaccine</h3>
-              <ul className="listNone">
+              <ul>
                 {facts.map((fact, idx) => (
                   <div key={idx} style={{ margin: '0' }}>
                     <li><p>{fact.list}</p></li>
