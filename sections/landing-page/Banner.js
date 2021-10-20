@@ -14,7 +14,7 @@ export default function Banner() {
           </div>
           <p style={{ marginTop: '10px' }}>
             The Coronavirus (Covid-19) was first reported in Wuhan, Hubei, China in December 2019, the outbreak was later recognized as a
-            pandemic by the World Health Organization (WHO) on 11 March 2020
+            pandemic by the World Health Organization (WHO) on 11 March 2020.
           </p>
         </Grid>
         <Grid item xs={10} sm={6} md={4} style={{ display: 'block', margin: 'auto' }} order={{ xs: 1, sm: 2 }}>

@@ -57,7 +57,9 @@ export default function Detail() {
           ) : data && map ? (
             <div>
               <Map lat={map.data.lat} long={map.data.long} name={data.data.name} phone={data.data.phone} address={data.data.address} />
-              <h3 style={{ marginTop: '20px', marginBottom: '-10px' }}>Result ({`${data.data.bedDetail.length} Bed Type`})</h3>
+              {data.data.bedDetail.length > 0 && (
+                <h3 style={{ marginTop: '20px', marginBottom: '-10px' }}>Result ({`${data.data.bedDetail.length} Bed Type`})</h3>
+              )}
               <HospitalCard data={data.data} />
             </div>
           ) : null}

@@ -22,26 +22,28 @@ export default function List() {
       <Head>
         <title>List of Hospital</title>
       </Head>
-      <Container maxWidth='lg'>
+      <Container maxWidth="lg">
         <div>
           {error ? (
             <div className={classes.errorMessageContainer}>
               <div>
                 <p className={classes.errorMessage}>Oops.. Something went wrong. Failed to get data, please try again.</p>
-                <Button onClick={handleReload} variant='outlined' className={classes.btnCustom}>
+                <Button onClick={handleReload} variant="outlined" className={classes.btnCustom}>
                   Try Again
                 </Button>
               </div>
             </div>
           ) : isLoading ? (
-            <Stack direction='row' justifyContent='center' alignItems='center' className={classes.errorMessageContainer}>
+            <Stack direction="row" justifyContent="center" alignItems="center" className={classes.errorMessageContainer}>
               <CircularProgress />
             </Stack>
           ) : data ? (
             <div>
-              <h3>
-                Result ({`${data.hospitals.length}`} {data.hospitals.length > 1 ? 'Hospitals' : 'Hospital'})
-              </h3>
+              {data.hospitals.length > 0 && (
+                <h3>
+                  Result ({`${data.hospitals.length}`} {data.hospitals.length > 1 ? 'Hospitals' : 'Hospital'})
+                </h3>
+              )}
               <HospitalCard list={data.hospitals} type={type} />
             </div>
           ) : null}
