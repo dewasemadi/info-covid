@@ -9,6 +9,14 @@ const accordionStyle = {
   blueText: {
     color: '#0093E9',
   },
+  faqContainer: {
+    marginTop: '20px !important',
+    '@media screen and (min-width: 900px)': {
+      width: '650px',
+      marginLeft: 'auto',
+      marginRight: 'auto',
+    },
+  },
 };
 
 export default accordionStyle;

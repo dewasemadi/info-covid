@@ -44,7 +44,7 @@ export default function MyAccordion() {
   };
 
   return (
-    <div style={{ marginTop: '20px' }}>
+    <div className={classes.faqContainer}>
       {faq.map(({ question, answer }, idx) => (
         <Accordion
           expanded={expanded === `${idx}`}
