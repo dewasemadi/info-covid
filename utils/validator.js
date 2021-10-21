@@ -13,3 +13,7 @@ export const isExist = (v) => {
     (typeof v === 'object' && Object.keys(v).length > 0)
   );
 };
+
+export const isContainAlphabet = (arg) => {
+  return arg.includes('S', 0) || arg.includes('E', 0);
+};
